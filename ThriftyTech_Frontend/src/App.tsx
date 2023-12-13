@@ -1,6 +1,7 @@
 // src/components/ViewComponent.tsx
 import './assets/logo.png'
 import './assets/Apple.jpg'
+import React from "react";
 const ViewComponent: React.FC = () => {
 
     return (
