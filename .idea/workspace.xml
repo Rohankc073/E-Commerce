@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d80ebf6d-b9c4-4e7d-9d39-db4cd9b85303" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd45506a-5a5c-4bb6-a364-5ab6c9cc8062.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd45506a-5a5c-4bb6-a364-5ab6c9cc8062/storage_v2/_src_/database/thriftytech.duzYNw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd45506a-5a5c-4bb6-a364-5ab6c9cc8062/storage_v2/_src_/database/thriftytech.duzYNw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd45506a-5a5c-4bb6-a364-5ab6c9cc8062/storage_v2/_src_/database/thriftytech.duzYNw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd45506a-5a5c-4bb6-a364-5ab6c9cc8062/storage_v2/_src_/database/thriftytech.duzYNw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/E-Commerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Commerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +39,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Rohan-KC&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -82,6 +79,9 @@
       <workItem from="1702393954569" duration="1788000" />
       <workItem from="1702433725667" duration="18000" />
       <workItem from="1702433745152" duration="6000" />
+      <workItem from="1702462167478" duration="12000" />
+      <workItem from="1702462223313" duration="50000" />
+      <workItem from="1702462275824" duration="19000" />
     </task>
     <servers />
   </component>
