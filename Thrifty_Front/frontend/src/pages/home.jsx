@@ -34,66 +34,70 @@ const HomePage = () => {
         <div>
             {/* Commented out the loader-related code */}
             {/* <div className="loader"></div> */}
-
-            <div className="navbar1">
-                <div className="nav-logo1 border">
-                    <div className="logo1"></div>
-                </div>
-
-                <div className="nav-address border">
-                    <p className="add-first">Delivery to</p>
-                    <div className="add-icon">
-                        <i className="fa-solid fa-location-dot"></i>
-                        <p className="add-second">KTM</p>
+            <header>
+                <div className="navbar1">
+                    <div className="nav-logo1 border">
+                        <div className="logo1"></div>
                     </div>
-                </div>
 
-                <div className="nav-search1">
-                    <select className="search-select1">
-                        <option>All</option>
-                    </select>
+                    <div className="nav-address border">
+                        <p className="add-first">Delivery to</p>
+                        <div className="add-icon">
+                            <i className="fa-solid fa-location-dot"></i>
+                            <p className="add-second">KTM</p>
+                        </div>
+                    </div>
 
-                    {/* Corrected the placement of div elements within input */}
-                    <div className="search-input1">
-                        <input placeholder="Search Thrifty Techs" />
+                    <div className="nav-search1">
+                        <select className="search-select1">
+                            <option>All</option>
+                        </select>
+
+                        <input
+                            placeholder="Search Thrifty Techs"
+                            className="search-input1"
+                        />
                         <div className="search-icon">
                             <i className="fa-solid fa-magnifying-glass"></i>
                         </div>
                     </div>
-                </div>
 
-                <div className="nav-signin border">
-                    <p><span>Hello, Sign in</span></p>
-                    <p className="nav-second border">Account & Lists</p>
-                </div>
+                    <div className="nav-signin border">
+                        <p>
+                            <span>Hello, Sign in</span>
+                        </p>
+                        <p className="nav-second border">Account & Lists</p>
+                    </div>
 
-                <div className="nav-return border">
-                    <p><span>Returns</span></p>
-                    <p className="nav-second border">& Order</p>
-                </div>
+                    <div className="nav-return border">
+                        <p>
+                            <span>Returns</span>
+                        </p>
+                        <p className="nav-second border">& Order</p>
+                    </div>
 
-                <div className="nav-cart border">
-                    <i className="fa-solid fa-cart-shopping"></i>
-                    Cart
+                    <div className="nav-cart border">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        Cart
+                    </div>
                 </div>
-            </div>
-
-            <div className="panel">
-                <div className="panel-all border">
-                    <i className="fa-solid fa-bars"></i>
-                    All
+                <div className="panel">
+                    <div className="panel-all border">
+                        <i className="fa-solid fa-bars"></i>
+                        All
+                    </div>
+                    <div className="panel-ops border">
+                        <p>Today's Deals</p>
+                        <p>Customer Service</p>
+                        <p>Registry</p>
+                        <p>Gift Cards </p>
+                        <p>Sell</p>
+                    </div>
+                    <div className="panel-deals border">
+                        <p>Shop deals in Electronics</p>
+                    </div>
                 </div>
-                <div className="panel-ops border">
-                    <p>Today's Deals</p>
-                    <p>Customer Service</p>
-                    <p>Registry</p>
-                    <p>Gift Cards </p>
-                    <p>Sell</p>
-                </div>
-                <div className="panel-deals border">
-                    <p>Shop deals in Electronics</p>
-                </div>
-            </div>
+            </header>
 
 
             <div className="hero-section">
