@@ -7,11 +7,12 @@ import FirstPage from "./pages/landing";
 import './images/3.png'
 import HomePage from "./pages/home";
 import "./css/home.css"
+import ViewPage from "./pages/viewpage";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HomePage />
+    <ViewPage />
   </React.StrictMode>
 );
 

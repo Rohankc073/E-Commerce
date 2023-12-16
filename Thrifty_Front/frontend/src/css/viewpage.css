@@ -3,7 +3,7 @@
     font-family: ' Argent CF', serif;
     /*border: border-box;*/
 }
-.navbar1 {
+.navbar2 {
     height: 60px;
     background-color: #11b18b;
     color: black;
@@ -54,7 +54,7 @@
     margin-bottom: 5px;
 }
 
-.nav-search{
+.nav-search2{
     display: flex;
     justify-content: space-evenly;
     background-color: pink;
@@ -62,7 +62,7 @@
     height: 40px;
     border-radius: 5px;
 }
-.nav-search:hover{
+.nav-search2:hover{
     border: 2px solid orange;
 }
 
@@ -75,7 +75,7 @@
     border: none;
 }
 
-.search-input1{
+.search-input{
     width: 100%;
     font-size: 1rem;
     border: none;

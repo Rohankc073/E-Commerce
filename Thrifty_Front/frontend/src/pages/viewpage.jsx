@@ -6,7 +6,7 @@ const ViewPage = () => {
     return (
         <>
             <header>
-                <div className="navbar1">
+                <div className="navbar2">
                     <div className="nav-logo1 border">
                         <div className="logo1"></div>
                     </div>
@@ -19,8 +19,8 @@ const ViewPage = () => {
                         </div>
                     </div>
 
-                    <div className="nav-search">
-                        <select className="search-select">
+                    <div className="nav-search2">
+                        <select className="search-select1">
                             <option>All</option>
                         </select>
 
