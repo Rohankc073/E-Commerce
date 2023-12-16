@@ -1,9 +1,9 @@
 * {
     margin: 0;
-    font-family: Arial;
-    border: border-box;
+    font-family: Arial, serif;
+    /*border: border-box;*/
 }
-.navbar {
+.navbar1 {
     height: 60px;
     background-color: #11b18b;
     color: black;
@@ -20,7 +20,7 @@
     justify-content: center;
 }
 .logo1{
-    background-image: url(logo-removebg-preview.png);
+    /*background-image: url(logo-removebg-preview.png);*/
     background-size: cover;
     height:50px ;
     width: 100%;
@@ -55,7 +55,7 @@
     margin-bottom: 5px;
 }
 
-.nav-search{
+.nav-search2{
     display: flex;
     justify-content: space-evenly;
     background-color: pink;
@@ -63,11 +63,11 @@
     height: 40px;
     border-radius: 5px;
 }
-.nav-search:hover{
+.nav-search2:hover{
     border: 2px solid orange;
 }
 
-.search-select{
+.search-select1{
     background-color: #f3f3f3;
     width: 50px;
     text-align: center;
@@ -113,7 +113,7 @@ span{
     font-weight: 700;
 }
 
-.panel{
+.panel1{
     height: 40px;
     background-color: #1f6858;
     display: flex;
@@ -121,22 +121,22 @@ span{
     align-items: center;
     justify-content: space-evenly;
 }
-.panel-ops p{
+.panel1-ops p{
     display: inline;
     margin-left: 15px;
 }
 
-.panel-ops{
+.panel1-ops{
     width: 70%;
     font-size: 0.85rem;
 
 }
-.panel-deals{
+.panel1-deals{
     font-size: 0.9rem;
     font-weight: 700;
 }
 
-.apple {
+.apple1 {
     width: 1430px;
     height: 600px;
     background-color: white;
@@ -147,11 +147,11 @@ span{
     position: relative; /* Add position: relative to the container */
 }
 
-.apple-logo {
+.apple1-logo {
     /* Add styles for the Apple logo */
     width: 100px; /* Increase the width of the logo as needed */
     height: 80px; /* Increase the height of the logo as needed */
-    background-image: url('app1.jpg'); /* Set the path to your Apple logo image */
+    /*background-image: url('app1.jpg'); !* Set the path to your Apple logo image *!*/
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -160,7 +160,7 @@ span{
     transform: translate(0, -50%); /* Center the logo vertically */
 }
 
-.apple p {
+.apple1 p {
     font-family: 'SF Pro Display', sans-serif; /* Specify a fallback font family */
     font-size: 48px;
     font-weight: 800;
@@ -172,7 +172,7 @@ span{
 }
 
 
-.apple video {
+.apple1 video {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -344,7 +344,7 @@ ul a {
 }
 
 .logo{
-    background-image: url(logo-removebg-preview.png);
+    /*background-image: url(logo-removebg-preview.png);*/
     background-size: cover;
     height:60px ;
     width: 200px;
