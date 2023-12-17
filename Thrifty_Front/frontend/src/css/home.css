@@ -1,7 +1,7 @@
 * {
     margin: 0;
     font-family: 'Argent CF', serif;
-    /*border: border-box;*/
+    border: border-box;
 }
 .example {
     width: 100%; /* Make an element 100% of its parent container */
@@ -465,6 +465,7 @@ footer{
     height: 300px;
     justify-content: space-evenly;
 }
+
 
 ul{
     margin-top: 20px;
