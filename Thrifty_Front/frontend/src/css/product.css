@@ -1,9 +1,9 @@
 * {
     margin: 0;
     font-family: Arial, serif;
-    /*border: border-box;*/
+    /*border-style: border-box;*/
 }
-.navbar1 {
+.navbar2{
     height: 60px;
     background-color: #11b18b;
     color: black;
@@ -13,14 +13,14 @@
 
 }
 
-.nav-logo1 {
+.nav-logo1{
     height: 70px;
     width: 170px;
     align-items: center;
     justify-content: center;
 }
 .logo1{
-    /*background-image: url(logo-removebg-preview.png);*/
+    background-image: url("../images/logo.png");
     background-size: cover;
     height:50px ;
     width: 100%;
@@ -29,21 +29,21 @@
     justify-content: center;
 }
 
-.border {
+.border{
     border: 2px solid transparent;
 }
 
-.border :hover {
+.border:hover {
     border: 2px solid white;
 }
 
-.add-first {
+.add-first{
     color: black;
     font-size: 0.5rem;
     margin-left: 15px;
 }
 
-.add-second {
+.add-second{
     font-size: 1rem;
     margin-left: 3px;
     font-weight: 500;
@@ -113,7 +113,7 @@ span{
     font-weight: 700;
 }
 
-.panel1{
+.panel{
     height: 40px;
     background-color: #1f6858;
     display: flex;
@@ -121,22 +121,22 @@ span{
     align-items: center;
     justify-content: space-evenly;
 }
-.panel1-ops p{
+.panel-ops p{
     display: inline;
     margin-left: 15px;
 }
 
-.panel1-ops{
+.panel-ops{
     width: 70%;
     font-size: 0.85rem;
 
 }
-.panel1-deals{
+.panel-deals{
     font-size: 0.9rem;
     font-weight: 700;
 }
 
-.apple1 {
+.apple {
     width: 1430px;
     height: 600px;
     background-color: white;
@@ -147,7 +147,7 @@ span{
     position: relative; /* Add position: relative to the container */
 }
 
-.apple1-logo {
+.apple-logo {
     /* Add styles for the Apple logo */
     width: 100px; /* Increase the width of the logo as needed */
     height: 80px; /* Increase the height of the logo as needed */
@@ -160,7 +160,7 @@ span{
     transform: translate(0, -50%); /* Center the logo vertically */
 }
 
-.apple1 p {
+.apple p {
     font-family: 'SF Pro Display', sans-serif; /* Specify a fallback font family */
     font-size: 48px;
     font-weight: 800;
@@ -172,7 +172,7 @@ span{
 }
 
 
-.apple1 video {
+.apple video {
     display: flex;
     align-items: center;
     justify-content: center;
