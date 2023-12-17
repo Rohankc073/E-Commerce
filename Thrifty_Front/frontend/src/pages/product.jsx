@@ -3,82 +3,98 @@ import React from 'react';
 const Product = () => {
     return (
         <>
-            <div>
-                <header>
-                    <div className="navbar1">
-                        <div className="nav-logo1 border">
-                            <div className="logo1">
-                            </div>
-                        </div>
+            <header>
+                <div className="navbar2">
+                    <div className="nav-logo1 border">
+                        <div className="logo1"></div>
+                    </div>
 
-                        <div className="nav-address border">
-                            <p className="add-first">Delivery to</p>
-                            <div className="add-icon">
-                                <i className="fa-solid fa-location-dot"></i>
-                                <p className="add-second">KTM</p>
-                            </div>
-                        </div>
-
-                        <div className="nav-search2">
-                            <select className="search-select1">
-                                <option>All</option>
-                            </select>
-
-                            <div className="search-icon">
-                                <i className="fa-solid fa-magnifying-glass"></i>
-                            </div>
-
-                            <input placeholder="Search Thrifty Techs" className="search-input" />
-                        </div>
-
-                        <div className="nav-signin border1">
-                            <p><span>Hello, Sign in</span></p>
-                            <p className="nav-second border1">Account & Lists</p>
-                        </div>
-
-                        <div className="nav-return border1">
-                            <p><span>Returns</span></p>
-                            <p className="nav-second border1">& Order</p>
-                        </div>
-
-                        <div className="nav-cart border1">
-                            <i className="fa-solid fa-cart-shopping"></i>
-                            Cart
+                    <div className="nav-address border">
+                        <p className="add-first">Delivery to</p>
+                        <div className="add-icon">
+                            <i className="fa-solid fa-location-dot"></i>
+                            <p className="add-second">KTM</p>
                         </div>
                     </div>
-                    <div className="panel1">
-                        {/* Panel content goes here */}
-                    </div>
-                    <div className="apple1">
-                        {/* Apple section content goes here */}
-                    </div>
-                </header>
 
-                <div className="shop-section">
-                    {/* Shop section content goes here */}
+                    <div className="nav-search2">
+                        <select className="search-select1">
+                            <option>All</option>
+                        </select>
+
+                        <input
+                            placeholder="Search Thrifty Techs"
+                            className="search-input"
+                        />
+                        <div className="search-icon">
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+
+                    <div className="nav-signin border">
+                        <p>
+                            <span>Hello, Sign in</span>
+                        </p>
+                        <p className="nav-second border">Account & Lists</p>
+                    </div>
+
+                    <div className="nav-return border">
+                        <p>
+                            <span>Returns</span>
+                        </p>
+                        <p className="nav-second border">& Order</p>
+                    </div>
+
+                    <div className="nav-cart border">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        Cart
+                    </div>
                 </div>
-
-                <div className="shop-section1">
-                    {/* Shop section 1 content goes here */}
+                <div className="panel">
+                    <div className="panel-all border">
+                        <i className="fa-solid fa-bars"></i>
+                        All
+                    </div>
+                    <div className="panel-ops border">
+                        <p>Today's Deals</p>
+                        <p>Customer Service</p>
+                        <p>Registry</p>
+                        <p>Gift Cards </p>
+                        <p>Sell</p>
+                    </div>
+                    <div className="panel-deals border">
+                        <p>Shop deals in Electronics</p>
+                    </div>
                 </div>
+                <div className="apple">
+                    <div className="apple-logo">
 
-                <footer>
-                    <div className="foot-panel1">
-                        Back to Top
                     </div>
-                    <div className="foot-panel2">
-                        {/* Footer panel 2 content goes here */}
-                    </div>
-                    <div className="foot-panel3">
-                        <div className="logo"></div>
-                    </div>
-                    <div className="foot-panel4">
-                        {/* Footer panel 4 content goes here */}
-                    </div>
-                </footer>
+                    <p>Apple</p>
+                    <video autoPlay loop muted playsInline>
+                        <source src="apple.mp4" type="video/mp4" />
+                        {/* Your browser does not support the video tag. */}
+                    </video>
+                </div>
+            </header>
+
+
+            <body>
+            <div className="shop-section">
+                {/* ... (your existing code for the shop section) */}
             </div>
+
+            <div className="shop-section1">
+                {/* ... (your existing code for the shop section1) */}
+            </div>
+
+            <footer>
+                {/* ... (your existing code for the footer) */}
+            </footer>
+            </body>
+
         </>
     );
-}
+};
 
 export default Product;
