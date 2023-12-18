@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
+
 import reportWebVitals from './reportWebVitals';
-import FirstPage from "./pages/landing";
+
 import './images/3.png'
-import HomePage from "./pages/home";
+
 import "./css/home.css"
 import ViewPage from "./pages/viewpage";
-import Product from "./pages/product";
-import LoginPage from "./pages/login";
+i
 import "./css/login.css"
 
 
