@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../css/home.css';
+import CartPanel from "./cartPanle"; // Corrected import
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
+    // ... other functions and useEffect ...
+
+    const toggleCartPanel = () => {
+        setIsCartOpen(!isCartOpen);
+    };
 
     const showLoader = () => {
         setIsLoading(true);
@@ -77,9 +85,12 @@ const HomePage = () => {
                     </div>
 
                     <div className="nav-cart border">
-                        <i className="fa-solid fa-cart-shopping"></i>
-                        Cart
+                        <button className="cart-button" onClick={toggleCartPanel}>
+                            <i className="fa-solid fa-cart-shopping"></i>
+                            Cart
+                        </button>
                     </div>
+                    <CartPanel isOpen={isCartOpen} onClose={toggleCartPanel} />
                 </div>
                 <div className="panel">
                     <div className="panel-all border">

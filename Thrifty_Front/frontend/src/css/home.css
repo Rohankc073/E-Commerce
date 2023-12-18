@@ -129,7 +129,38 @@
     color: #0f1111;
 }
 
-span{
+.cart-button{
+    border-radius: 5px;
+    border-style: none;
+    background-color: #11b18b;
+    width: 100px;
+}
+
+/* Add styles for the cart panel */
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: right 0.3s ease; /* Add smooth transition effect */
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cart-panel.open {
+    right: 0; /* Move the panel on-screen when open */
+}
+
+/* Style your close button as needed */
+.cart-panel button {
+    margin-top: 10px;
+}
+
+.span{
     font-size:0.7rem ;
 }
 
