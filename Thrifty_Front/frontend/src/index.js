@@ -6,15 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import './images/3.png'
 
 import "./css/home.css"
-import ViewPage from "./pages/viewpage";
-i
+// import ViewPage from "./pages/viewpage";
+
 import "./css/login.css"
+// import RegisterUserForm from "./pages/register";
+// import LoginPage from "./pages/login";
+// import HomePage from "./pages/home";
+import SignUpForm from "./pages/register";
+import "../src/css/register.css"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ViewPage/>
+    <SignUpForm/>
   </React.StrictMode>
 );
 
