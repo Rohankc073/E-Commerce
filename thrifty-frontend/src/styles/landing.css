@@ -1,4 +1,4 @@
-body {
+. *{
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -51,6 +51,7 @@ body {
     font-size: 50px; /* Adjust the font size for the Discover More button */
 }
 .navbar {
+    margin-left: 130px;
     margin-top: 15px;
     position: fixed;
     top: 0;
@@ -133,32 +134,27 @@ body {
     color: #000; /* Set a color that contrasts with your background */
 }
 
-footer {
-    width: 100%;
-
+footer{
+    margin-top: 70px;
 }
-
-/* ... (your existing CSS code for other footer elements) ... */
-
 .foot-panel1{
-    background-color: #0099b3;
+    background-color: #1f6858;
     color: white;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.5rem;
-
-
 }
 
 .foot-panel2{
     display: flex;
-    background-color: #0099b3;
+    background-color: #11b18b;
     color: white;
     height: 300px;
     justify-content: space-evenly;
 }
+
 
 ul{
     margin-top: 20px;
@@ -172,7 +168,7 @@ ul a {
 }
 
 .foot-panel3{
-    background-color: #05869d;
+    background-color: #1f6858;
     border-top: 0.5px solid white;
     height: 70px;
     display: flex;
@@ -191,29 +187,19 @@ ul a {
 
 
 .foot-panel4{
-    display: flex;
-    background-color:#077a8e ;
+    background-color:#11b18b ;
     color: white;
     height: 75px;
 }
 
 .pages{
-    display: flex;
-    justify-content: center;
-    align-content: center;
     font-size: 0.9rem;
     text-align: center;
     padding-top: 10px;
 }
 
-.Copyright{
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.copyright{
     padding-top: 5px;
     font-size: 0.9rem;
     text-align: center;
 }
-
-
-
