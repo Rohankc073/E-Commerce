@@ -19,7 +19,7 @@ const Navbar1 = () => {
     };
     return (
         <div className="navbar1">
-            <div className="nav-logo1 border">
+            <div className="nav-logo12 border">
                 <div className="logo">
 
                 </div>
