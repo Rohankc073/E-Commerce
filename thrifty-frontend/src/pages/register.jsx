@@ -2,7 +2,7 @@
 // import { useForm } from 'react-hook-form'; // You might need to install this package
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import "../css/register.css"
+import "../../../Thrifty_Front/frontend/src/css/register.css"
 const SignUpForm = () => {
     const { register, handleSubmit, errors } = useForm();
     const [errorMessage, setErrorMessage] = useState('');

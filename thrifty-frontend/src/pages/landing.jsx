@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/landing.css'; // Import your CSS file
-import "../images/3.png"
+import '../../../Thrifty_Front/frontend/src/css/landing.css'; // Import your CSS file
+import "../../../Thrifty_Front/frontend/src/images/3.png"
 import Footer from "./footer";
 
 const FirstPage = () => {
@@ -14,7 +14,7 @@ const FirstPage = () => {
             </head>
             <body>
             <div className="hero">
-                <img src="../images/3.png" alt="" />
+                <img src="../../../Thrifty_Front/frontend/src/images/3.png" alt="" />
 
                 <div className="hero-text">
                     <p className="hero-text-content">

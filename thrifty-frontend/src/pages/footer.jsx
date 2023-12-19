@@ -1,5 +1,5 @@
 import React from 'react';
-import "../css/footer.css"
+import "../../../Thrifty_Front/frontend/src/css/footer.css"
 const Footer = () => {
     const scrollToTop = () => {
         window.scrollTo({

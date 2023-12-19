@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/viewpage.css';
+import '../../../Thrifty_Front/frontend/src/css/viewpage.css';
 
 import Navbar1 from "./navbar";
 // import './font-awesome.min.css'; // Import the Font Awesome CSS file

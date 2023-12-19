@@ -1,8 +1,8 @@
 // Navbar.js
 import React, {useState} from 'react';
-import '../css/navbar.css'; // Import your CSS file for styling
+import '../../../Thrifty_Front/frontend/src/css/navbar.css'; // Import your CSS file for styling
 import CartPanel from "./cartPanle"; // Corrected import
-import "../images/logo.png"
+import "../../../Thrifty_Front/frontend/src/images/logo.png"
 
 const Navbar1 = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
