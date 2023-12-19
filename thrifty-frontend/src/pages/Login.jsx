@@ -1,13 +1,25 @@
-import React from 'react'
-import "../styles/login.css"
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import "../styles/login.css";
+
 const Login = () => {
+    const navigate = useNavigate();
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+
+        // Perform your login logic here...
+
+        // After successful login, navigate to the home page
+        navigate('/home');
+    };
+
     return (
         <>
             <div className="login-form">
-                {/*<img src="/images/sdfa.png" alt="" />*/}
                 <div className="left-section">
                     <h2>Sign In</h2>
-                    <form method="post" action="/login">
+                    <form onSubmit={handleLogin}>
                         <div className="formAlign">
                             <div className="formGroup">
                                 <input
@@ -45,7 +57,7 @@ const Login = () => {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;
