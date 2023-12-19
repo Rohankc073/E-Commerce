@@ -39,4 +39,5 @@ public class Product {
 
     @Transient
     private String imageBase64;
+
 }

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../css/home.css';
-import CartPanel from "./cartPanle";
+import Footer from './footer';
 import Navbar1 from "./navbar"; // Corrected import
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
 
-    // ... other functions and useEffect ...
 
     const toggleCartPanel = () => {
         setIsCartOpen(!isCartOpen);
@@ -172,62 +171,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <footer>
-                <div className="foot-panel1">
-                    Back to Top
-                </div>
-                <div className="foot-panel2">
-                    <ul>
-                        <p>Customer Care </p>
-                        <a>Help center</a>
-                        <a>How to buy </a>
-                        <a>Returns and Refund </a>
-                        <a>Contact Us</a>
-                    </ul>
-
-                    <ul>
-                        <p>Earn with Thrifty </p>
-                        <a>Sell in Thrifty</a>
-                        <a>Career</a>
-                        <a>Code of conduct </a>
-                        <a>Partner with Thrifty</a>
-                        <a>Affiliate Program</a>
-                    </ul>
-
-                    <ul>
-                        <p>Get to Know Us </p>
-                        <a>About</a>
-                        <a>Blog</a>
-                        <a>Thrifty Relations </a>
-                        <a>Thrifty Devices</a>
-                        <a>Thrifty Science </a>
-                    </ul>
-
-                    <ul>
-                        <p>Get to Know Us </p>
-                        <a>Careers</a>
-                        <a>Blog</a>
-                        <a>Thrifty Relations </a>
-                        <a>Thrifty Devices</a>
-                        <a>Thrifty Science </a>
-                    </ul>
-                </div>
-
-                <div className="foot-panel3">
-                    <div className="logo"></div>
-                </div>
-
-                <div className="foot-panel4">
-                    <div class="pages">
-                        <a>Conditions of Use</a>
-                        <a>Privacy Notice</a>
-                        <a>Your Ads Privacy Choices</a>
-                    </div>
-                    <div class="copyright">
-                        ©1996-2023, Amazon.com, Inc. or its affiliates
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/landing.css'; // Import your CSS file
 import "../images/3.png"
+import Footer from "./footer";
 
 const FirstPage = () => {
     return (
@@ -52,24 +53,7 @@ const FirstPage = () => {
                     </div>
                 </div>
             </div>
-            <footer>
-                {/*<div className="foot-panel1">Back to Top</div>*/}
-
-                <div className="foot-panel3">
-                    <div className="logo"></div>
-                </div>
-
-                <div className="foot-panel4">
-                    <div className="pages">
-                        {/*<a>Conditions of Use</a>*/}
-                        {/*<a>Privacy Notice</a>*/}
-                        {/*<a>Your Ads Privacy Choices</a>*/}
-                    </div>
-                    <div className="Copyright">
-                        {/*©1996-2023, Thriftytech.com, Inc. or its affiliates*/}
-                    </div>
-                </div>
-            </footer>
+            <Footer />
             </body>
         </div>
     );
