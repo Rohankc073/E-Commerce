@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../Thrifty_Front/frontend/src/css/viewpage.css';
+import '../styles/viewpage.css'
 
 import Navbar1 from "./navbar";
 // import './font-awesome.min.css'; // Import the Font Awesome CSS file
@@ -29,7 +29,7 @@ const ViewPage = () => {
             </header>
 
             <body>
-            <div className="shop-section">
+            <div className="shop-section33">
                 <div className="small-box-container">
                     <div className="small-box">
                         {/* Content for the first small box goes here */}
@@ -38,10 +38,10 @@ const ViewPage = () => {
                         {/* Content for the second small box goes here */}
                     </div>
                 </div>
-                <div className="box1 box ">
-                    <div className="box-content">
+                <div className="box5 box13 ">
+                    <div className="box13-content">
                         <div
-                            className="box-image"
+                            className="box13-image"
                             style={{ backgroundImage: "url('ip13Pink.jpg')" }}
                         ></div>
                     </div>

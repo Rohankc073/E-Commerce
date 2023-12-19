@@ -136,14 +136,14 @@ span{
 }
 
 
-.shop-section{
+.shop-section33{
     display: flex;
     margin-left: 50px;
     background-color: white;
 }
 
 
-.box{
+.box13{
     height: 500px;
     width: 550px;
     background-color: #e2e7e6;
@@ -156,16 +156,13 @@ span{
     cursor: pointer;
     box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
 }
-.box-image{
+.box13-image{
     display: flex;
     align-content: center;
     justify-content: center;
     height: 400px;
     width: 250px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -174,7 +171,7 @@ span{
 
 
 /* Style for positioning the container */
-.box-content {
+.box13-content {
     margin-left: 10px;
     position: relative; /* This is important for positioning children */
 }

@@ -1,8 +1,11 @@
 // Navbar.js
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping, faPlus } from '@fortawesome/free-solid-svg-icons';
 import React, {useState} from 'react';
-import '../../../Thrifty_Front/frontend/src/css/navbar.css'; // Import your CSS file for styling
+import '../images/logo.png'
 import CartPanel from "./cartPanle"; // Corrected import
-import "../../../Thrifty_Front/frontend/src/images/logo.png"
+import "../styles/cartPanel.css"
+// import "../styles/"
 
 const Navbar1 = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -17,7 +20,9 @@ const Navbar1 = () => {
     return (
         <div className="navbar1">
             <div className="nav-logo1 border">
-                <div className="logo1"></div>
+                <div className="logo">
+
+                </div>
             </div>
 
             <div className="nav-address border">
@@ -28,7 +33,7 @@ const Navbar1 = () => {
                 </div>
             </div>
 
-            <div className="nav-search">
+            <div className="nav-search1">
                 <select className="search-select">
                     <option>All</option>
                 </select>
@@ -48,11 +53,10 @@ const Navbar1 = () => {
                 <p><span>Returns</span></p>
                 <p className="nav-second border">& Order</p>
             </div>
-
             <div className="nav-cart border">
                 <button className="cart-button" onClick={openCartPanel}>
-                    <i className="fa-solid fa-cart-shopping"></i>
-                    Open Cart
+                    <FontAwesomeIcon icon={faCartShopping} /> {/* Cart icon */}
+                    Cart <FontAwesomeIcon icon={faPlus} /> {/* Plus symbol */}
                 </button>
             </div>
             <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel} />

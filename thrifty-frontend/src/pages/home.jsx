@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../../Thrifty_Front/frontend/src/css/home.css';
+import '../styles/home.css';
 import Footer from './footer';
 import Navbar1 from "./navbar"; // Corrected import
 

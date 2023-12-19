@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../../Thrifty_Front/frontend/src/css/footer.css"
+import '../styles/footer.css'
 const Footer = () => {
     const scrollToTop = () => {
         window.scrollTo({
@@ -58,12 +58,12 @@ const Footer = () => {
 
             <div className="foot-panel4">
                 <div className="pages">
-                    <a>Conditions of Use</a>
-                    <a>Privacy Notice</a>
-                    <a>Your Ads Privacy Choices</a>
+                    {/*<a>Conditions of Use</a>*/}
+                    {/*<a>Privacy Notice</a>*/}
+                    {/*<a>Your Ads Privacy Choices</a>*/}
                 </div>
                 <div className="copyright">
-                    ©1996-2023, Amazon.com, Inc. or its affiliates
+
                 </div>
             </div>
         </footer>
