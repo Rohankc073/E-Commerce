@@ -14,7 +14,7 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path='/' element={<Navigate to="/home" />} />
+                <Route path='/' element={<Navigate to="/login" />} />
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/admin' element={<AdminDashboard />} />
