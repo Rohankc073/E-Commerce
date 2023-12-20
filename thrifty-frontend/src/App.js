@@ -8,6 +8,7 @@ import ViewPage from "./pages/viewpage";
 import FirstPage from "./pages/landing";
 import Product from "./pages/product";
 import SignUpForm from "./pages/register";
+import Login33 from "./pages/login33";
 
 function App() {
     console.log('App component rendered');
@@ -23,6 +24,7 @@ function App() {
                 <Route path='/landing' element={<FirstPage />} />
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
+                <Route path='/ll' element={<Login33 />} />
 
             </Routes>
         </Router>
