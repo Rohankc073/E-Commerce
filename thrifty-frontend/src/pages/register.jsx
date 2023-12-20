@@ -1,63 +1,121 @@
-// import React, { useState } from 'react';
-// import { useForm } from 'react-hook-form'; // You might need to install this package
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import "../../../Thrifty_Front/frontend/src/css/register.css"
-const SignUpForm = () => {
-    const { register, handleSubmit, errors } = useForm();
-    const [errorMessage, setErrorMessage] = useState('');
+import { useNavigate } from 'react-router-dom';
 
-    const onSubmit = (data) => {
-        // Handle form submission logic here
-        console.log(data);
+import '../styles/register.css';
+
+const SignUpForm = () => {
+    const navigate = useNavigate();
+
+    const [user, setUser] = useState({
+        fullname: '',
+        email: '',
+        mobile_no: '',
+        address: '',
+        password: '',
+    });
+
+    const handleChange = (e) => {
+        setUser({
+            ...user,
+            [e.target.id]: e.target.value,
+        });
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        console.log('Form submitted:', user);
+
+        // Redirect to login page
+        navigate('/login');
+    };
+
+
     return (
-        <div className="login-form">
-            <div className="left-section">
+        <div className="custom-login-form">
+            <div className="custom-left-section">
                 <h2>
                     <span>sign </span>up
                 </h2>
-                {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="formGroup">
-                        <input type="text" id="name" placeholder="FullName" name="fullname" ref={register({ required: true })} />
+                <div className="custom-alert alert-danger d-none" id="errorMsg"></div>
+
+                <form onSubmit={handleSubmit}>
+                    <div className="custom-form-group">
+                        <input
+                            type="text"
+                            id="fullname"
+                            placeholder="FullName"
+                            value={user.fullname}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <div className="formGroup">
-                        <input type="email" id="email" placeholder="Email" name="email" ref={register({ required: true })} />
+                    <div className="custom-form-group">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Email"
+                            value={user.email}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <div className="formGroup">
-                        <input type="text" id="mobile" placeholder="Phone No." name="mobile_no" ref={register({ required: true })} />
+                    <div className="custom-form-group">
+                        <input
+                            type="text"
+                            id="mobile_no"
+                            placeholder="Phone No."
+                            value={user.mobile_no}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <div className="formGroup">
-                        <input type="text" placeholder="Address" name="address" ref={register} />
+                    <div className="custom-form-group">
+                        <input
+                            type="text"
+                            placeholder="Address"
+                            id="address"
+                            value={user.address}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <div className="formGroup">
-                        <input type="password" id="password" placeholder="Password" name="password" ref={register({ required: true })} />
+                    <div className="custom-form-group">
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Password"
+                            value={user.password}
+                            onChange={handleChange}
+                        />
                     </div>
 
-                    <div className="formGroup">
-                        <input type="password" id="cpassword" placeholder="Confirm Password" name="cpassword" ref={register({ required: true })} />
+                    <div className="custom-form-group">
+                        <input
+                            type="password"
+                            id="cpassword"
+                            placeholder="Confirm Password"
+                            required
+                        />
                     </div>
 
-                    <button className="submit-btn" type="submit">
+                    <button className="custom-submit-btn" type="submit" onClick={handleSubmit}>
                         submit
                     </button>
-
-                    <p className="ask">
-                        Already a member? <a href="login.html">Login</a>
+                    <p className="custom-ask">
+                        Already a member? <a href="/login">Login</a>
                     </p>
                 </form>
             </div>
 
-            <div className="right-section">
-                <img src="/images/sdfa.png" alt="" />
-            </div>
+
+
+        {/*    <div style={{ backgroundImage: "url('/images/sdfa.png')" }} className="custom-right-section"></div>*/}
+        <div className="custom-right-section">
+
         </div>
+        </div>
+
     );
 };
 
