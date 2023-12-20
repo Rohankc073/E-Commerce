@@ -5,9 +5,21 @@ import React, {useState} from 'react';
 import '../images/logo.png'
 import CartPanel from "./cartPanle"; // Corrected import
 import "../styles/cartPanel.css"
+import Login from "./Login";
 // import "../styles/"
+import { useNavigate } from 'react-router-dom';
+import "../styles/navbar.css"
+
 
 const Navbar1 = () => {
+    const [showLogin, setShowLogin] = useState(false);
+
+    const navigate = useNavigate();
+
+    const handleSignInClick = () => {
+        // Navigate to the login page
+        navigate('/login');
+    };
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     const openCartPanel = () => {
@@ -18,8 +30,9 @@ const Navbar1 = () => {
         setIsCartOpen(false);
     };
     return (
+        <div className="nav">
         <div className="navbar1">
-            <div className="nav-logo12 border1">
+            <div className="nav-logo border1">
                 <div className="logo">
 
                 </div>
@@ -47,10 +60,11 @@ const Navbar1 = () => {
                 </div>
             </div>
 
-            <div className="nav-signin border">
-                <p><span>Hello, Sign in</span></p>
-                <p className="nav-second border">Account & Lists</p>
-            </div>
+
+                <div className="nav-signin">
+                    <button id="btn-login" onClick={handleSignInClick}>Hello, Sign in</button>
+                    <p className="nav-second border">Account & Lists</p>
+                </div>
 
             <div className="nav-return border">
                 <p><span>Returns</span></p>
@@ -63,6 +77,7 @@ const Navbar1 = () => {
                 </button>
             </div>
             <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel} />
+        </div>
         </div>
     );
 };
