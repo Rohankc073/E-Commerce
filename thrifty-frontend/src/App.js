@@ -17,7 +17,7 @@ function App() {
                 <Route path='/' element={<Navigate to="/login" />} />
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/admin' element={<AdminDashboard />} />
+                {/*<Route path='/admin' element={<AdminDashboard />} />*/}
                 <Route path='/view' element={<ViewPage />} />
                 <Route path='/landing' element={<FirstPage />} />
                 <Route path='/product' element={<Product />} />

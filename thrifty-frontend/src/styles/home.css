@@ -218,6 +218,8 @@
     background-size: cover;
     margin-bottom: 60px;
     box-shadow: 30px 30px 80px #fdfdfd41, inset -30px -30px 80px ;
+    display: block;
+    transition: opacity 1s ease-in-out;
 }
 
 .hero-message{

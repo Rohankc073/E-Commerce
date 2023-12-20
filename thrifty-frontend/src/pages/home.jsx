@@ -4,6 +4,16 @@ import Footer from './footer';
 import Navbar1 from "./navbar"; // Corrected import
 import '../images/Front.jpg'
 const HomePage = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const images = ['Front1.jpg', 'Front2.jpg', 'Front3.jpg'];
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000); // Change image every 5 seconds (adjust as needed)
+
+        return () => clearInterval(intervalId);
+    }, []);
     const [isLoading, setIsLoading] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -38,6 +48,8 @@ const HomePage = () => {
     }, []); // Empty dependency array to run the effect only once
 
 
+
+
     return (
         <div>
             {/* Commented out the loader-related code */}
@@ -62,11 +74,9 @@ const HomePage = () => {
                 </div>
             </header>
 
-
-            <div className="hero-section">
+            <div className="hero-section" >
                 {/* Your hero section content here */}
             </div>
-
             <div className="hero-message">
                 <p>
                     You are on Thrifty Tech. You can shop on Thrifty Tech with fast delivery.{' '}

@@ -1,11 +1,11 @@
 // Navbar.js
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {faCartShopping, faLocationDot, faMagnifyingGlass, faPlus} from '@fortawesome/free-solid-svg-icons';
 import React, {useState} from 'react';
 import '../images/logo.png'
 import CartPanel from "./cartPanle"; // Corrected import
 import "../styles/cartPanel.css"
-import Login from "./Login";
+// import Login from "./Login";
 // import "../styles/"
 import { useNavigate } from 'react-router-dom';
 import "../styles/navbar.css"
@@ -30,7 +30,7 @@ const Navbar1 = () => {
         setIsCartOpen(false);
     };
     return (
-        <div className="nav">
+        // <div className="nav">
         <div className="navbar1">
             <div className="nav-logo border1">
                 <div className="logo">
@@ -41,13 +41,14 @@ const Navbar1 = () => {
             <div className="nav-address border">
                 <p className="add-first">Delivery to</p>
                 <div className="add-icon">
-                    <i className="fa-solid fa-location-dot"></i>
+                    <FontAwesomeIcon icon={faLocationDot} />
                     <p className="add-second">KTM</p>
                 </div>
             </div>
 
-            <div className="nav-search2">
-                <select className="search-select1">
+
+            <div className="nav-search">
+                <select className="search-select">
                     <option>All</option>
                 </select>
 
@@ -56,15 +57,17 @@ const Navbar1 = () => {
                     className="search-input"
                 />
                 <div className="search-icon">
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
             </div>
 
 
-                <div className="nav-signin">
-                    <button id="btn-login" onClick={handleSignInClick}>Hello, Sign in</button>
-                    <p className="nav-second border">Account & Lists</p>
-                </div>
+
+            <div className="nav-login">
+                <button onClick={handleSignInClick}>Hello, Sign in</button>
+                <p className="nav-second border">Account & Lists</p>
+            </div>
+
 
             <div className="nav-return border">
                 <p><span>Returns</span></p>
@@ -73,12 +76,12 @@ const Navbar1 = () => {
             <div className="nav-cart border">
                 <button className="cart-button" onClick={openCartPanel}>
                     <FontAwesomeIcon icon={faCartShopping} /> {/* Cart icon */}
-                    Cart <FontAwesomeIcon icon={faPlus} /> {/* Plus symbol */}
+                    Cart
                 </button>
             </div>
             <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel} />
         </div>
-        </div>
+        // </div>
     );
 };
 

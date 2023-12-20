@@ -21,8 +21,8 @@
 .cart-panel button {
     margin-top: 10px;
     padding: 10px;
-    background-color: #11b18b;
-    color: #fff;
+    background-color: transparent;
+    /*color: #fff;*/
     border: none;
     border-radius: 5px;
     cursor: pointer;

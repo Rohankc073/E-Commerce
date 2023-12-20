@@ -4,7 +4,7 @@ import '../../styles/AdminDashboard.css'
 const AdminDashboard = () => {
   return (
     <>
-        
+        hi
     </>
   )
 }
