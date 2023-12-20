@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ViewPage from "./pages/viewpage";
 import FirstPage from "./pages/landing";
+import Product from "./pages/product";
 
 function App() {
     console.log('App component rendered');
@@ -19,6 +20,7 @@ function App() {
                 <Route path='/admin' element={<AdminDashboard />} />
                 <Route path='/view' element={<ViewPage />} />
                 <Route path='/landing' element={<FirstPage />} />
+                <Route path='/product' element={<Product />} />
             </Routes>
         </Router>
     );

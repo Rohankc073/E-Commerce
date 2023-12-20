@@ -202,9 +202,10 @@
     font-weight: 700;
 }
 
+
 .hero-section{
 
-    /*background-image: url(Front.jpg);*/
+    background-image: url("../images/Front.jpg");
     background-size: cover;
     height: 400px;
     display: flex;

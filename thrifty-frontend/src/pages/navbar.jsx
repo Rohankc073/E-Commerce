@@ -19,7 +19,7 @@ const Navbar1 = () => {
     };
     return (
         <div className="navbar1">
-            <div className="nav-logo12 border">
+            <div className="nav-logo12 border1">
                 <div className="logo">
 
                 </div>
@@ -33,12 +33,15 @@ const Navbar1 = () => {
                 </div>
             </div>
 
-            <div className="nav-search1">
-                <select className="search-select">
+            <div className="nav-search2">
+                <select className="search-select1">
                     <option>All</option>
                 </select>
 
-                <input placeholder="Search Thrifty Techs" className="search-input" />
+                <input
+                    placeholder="Search Thrifty Techs"
+                    className="search-input"
+                />
                 <div className="search-icon">
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </div>

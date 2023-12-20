@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/home.css';
 import Footer from './footer';
 import Navbar1 from "./navbar"; // Corrected import
-
+import '../images/Front.jpg'
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);

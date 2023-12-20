@@ -1,4 +1,4 @@
-.navbar1 {
+.navbar1{
     height: 60px;
     background-color: #11b18b;
     color: black;
@@ -7,7 +7,8 @@
     justify-content: space-evenly;
 
 }
-.nav-logo12 {
+
+.nav-logo12{
     height: 70px;
     width: 170px;
     align-items: center;
@@ -23,21 +24,21 @@
     justify-content: center;
 }
 
-.border {
-    border: 0.1px solid transparent;
+.border1{
+    border: 2px solid transparent;
 }
 
-.border :hover {
-    border: 0.1px solid white;
+.border1:hover {
+    border: 2px solid white;
 }
 
-.add-first {
+.add-first{
     color: black;
     font-size: 0.5rem;
     margin-left: 15px;
 }
 
-.add-second {
+.add-second{
     font-size: 1rem;
     margin-left: 3px;
     font-weight: 500;
