@@ -38,11 +38,11 @@ const Product = () => {
 
 
             <body>
-            <div className="shop-section">
+            <div className="shop-section55">
                 {/* ... (your existing code for the shop section) */}
             </div>
 
-            <div className="shop-section1">
+            <div className="shop-section66">
                 {/* ... (your existing code for the shop section1) */}
             </div>
 

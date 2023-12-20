@@ -24,22 +24,22 @@
     justify-content: center;
 }
 .logo{
+    display: flex;
     background-image: url("../images/logo.png");
     background-size: cover;
     height:50px ;
-    width: 100%;
     margin-top: 8px;
     align-items: center;
     justify-content: center;
 }
 
-.border1{
-    border: 2px solid transparent;
-}
+/*.border1{*/
+/*    border: 2px solid transparent;*/
+/*}*/
 
-.border1:hover {
-    border: 2px solid white;
-}
+/*.border1:hover {*/
+/*    border: 2px solid white;*/
+/*}*/
 
 .add-first{
     color: black;

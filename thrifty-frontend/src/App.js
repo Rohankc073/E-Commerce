@@ -21,7 +21,6 @@ function App() {
                 <Route path='/admin' element={<AdminDashboard />} />
                 <Route path='/view' element={<ViewPage />} />
                 <Route path='/landing' element={<FirstPage />} />
-                <Route path='/product' element={<Product />} />
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
 
