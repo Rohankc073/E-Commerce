@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/viewpage.css'
 
 import Navbar1 from "./navbar";
+import Footer from "./footer";
 // import './font-awesome.min.css'; // Import the Font Awesome CSS file
 
 const ViewPage = () => {
@@ -63,21 +64,7 @@ const ViewPage = () => {
                 </div>
             </div>
             </body>
-
-            <footer>
-                <div className="foot-panel1">Back to Top</div>
-                <div className="foot-panel2">
-                    {/* Your footer content here */}
-                </div>
-
-                <div className="foot-panel3">
-                    <div className="logo"></div>
-                </div>
-
-                <div className="foot-panel4">
-                    {/* Your footer content here */}
-                </div>
-            </footer>
+            < Footer/>
         </>
     );
 };

@@ -1,6 +1,6 @@
 // Navbar.js
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCartShopping, faLocationDot, faMagnifyingGlass, faPlus} from '@fortawesome/free-solid-svg-icons';
+import {faCartShopping, faLocationDot, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import React, {useState} from 'react';
 import '../images/logo.png'
 import CartPanel from "./cartPanle"; // Corrected import
@@ -12,7 +12,7 @@ import "../styles/navbar.css"
 
 
 const Navbar1 = () => {
-    const [showLogin, setShowLogin] = useState(false);
+    // const [showLogin, setShowLogin] = useState(false);
 
     const navigate = useNavigate();
 
