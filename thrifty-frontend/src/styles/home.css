@@ -202,25 +202,50 @@
     font-weight: 700;
 }
 
-
-.hero-section{
-
-    background-image: url("../images/Front.jpg");
-    background-size: cover;
+/* Styles for the slider container */
+/* Styles for the slider container */
+.slider-container22 {
+    background-size: contain;
     height: 400px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 30px 25px 60px;
+    /*display: flex;*/
+}
+
+/* Style for each slide item */
+.alice-carousel__stage-item {
+    width: 100%;
+    list-style: none;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    margin-top: 30px;
-    margin-right: 25px;
-    border-radius: 10px;
-    margin-left: 25px;
-    background-size: cover;
-    margin-bottom: 60px;
-    box-shadow: 30px 30px 80px #fdfdfd41, inset -30px -30px 80px ;
-    display: block;
-    transition: opacity 1s ease-in-out;
 }
+
+/* Style for the images in each slide */
+.alice-carousel__stage-item img {
+    max-width: 100%; /* Adjust the width as needed */
+    max-height: 100%; /* Adjust the height as needed */
+    border-radius: 10px; /* Add border-radius if needed */
+}
+/*.hero-section{*/
+
+/*    background-image: url("../images/Front.jpg");*/
+/*    background-size: cover;*/
+/*    height: 400px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: flex-end;*/
+/*    margin-top: 30px;*/
+/*    margin-right: 25px;*/
+/*    border-radius: 10px;*/
+/*    margin-left: 25px;*/
+/*    background-size: cover;*/
+/*    margin-bottom: 60px;*/
+/*    box-shadow: 30px 30px 80px #fdfdfd41, inset -30px -30px 80px ;*/
+/*    display: block;*/
+/*    transition: opacity 1s ease-in-out;*/
+/*}*/
 
 .hero-message{
     margin-top: 30px;

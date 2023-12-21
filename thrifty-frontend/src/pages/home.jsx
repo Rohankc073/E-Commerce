@@ -3,6 +3,20 @@ import '../styles/home.css';
 import Footer from './footer';
 import Navbar1 from "./navbar"; // Corrected import
 import '../images/Front.jpg'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import frontImage from '../images/Front.jpg';
+import heroImage from '../images/hero1.jpg';
+const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500, // Set the interval for changing slides (in milliseconds)
+};
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -61,10 +75,16 @@ const HomePage = () => {
                     </div>
                 </div>
             </header>
-
-
-            <div className="hero-section">
-                {/* Your hero section content here */}
+            <div className="slider-container22">
+                <Slider {...sliderSettings}>
+                    <div className="alice-carousel__stage-item">
+                        <img style={{ margin: 'auto', width: '100%', height: '100%' }} src={frontImage} alt="Slide 1" />
+                    </div>
+                    <div className="alice-carousel__stage-item">
+                        <img style={{ margin: 'auto', width: '100%', height: '100%' }} src={heroImage} alt="Slide 2" />
+                    </div>
+                    {/* Add more slides as needed */}
+                </Slider>
             </div>
 
             <div className="hero-message">
