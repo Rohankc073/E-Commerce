@@ -73,15 +73,32 @@
 .nav-search:hover{
     border: 2px solid orange;
 }
-.search-select{
-    background-color: #f3f3f3;
-
-    height: 40px;
-    text-align: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: none ;
+/* CSS */
+.search-select {
+    width: 70px; /* Adjust the width as needed */
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+/* Style the dropdown arrow */
+.search-select:after {
+    /*content: '\25BC'; !* Unicode character for a down arrow *!*/
+    /*position: absolute;*/
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Style the options */
+.search-select option {
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+
 
 
 .search-input{

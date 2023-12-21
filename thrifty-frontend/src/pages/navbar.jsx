@@ -47,7 +47,11 @@ const Navbar1 = () => {
 
             <div className="nav-search">
                 <select className="search-select">
-                    <option>All</option>
+                    <option value="all">All</option>
+                    <option value="option1">Mobile Phone</option>
+                    <option value="option2">Laptop</option>
+                    <option value="option2">Tablet</option>
+                    <option value="option2">Smart Watches</option>
                 </select>
 
                 <input
