@@ -5,8 +5,6 @@ import React, {useState} from 'react';
 import '../images/logo.png'
 import CartPanel from "./cartPanle"; // Corrected import
 import "../styles/cartPanel.css"
-// import Login from "./Login";
-// import "../styles/"
 import { useNavigate } from 'react-router-dom';
 import "../styles/navbar.css"
 
@@ -73,8 +71,16 @@ const Navbar1 = () => {
                 <p><span>Returns</span></p>
                 <p className="nav-second border">& Order</p>
             </div>
+            <style>
+                {`
+    .cart-button:hover {
+        background-color: #someColor; /* Specify the color you want on hover */
+        color: #febd68; /* Specify the text color on hover */
+    }
+    `}
+            </style>
             <div className="nav-cart border">
-                <button className="cart-button" onClick={openCartPanel}>
+                <button className="cart-button" onClick={openCartPanel} style={{cursor: 'pointer'}}>
                     <FontAwesomeIcon icon={faCartShopping} /> {/* Cart icon */}
                     Cart
                 </button>

@@ -3,12 +3,17 @@ footer{
 }
 .foot-panel1{
     background-color: #1f6858;
+    cursor: pointer;
     color: white;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 0.5rem;
+}
+
+.foot-panel1:hover {
+    text-decoration: underline;
 }
 
 .foot-panel2{
@@ -39,6 +44,19 @@ ul a {
     justify-content: center;
     align-items: center;
 }
+/* Add this to your CSS file or use styled-components */
+.scroll-to-top-button {
+    /* Your existing button styles */
+
+    /* Add the following styles for hover effect */
+    cursor: pointer;
+}
+
+.scroll-to-top-button:hover {
+    /* Add styles for the hover state */
+    text-decoration: underline; /* Example: Underline the text on hover */
+}
+
 
 .logo{
     background-image: url("../images/logo.png");
