@@ -8,11 +8,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import frontImage from '../images/Front.jpg';
 import heroImage from '../images/hero1.jpg';
-import hero1Image from '../images/hero2.png'
+import hero1Image from '../images/hero2.png';
+import hero2Image from '../images/hero5.jpg'
 const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 800,
+    speed: 1400,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -86,6 +87,9 @@ const HomePage = () => {
                     </div>
                     <div className="alice-carousel__stage-item">
                         <img style={{ margin: 'auto', width: '100%', height: '400px' }} src={hero1Image} alt="Slide 2" />
+                    </div>
+                    <div className="alice-carousel__stage-item">
+                        <img style={{ margin: 'auto', width: '100%', height: '400px' }} src={hero2Image} alt="Slide 2" />
                     </div>
                 </Slider>
             </div>
