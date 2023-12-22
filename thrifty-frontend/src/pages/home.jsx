@@ -6,18 +6,18 @@ import '../images/Front.jpg'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import frontImage from '../images/Front.jpg';
-import heroImage from '../images/hero1.jpg';
+import frontImage from '../images/slider.jpg';
+import heroImage from '../images/slider2.jpg';
 import hero1Image from '../images/hero2.png';
 import hero2Image from '../images/hero5.jpg'
 const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 1400,
+    speed: 1700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500, // Set the interval for changing slides (in milliseconds)
+    autoplaySpeed: 2000, // Set the interval for changing slides (in milliseconds)
 };
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
