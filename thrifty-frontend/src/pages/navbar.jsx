@@ -45,8 +45,8 @@ const Navbar1 = () => {
             </div>
 
 
-            <div className="nav-search">
-                <select className="search-select">
+            <div className="nav-search12">
+                <select className="search-select12">
                     <option value="all">All</option>
                     <option value="option1">Mobile Phone</option>
                     <option value="option2">Laptop</option>

@@ -59,23 +59,23 @@
     margin-bottom: 5px;
 }
 
-.nav-search{
+.nav-search12{
     display: flex;
-    /*justify-content: space-evenly;*/
-    background-color: pink;
+    justify-content: space-evenly;
+    background-color: white;
     width: 620px;
     height: 40px;
     border-radius: 5px;
 }
-.nan-search option{
+.nav-search12 option{
     width: 10px;
 }
-.nav-search:hover{
+.nav-search12:hover{
     border: 2px solid orange;
 }
 /* CSS */
-.search-select {
-    width: 70px; /* Adjust the width as needed */
+.search-select12 {
+    width: 80px; /* Adjust the width as needed */
     padding: 8px;
     font-size: 15px;
     border: 1px solid #ccc;
@@ -84,16 +84,16 @@
 }
 
 /* Style the dropdown arrow */
-.search-select:after {
-    /*content: '\25BC'; !* Unicode character for a down arrow *!*/
-    /*position: absolute;*/
+.search-select12:after {
+    content: '\25BC'; /* Unicode character for a down arrow */
+    position: absolute;
     top: 50%;
     right: 10px;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
 }
 
 /* Style the options */
-.search-select option {
+.search-select12 option {
     font-size: 14px;
     background-color: #fff;
     color: #333;
