@@ -11,6 +11,9 @@ public interface RegistrationUserService {
 
     RegistrationUser findByEmail(String email);
     boolean authenticateUser(String email, String password);
+
+    void updateUser(RegistrationUser user);
+
     // Add other service methods as needed
 
 }

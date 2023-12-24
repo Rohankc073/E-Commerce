@@ -1,6 +1,7 @@
 package com.example.ThriftyTech_Back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
 @Table(name = "registration_users")
@@ -14,6 +15,7 @@ public class RegistrationUser {
     @Column(name = "user_name", length = 255)
     private String userName;
 
+    @Getter
     @Column(name = "email", length = 255, unique = true)
     private String email;
 
@@ -29,7 +31,7 @@ public class RegistrationUser {
         this.password = password;
     }
 
-    public int getUserId() {
+    public int getId() {
         return userId;
     }
 
@@ -45,9 +47,9 @@ public class RegistrationUser {
         this.userName = userName;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    //    public int getId(){
+//        this.userId=;
+//    }
 
     public void setEmail(String email) {
         this.email = email;

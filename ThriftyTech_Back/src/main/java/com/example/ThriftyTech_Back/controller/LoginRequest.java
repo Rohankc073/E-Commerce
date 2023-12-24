@@ -1,12 +1,11 @@
 package com.example.ThriftyTech_Back.controller;
 
-// LoginRequest.java
 public class LoginRequest {
 
     private String email;
     private String password;
 
-    // Constructors, if needed
+    // Getters and setters
 
     public String getEmail() {
         return email;

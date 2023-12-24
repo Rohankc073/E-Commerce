@@ -7,9 +7,9 @@ import com.example.ThriftyTech_Back.service.RegistrationUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-// RegistrationUserServiceImpl.java
+import java.util.Optional;
+
 @Service
-//@Override
 public class RegistrationUserServiceImpl implements RegistrationUserService {
 
     @Autowired
@@ -17,14 +17,9 @@ public class RegistrationUserServiceImpl implements RegistrationUserService {
 
     @Override
     public RegistrationUser registerUser(RegistrationUserPojo userPojo) {
-        // Convert POJO to entity
         RegistrationUser userEntity = mapPojoToEntity(userPojo);
-
-        // Save entity
-        return registrationUserRepo.save(userEntity);
+        return registrationUserRepo.save(userEntity); // Use save method from JpaRepository
     }
-
-
 
     @Override
     public RegistrationUser findByEmail(String email) {
@@ -37,15 +32,30 @@ public class RegistrationUserServiceImpl implements RegistrationUserService {
         return user != null && password.equals(user.getPassword());
     }
 
-    // Add other methods as needed
+    @Override
+    public void updateUser(RegistrationUser user) {
+        Optional<RegistrationUser> existingUserOptional = registrationUserRepo.findById(user.getId());
 
-    // Helper method to convert POJO to Entity
+        if (existingUserOptional.isPresent()) {
+            RegistrationUser existingUser = existingUserOptional.get();
+
+            // Update the fields you want to change
+            existingUser.setPassword(user.getPassword());
+
+
+            // Save the updated user entity
+            registrationUserRepo.save(existingUser);
+        } else {
+            // Handle the case where the user is not found (log an error, throw an exception, etc.)
+        }
+    }
+
     private RegistrationUser mapPojoToEntity(RegistrationUserPojo userPojo) {
         RegistrationUser userEntity = new RegistrationUser();
         userEntity.setEmail(userPojo.getEmail());
         userEntity.setPassword(userPojo.getPassword());
         // Map other fields as needed
 
-        return userEntity; // Add the return statement
+        return userEntity;
     }
 }
