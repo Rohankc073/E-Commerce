@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../images/logo.png';
+import logo23 from '../images/logo.png';
+import product1 from "../images/ip13Blue.jpg";
 
 const CartPanel = ({ isOpen, onClose }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -10,23 +11,31 @@ const CartPanel = ({ isOpen, onClose }) => {
     return (
         <div className={`custom-cart-panel ${isOpen ? 'custom-open' : ''}`}>
             <div>
+                <div className="logo">
+                </div>
                 <h2>Your Custom Cart</h2>
             </div>
 
-            {/*<div className="menu">*/}
-            {/*    <h2>Menu</h2>*/}
-            {/*</div>*/}
-
-            <div className='logo'>
-                {/*<img src={logo} alt="Slide 1" />*/}
-            </div>
-
-            <div className="product"></div>
-            <div className="shoping">
-                <button type="button">Continue Shopping</button>
-            </div>
-
             <div className="custom-center-wrapper">
+                <div className="custom-content">
+
+
+                    {/* Other content or components related to your logo */}
+
+                    <div className="custom-bag-product">
+                        <div className="custom-image">
+                            <img src={product1} alt="Product" />
+                        </div>
+                        {/* Other product-related content */}
+                    </div>
+
+                    {/* Other content or components related to your product */}
+
+                </div>
+            </div>
+                    <div className="shoping">
+                        <button type="button">Continue Shopping</button>
+                    </div>
                 {/*<div className="custom-content">*/}
 
 
@@ -109,8 +118,10 @@ const CartPanel = ({ isOpen, onClose }) => {
             {/*</div>*/}
 
             <button onClick={onClose}>Close</button>
+        {/*</div>*/}
+        {/*</div>*/}
         </div>
-        </div>
+
     );
 };
 
