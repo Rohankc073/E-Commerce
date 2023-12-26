@@ -28,9 +28,6 @@ const CartPanel = ({ isOpen, onClose }) => {
                         </div>
                         {/* Other product-related content */}
                     </div>
-
-                    {/* Other content or components related to your product */}
-
                 </div>
             </div>
                     <div className="shoping">
