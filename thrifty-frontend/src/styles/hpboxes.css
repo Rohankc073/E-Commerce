@@ -1,0 +1,48 @@
+/*!* ProductBox.css *!*/
+
+/*.box1 {*/
+/*    !* Your original styles for .box1 if any *!*/
+/*}*/
+
+/*.product-box-content {*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    position: relative;*/
+/*    padding: 1rem; !* Add padding for better spacing *!*/
+/*}*/
+
+/*.product-box-button {*/
+/*    display: inline-block;*/
+/*    padding: 10px 20px;*/
+/*    background-color: white;*/
+/*    color: #007185;*/
+/*    text-decoration: none;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.product-box-button:hover {*/
+/*    background-color: #007185;*/
+/*    color: white;*/
+/*}*/
+
+/*.product-box-content p {*/
+/*    color: #007185;*/
+/*}*/
+
+/*.product-box-image {*/
+/*    height: 175px;*/
+/*    width: 145px;*/
+/*    margin-top: 1rem;*/
+/*    margin-bottom: 1rem;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    background-size: cover;*/
+/*}*/
+
+/*.product-box-content h2 {*/
+/*    font-weight: 700;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/

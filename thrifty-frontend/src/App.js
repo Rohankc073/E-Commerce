@@ -8,6 +8,7 @@ import FirstPage from "./pages/landing";
 import Product from "./pages/product";
 import SignUpForm from "./pages/register";
 import Login from "./pages/Login";
+import Imageuploadpage from "./pages/imageuploadpage";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path='/landing' element={<FirstPage />} />
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
+                <Route path='/upload' element={<Imageuploadpage />} />
                 {/*<Route path='/ll' element={<Login33 />} />*/}
 
             </Routes>

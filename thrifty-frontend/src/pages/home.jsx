@@ -11,6 +11,7 @@ import frontImage from '../images/slider.jpg';
 import heroImage from '../images/slider2.jpg';
 import hero1Image from '../images/hero2.png';
 import hero2Image from '../images/hero5.jpg'
+import ProductBox from "./hpboxes";
 // import firebase from "firebase/compat";
 const sliderSettings = {
     dots: false,
@@ -109,15 +110,16 @@ const HomePage = () => {
                 </div>
 
                 <div className="shop-section">
-                    <div className="box1 box">
-                        <div className="box-content">
-                            <h2>Apple</h2>
-                            {/* Use the dynamically fetched image URL */}
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image"></div>
-                            <div className="button-container">
-                                <a href="index2.html" className="button">See more</a>
+
+                        <div className="box2 box">
+                            <div className="box-content">
+                                <h2>Samsung</h2>
+                                <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image"></div>
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button">See more</a>
+                                </div>
                             </div>
-                        </div>
+
                     </div>
                     <div className="box2 box">
                         <div className="box-content">
