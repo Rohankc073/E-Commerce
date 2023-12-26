@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/home.css';
 import Footer from './footer';
-import Navbar1 from "./navbar"; // Corrected import
-import '../images/Front.jpg'
+import Navbar1 from './navbar'; // Corrected import
 import Slider from 'react-slick';
-
+import { storage } from '../Firebase/firebase';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import frontImage from '../images/slider.jpg';
 import heroImage from '../images/slider2.jpg';
 import hero1Image from '../images/hero2.png';
-import hero2Image from '../images/hero5.jpg'
-import ProductBox from "./hpboxes";
-// import firebase from "firebase/compat";
+import hero2Image from '../images/hero5.jpg';
+import ProductBox from './hpboxes';
+import { getDownloadURL, ref } from 'firebase/storage';
+
 const sliderSettings = {
     dots: false,
     infinite: true,
@@ -20,12 +20,37 @@ const sliderSettings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Set the interval for changing slides (in milliseconds)
+    autoplaySpeed: 2000,
 };
+
 const HomePage = () => {
+    const [appleImageURL, setAppleImageURL] = useState('');
+    const [samsungImageURL, setSamsungImageURL] = useState('');
+    const [oneplusImageURL, setOneplusImageURL] = useState('');
+
+    useEffect(() => {
+        const fetchImageURLs = async () => {
+            try {
+                const appleImageRef = ref(storage, 'upload/20231226T092116764Z_gi8ffu_Apple.jpg');
+                const samsungImageRef = ref(storage, 'upload/20231226T132335824Z_jcq3fi_S22Black.jpg');
+                const oneplusImageRef = ref(storage,'upload/20231226T133843662Z_2aukpu_oppo.jpg')
+                const appleURL = await getDownloadURL(appleImageRef);
+                const samsungURL = await getDownloadURL(samsungImageRef);
+                const oneplusURL = await getDownloadURL(oneplusImageRef)
+
+                setOneplusImageURL(oneplusURL);
+                setAppleImageURL(appleURL);
+                setSamsungImageURL(samsungURL);
+            } catch (error) {
+                console.error('Error fetching image URLs:', error);
+            }
+        };
+
+        fetchImageURLs();
+    }, []);
+
     const [isLoading, setIsLoading] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
-
 
     const toggleCartPanel = () => {
         setIsCartOpen(!isCartOpen);
@@ -113,8 +138,8 @@ const HomePage = () => {
 
                         <div className="box2 box">
                             <div className="box-content">
-                                <h2>Samsung</h2>
-                                <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image"></div>
+                                <h2>Apple</h2>
+                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container">
                                     <a href="samsung.html" className="button">See more</a>
                                 </div>
@@ -124,7 +149,7 @@ const HomePage = () => {
                     <div className="box2 box">
                         <div className="box-content">
                             <h2>Samsung</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image"></div>
+                            {samsungImageURL && <img src={samsungImageURL} alt="Samsung" className="box-image" />}
                             <div className="button-container">
                                 <a href="samsung.html" className="button">See more</a>
                             </div>
@@ -133,7 +158,7 @@ const HomePage = () => {
                     <div className="box3 box ">
                         <div className="box-content">
                             <h2>One Plus</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image2"></div>
+                            {oneplusImageURL && <img src={oneplusImageURL} alt="Samsung" className="box-image" />}
                             <div className="button-container">
                                 <a href="oneplus.html" className="button">See more</a>
                             </div>
