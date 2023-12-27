@@ -21,4 +21,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const storage = getStorage(app);
-export { storage };
+const sampleImageDetails = [
+    {
+        imageURL: "/upload/20231226T092117562Z_qusy77_Apple.jpg",
+        description: "iPhone 12",
+        price: 899,
+        condition: "New",
+        color: "Blue",
+    },
+    {
+        imageURL: "/upload/20231227T040438402Z_rpq188_ip11Red.jpg",
+        description: "iPhone 11 (Red)",
+        price: 799,
+        condition: "Pre-owned",
+        color: "Red",
+    },
+    // Add more image details as needed
+];
+function addImageDetails(imageSrc, description, price, condition, color) {
+    // Implement the logic to add image details to your data source (e.g., a database)
+    // This could be a call to your backend API or any other suitable mechanism
+}
+
+// Add sampleImageDetails to Firestore during initialization
+sampleImageDetails.forEach((detail) => addImageDetails(detail));
+
+export {storage, sampleImageDetails };

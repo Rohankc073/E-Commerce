@@ -1,46 +1,42 @@
 package com.example.ThriftyTech_Back.pojo;
 
-import com.example.ThriftyTech_Back.entity.Product;
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotEmpty;
-import lombok.*;
-import org.springframework.web.multipart.MultipartFile;
+import lombok.Getter;
 
-@Builder
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class ProductPojo {
-    private Long id;
-
-    private MultipartFile photo;
-
-    @NotEmpty(message = "Product Name can't be empty")
     private String name;
+    private String description;
+    private double price;
+    private byte[] imageData;
 
-    @NotEmpty(message = "Product Color can't be empty")
-    private String color;
+    // Constructors, getters, and setters
 
-    @NotEmpty(message = "Product Storage can't be empty")
-    private String storage;
+    public ProductPojo() {
+        // Default constructor
+    }
 
-    @NotEmpty(message = "Product Condition can't be empty")
-    private String condition;
+    public ProductPojo(String name, String description, double price, byte[] imageData) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageData = imageData;
+    }
 
-    @NotEmpty(message = "Product Model can't be empty")
-    private String model;
+    // Getter and setter methods for each field
 
-    @NotEmpty(message = "Product Price can't be empty")
-    private String price;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public ProductPojo(Product product) {
-        this.id = product.getId();
-        this.name = product.getName();
-        this.color = product.getColor();
-        this.storage = product.getStorage();
-        this.condition = product.getCondition();
-        this.model = product.getModel();
-        this.price = product.getPrice();
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
     }
 }

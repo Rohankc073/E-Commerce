@@ -8,7 +8,10 @@ import FirstPage from "./pages/landing";
 import Product from "./pages/product";
 import SignUpForm from "./pages/register";
 import Login from "./pages/Login";
+// import Imageuploadpage from "./pages/imageuploadpage";
+import Addtocart from "./pages/addtocart";
 import Imageuploadpage from "./pages/imageuploadpage";
+import AddProductForm from "./pages/upload";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -27,6 +30,7 @@ function App() {
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
                 <Route path='/upload' element={<Imageuploadpage />} />
+                <Route path='/image' element={<AddProductForm />} />
                 {/*<Route path='/ll' element={<Login33 />} />*/}
 
             </Routes>

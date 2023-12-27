@@ -1,9 +1,8 @@
 import React from "react";
-import "sulav.css";              //sulav.css import garne
+import '../styles/addtocart.css';
 
 
 const Addtocart = () => {
-
 
     return (
         <>

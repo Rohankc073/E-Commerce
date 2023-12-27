@@ -1,43 +1,60 @@
 package com.example.ThriftyTech_Back.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
-@Builder
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
-@Table(name = "products")
 public class Product {
     @Id
-    @SequenceGenerator(name = "products_seq_gen", sequenceName = "products_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "products_seq_gen", strategy = GenerationType.SEQUENCE)
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String photo;
-
-    @Column(name = "productName", nullable = false)
     private String name;
+    private String description;
+    private double price;
 
-    @Column(name = "productColor", nullable = false)
-    private String color;
+    @Lob
+    private byte[] imageData;
 
-    @Column(name = "productStorage", nullable = false)
-    private String storage;
+    // getters and setters
 
-    @Column(name = "productCondition", nullable = false)
-    private String condition;
+    public Long getId() {
+        return id;
+    }
 
-    @Column(name = "productModel", nullable = false)
-    private String model;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    @Column(name = "productPrice", nullable = false)
-    private String price;
+    public String getName() {
+        return name;
+    }
 
-    @Transient
-    private String imageBase64;
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+    }
 }

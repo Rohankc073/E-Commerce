@@ -4,50 +4,56 @@ import com.example.ThriftyTech_Back.entity.Product;
 import com.example.ThriftyTech_Back.pojo.ProductPojo;
 import com.example.ThriftyTech_Back.repo.ProductRepo;
 import com.example.ThriftyTech_Back.service.ProductService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 @Service
-@RequiredArgsConstructor
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl extends ProductService {
 
-    public final ProductRepo productRepo;
-    public static String UPLOAD_DIRECTORY = System.getProperty("user.dir") + "/database_image";
+    @Autowired
+    private ProductRepo productRepos;
+
+    @Value("${file.upload-dir}")
+    private String uploadDir;
+
+    @Override
+    public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
+        byte[] imageData = imageFile.getBytes();
+        product.setImageData(imageData);
+
+        // Save the product to the database
+        Product savedProduct = productRepos.save(product);
+
+        // Save the image file to the file system
+        saveImageToFileSystem(savedProduct.getId(), imageFile);
+
+        return savedProduct;
+    }
+
+    private void saveImageToFileSystem(Long productId, MultipartFile imageFile) throws IOException {
+        Path uploadPath = Paths.get(uploadDir);
+
+        if (!Files.exists(uploadPath)) {
+            Files.createDirectories(uploadPath);
+        }
+
+        try (var inputStream = imageFile.getInputStream()) {
+            Path filePath = uploadPath.resolve(productId + "_" + imageFile.getOriginalFilename());
+            Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
 
     @Override
     public String save(ProductPojo productPojo) throws IOException {
-        Product product;
-
-        if (productPojo.getId() != null) {
-            product = productRepo.findById(productPojo.getId()).orElseThrow(() -> new RuntimeException("Not Found"));
-        } else {
-            product = new Product();
-        }
-
-        if(productPojo.getId()!=null){
-            product.setId(productPojo.getId());
-        }
-        product.setName(productPojo.getName());
-        product.setColor(productPojo.getColor());
-        product.setCondition(productPojo.getCondition());
-        product.setModel(productPojo.getModel());
-        product.setStorage(productPojo.getStorage());
-        product.setPrice(productPojo.getPrice());
-        if(productPojo.getPhoto()!=null){
-            StringBuilder fileNames = new StringBuilder();
-            Path fileNameAndPath = Paths.get(UPLOAD_DIRECTORY, productPojo.getPhoto().getOriginalFilename());
-            fileNames.append(productPojo.getPhoto().getOriginalFilename());
-            Files.write(fileNameAndPath, productPojo.getPhoto().getBytes());
-
-            product.setPhoto(productPojo.getPhoto().getOriginalFilename());
-        }
-
-        productRepo.save(product);
-        return "Product created successfully";
+        return null;
     }
+
+    // Other methods in your service implementation...
 }

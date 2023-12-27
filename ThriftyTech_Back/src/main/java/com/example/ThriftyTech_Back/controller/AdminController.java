@@ -25,10 +25,10 @@ public class AdminController {
 //        return ma page ko naam ma
         return "";
     }
-    @PostMapping("/save/product")
-    public String saveProduct(@Valid ProductPojo productPojo) throws IOException {
-        productService.save(productPojo);
-//        save vayesi kata redirect garne tesko naam : paxi
-        return "redirect:";
-    }
+//    @PostMapping("/save/product")
+//    public String saveProduct(@Valid ProductPojo productPojo) throws IOException {
+//        productService.save(productPojo);
+////        save vayesi kata redirect garne tesko naam : paxi
+//        return "redirect:";
+//    }
 }
