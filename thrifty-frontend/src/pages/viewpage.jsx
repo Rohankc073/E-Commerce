@@ -1,70 +1,92 @@
 import React from 'react';
-import '../styles/viewpage.css'
-
-import Navbar1 from "./navbar";
-import Footer from "./footer";
-// import './font-awesome.min.css'; // Import the Font Awesome CSS file
+import Navbar from "./navbar"; // Make sure to import your CSS file
+import { storage } from '../Firebase/firebase'; // Import Firebase storage if not already imported
+import { getDownloadURL, ref } from "firebase/storage";
+import Footer from "./footer"; // Import necessary functions from Firebase storage
+import "../styles/viewpage.css"
 
 const ViewPage = () => {
+    // Assuming you have the state for imageURLs
+    const [appleImageURL, setAppleImageURL] = React.useState('');
+
+    // Fetch image URLs when the component mounts
+    React.useEffect(() => {
+        const fetchImageURL = async () => {
+            try {
+                // Update the path to your image in the storage
+                const appleImageRef = ref(storage, 'path_to_your_apple_image.jpg');
+                const url = await getDownloadURL(appleImageRef);
+                setAppleImageURL(url);
+            } catch (error) {
+                console.error('Error fetching image URL:', error);
+            }
+        };
+
+        fetchImageURL();
+    }, []); // Empty dependency array to run the effect only once
+
     return (
         <>
             <header>
-                <Navbar1 />
-
-                <div className="panel">
-                    <div className="panel-all border">
-                        <i className="fa-solid fa-bars"></i>
-                        All
-                    </div>
-                    <div className="panel-ops border">
-                        <p>Today's Deals</p>
-                        <p>Customer Service</p>
-                        <p>Registry</p>
-                        <p>Gift Cards </p>
-                        <p>Sell</p>
-                    </div>
-                    <div className="panel-deals border">
-                        <p>Shop deals in Electronics</p>
-                    </div>
-                </div>
+                <Navbar />
             </header>
 
-            <body>
-            <div className="shop-section33">
-                <div className="small-box-container">
-                    <div className="small-box">
-                        {/* Content for the first small box goes here */}
-                    </div>
-                    <div className="small-box1">
-                        {/* Content for the second small box goes here */}
-                    </div>
+            <div className="apple">
+                <div className="apple-logo">
                 </div>
-                <div className="box5 box13 ">
-                    <div className="box13-content">
-                        <div
-                            className="box13-image"
-                            style={{ backgroundImage: "url('ip13Pink.jpg')" }}
-                        ></div>
-                    </div>
-                </div>
+                <p>Apple</p>
+                <video autoPlay loop muted playsInline>
+                    {/*<source src="apple.mp4" type="video/mp4">*/}
+                </video>
+            </div>
 
-                <div className="product-description">
-                    <h2>Apple iPhone 13 (256GB) 5G - Pink</h2>
-                    <div className="condition">
-                        <span>Condition:</span> Pre-Loved | Top
-                    </div>
-                    <div className="pricingBox">
-                        <div className="salePrice">
-                            <span className="currency">NRP 1,40,000 </span>
-                            <div className="colour">
-                                <span className="colour">Color : Pink</span>
-                            </div>
+            <div className="shop-section">
+                <div className="box2 box">
+                    <div className="box-content">
+                        <h2>Apple</h2>
+                        {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                        <div className="button-container">
+                            <a href="samsung.html" className="button">See more</a>
                         </div>
                     </div>
                 </div>
+
+                {/* Add more box elements for other products in shop-section */}
+
             </div>
-            </body>
-            < Footer/>
+
+            <div className="shop-section">
+                <div className="box1 box ">
+
+                    <a href="viewP.html" className="box-content-link">
+                        <div className="box-content">
+                            <div className="button-container">
+                                <button className="love-button"><i className="fa-regular fa-heart"></i></button>
+                            </div>
+                            {/*<div className="box-image" style="background-image: url('ip13Pink.jpg');"></div>*/}
+                            <div className="caption">
+                                <h3 className="product-card-title">Apple iPhone 13  (256GB) 5G - Pink</h3>
+                                <div className="condition"><span>Condition:</span> Pre-Loved | Top</div>
+                                <div className="pricingBox">
+                                    <div className="salePrice">
+                                        <span className="currency">NRP</span>
+                                        <span className="amount">1,40,000.00</span>
+                                    </div>
+                                    <div className="d-flex text-truncate">
+                                        <div className="mainPrice">
+                                            NRP 1,80,000.00
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+
+           <Footer/>
         </>
     );
 };
