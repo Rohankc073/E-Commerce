@@ -1,34 +1,42 @@
-import React from 'react';
-import Navbar from "./navbar"; // Make sure to import your CSS file
-import { storage } from '../Firebase/firebase'; // Import Firebase storage if not already imported
+import React, { useEffect, useState } from 'react';
+import Navbar from "./navbar";
+import { storage } from '../Firebase/firebase';
 import { getDownloadURL, ref } from "firebase/storage";
-import Footer from "./footer"; // Import necessary functions from Firebase storage
-import "../styles/viewpage.css"
+import Footer from "./footer";
+import "../styles/viewpage.css";
+import Box from "./viewpageBox";
 
 const ViewPage = () => {
-    // Assuming you have the state for imageURLs
-    const [appleImageURL, setAppleImageURL] = React.useState('');
+    const appleImageSrcList = [
+        '/upload/20231226T092117562Z_qusy77_Apple.jpg',
+        '/upload/20231227T040438402Z_rpq188_ip11Red.jpg',
+        '/upload/20231227T041121110Z_qptvam_ip12Wh.jpg',
+        '/upload/20231227T041512650Z_twwirc_ip13Blue.jpg',
+        '/upload/20231227T041556550Z_8tthfr_ip13G.jpg',
+        // Add more image URLs as needed
+    ];
 
-    // Fetch image URLs when the component mounts
-    React.useEffect(() => {
-        const fetchImageURL = async () => {
-            try {
-                // Update the path to your image in the storage
-                const appleImageRef = ref(storage, 'path_to_your_apple_image.jpg');
-                const url = await getDownloadURL(appleImageRef);
-                setAppleImageURL(url);
-            } catch (error) {
-                console.error('Error fetching image URL:', error);
-            }
-        };
-
-        fetchImageURL();
-    }, []); // Empty dependency array to run the effect only once
 
     return (
         <>
             <header>
                 <Navbar />
+                <div className="panel">
+                    <div className="panel-all border">
+                        <i className="fa-solid fa-bars"></i>
+                        All
+                    </div>
+                    <div className="panel-ops border">
+                        <p>Today's Deals</p>
+                        <p>Customer Service</p>
+                        <p>Registry</p>
+                        <p>Gift Cards </p>
+                        <p>Sell</p>
+                    </div>
+                    <div className="panel-deals border">
+                        <p>Shop deals in Electronics</p>
+                    </div>
+                </div>
             </header>
 
             <div className="apple">
@@ -41,49 +49,86 @@ const ViewPage = () => {
             </div>
 
             <div className="shop-section">
-                <div className="box2 box">
-                    <div className="box-content">
-                        <h2>Apple</h2>
-                        {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
-                        <div className="button-container">
-                            <a href="samsung.html" className="button">See more</a>
-                        </div>
-                    </div>
-                </div>
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
 
                 {/* Add more box elements for other products in shop-section */}
 
             </div>
 
             <div className="shop-section">
-                <div className="box1 box ">
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
 
-                    <a href="viewP.html" className="box-content-link">
-                        <div className="box-content">
-                            <div className="button-container">
-                                <button className="love-button"><i className="fa-regular fa-heart"></i></button>
-                            </div>
-                            {/*<div className="box-image" style="background-image: url('ip13Pink.jpg');"></div>*/}
-                            <div className="caption">
-                                <h3 className="product-card-title">Apple iPhone 13  (256GB) 5G - Pink</h3>
-                                <div className="condition"><span>Condition:</span> Pre-Loved | Top</div>
-                                <div className="pricingBox">
-                                    <div className="salePrice">
-                                        <span className="currency">NRP</span>
-                                        <span className="amount">1,40,000.00</span>
-                                    </div>
-                                    <div className="d-flex text-truncate">
-                                        <div className="mainPrice">
-                                            NRP 1,80,000.00
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
 
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
 
-                </div>
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
+
+                <Box
+                    title="Apple"
+                    imageSrcList={appleImageSrcList}
+                    altText="Apple"
+                    buttonText="See more"
+                    buttonLink="samsung.html"
+                />
             </div>
 
            <Footer/>
