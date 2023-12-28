@@ -114,11 +114,17 @@
 
 /**Box section **/
 
-.shop-section{
+.shop-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    background-color: #e2e7e6;
+    justify-content: space-around;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin: 16px 0; /* Adjust the margin as needed */
 }
 .box{
     cursor: pointer;
@@ -128,38 +134,18 @@
     padding: 20px 0px 15px;
     margin-top: 10px;
     align-items: center;
-    border-radius: 10px;   box-shadow: 30px 30px 80px #ede8e841, inset -30px -30px 80px white;
+    border-radius: 10px;
+    box-shadow: 30px 30px 80px #ede8e841, inset -30px -30px 80px white;
 }
 
 .box-image{
     height: 170px;
     width: 138px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     background-size: cover;
 
 }
-.love-button {
-    background-color: white; /* Background color for the circle */
-    color: #007185; /* Color of the heart icon */
-    width: 40px; /* Adjust the size as needed */
-    height: 40px;
-    border: none;
-    border-radius: 50%; /* Makes it a circle */
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute; /* Position absolutely within the container */
-    top: 1px; /* Adjust the top position as needed */
-    right: 10px; /* Adjust the right position as needed */
-}
 
-.love-button:hover {
-    background-color: #e2e7e6; /* Change color on hover */
-}
 
 .box-content {
 

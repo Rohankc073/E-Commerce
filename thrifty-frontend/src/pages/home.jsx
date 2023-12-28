@@ -135,82 +135,117 @@ const HomePage = () => {
                 </div>
 
                 <div className="shop-section">
-
+                    {/* First row with 4 boxes */}
+                    <div className="box-container">
+                        {/* Box 1 */}
                         <div className="box2 box">
                             <div className="box-content">
                                 <h2>Apple</h2>
                                 {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container">
-                                    <a href="samsung.html" className="button">See more</a>
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
                                 </div>
                             </div>
+                        </div>
 
-                    </div>
-                    <div className="box2 box">
-                        <div className="box-content">
-                            <h2>Samsung</h2>
-                            {samsungImageURL && <img src={samsungImageURL} alt="Samsung" className="box-image" />}
-                            <div className="button-container">
-                                <a href="samsung.html" className="button">See more</a>
+                        {/* Box 2 */}
+                        <div className="box2 box">
+                            <div className="box-content">
+                                <h2>Samsung</h2>
+                                {samsungImageURL && <img src={samsungImageURL} alt="Samsung" className="box-image" />}
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="box3 box ">
-                        <div className="box-content">
-                            <h2>One Plus</h2>
-                            {oneplusImageURL && <img src={oneplusImageURL} alt="Samsung" className="box-image" />}
-                            <div className="button-container">
-                                <a href="oneplus.html" className="button">See more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box4 box ">
-                        <div className="box-content">
-                            <h2>Oppo</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image3"></div>
-                            <div className="button-container">
-                                <a href="index2.html" className="button">See more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box1 box ">
-                        <div className="box-content">
-                            <h2>Vivo</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image4"></div>
-                            <div className="button-container">
-                                <a href="index2.html" className="button">See more</a>
-                            </div>
 
+                        {/* Box 3 */}
+                        <div className="box3 box">
+                            <div className="box-content">
+                                <h2>One Plus</h2>
+                                {oneplusImageURL && <img src={oneplusImageURL} alt="OnePlus" className="box-image" />}
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="box2 box ">
-                        <div className="box-content">
-                            <h2>Nothing</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image5"></div>
-                            <div className="button-container">
-                                <a href="index2.html" className="button">See more</a>
+
+                        {/* Box 4 */}
+                        <div className="box4 box">
+                            <div className="box-content">
+                                <h2>Oppo</h2>
+                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image3"></div>
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="box3 box ">
-                        <div className="box-content">
-                            <h2>Redmi</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image6"></div>
-                            <div className="button-container">
-                                <a href="index2.html" className="button">See more</a>
+
+                    {/* Second row with 4 boxes */}
+                    <div className="box-container">
+                        {/* Box 5 */}
+                        <div className="box1 box">
+                            <div className="box-content">
+                                <h2>Vivo</h2>
+                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image4"></div>
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="box4 box ">
-                        <div className="box-content">
-                            <h2>Xiamoi</h2>
-                            <div style={{backgroundImage: "url('Apple.jpg')"}} className="box-image7"></div>
-                            <div className="button-container">
-                                <a href="index2.html" className="button">See more</a>
+
+                        {/* Box 6 */}
+                        <div className="box2 box">
+                            <div className="box-content">
+                                <h2>Nothing</h2>
+                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image5"></div>
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Box 7 */}
+                        <div className="box3 box">
+                            <div className="box-content">
+                                <h2>Redmi</h2>
+                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image6"></div>
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Box 8 */}
+                        <div className="box4 box">
+                            <div className="box-content">
+                                <h2>Xiaomi</h2>
+                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image7"></div>
+                                <div className="button-container">
+                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                        See more
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <div className="shop-section2">
                     <div className="box-container">
@@ -233,7 +268,6 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-
                 <Footer/>
             </div>
         );

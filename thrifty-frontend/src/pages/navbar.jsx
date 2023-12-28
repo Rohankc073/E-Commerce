@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCartShopping, faLocationDot, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import React, {useState} from 'react';
-import '../images/logo.png'
+import '../images/logoo.jpg'
 import CartPanel from "./cartPanle"; // Corrected import
 import "../styles/cartPanel.css"
 import { useNavigate } from 'react-router-dom';
