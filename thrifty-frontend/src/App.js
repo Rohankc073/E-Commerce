@@ -29,8 +29,8 @@ function App() {
                 <Route path='/landing' element={<FirstPage />} />
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
-                <Route path='/upload' element={<Imageuploadpage />} />
-                <Route path='/image' element={<AddProductForm />} />
+                {/*<Route path='/upload' element={<Imageuploadpage />} />*/}
+                <Route path='/image' element={<AddProductForm />} />i
                 {/*<Route path='/ll' element={<Login33 />} />*/}
 
             </Routes>
