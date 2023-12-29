@@ -4,7 +4,7 @@
     /*border: border-box;*/
 }
 body {
-    background-color: white;
+    background-color: #e2e7e6;
 }
 .example {
     width: 100%; /* Make an element 100% of its parent container */
@@ -118,6 +118,7 @@ body {
 /**Box section **/
 
 .shop-section33 {
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -133,12 +134,12 @@ body {
     cursor: pointer;
     height: 300px;
     width: 23%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.93);
     padding: 20px 0px 15px;
     margin-top: 10px;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 30px 30px 80px #ede8e841, inset -30px -30px 80px white;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
 }
 
 .box-image{
@@ -151,7 +152,7 @@ body {
 
 
 .box22-content {
-
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     position: relative; /* Add relative positioning to the container */
@@ -306,7 +307,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #e2e7e6;
+    background-color: white;
 }
 
 

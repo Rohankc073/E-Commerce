@@ -3,6 +3,10 @@
     font-family: Arial, serif;
     /*border-style: border-box;*/
 }
+
+body {
+    background-color: #e2e7e6;
+}
 /*.navbar2{*/
 /*    height: 60px;*/
 /*    background-color: #11b18b;*/
@@ -196,11 +200,10 @@
     background-color: white;
 }
 
-.box22{
-
+.box2{
     height: 300px;
     width: 250px;
-    background-color: #e2e7e6;
+    background-color: white;
     padding: 20px 0px 15px;
     margin-top: 10px;
     align-items: center;
