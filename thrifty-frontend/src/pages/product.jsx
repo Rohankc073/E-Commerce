@@ -3,6 +3,7 @@ import Navbar1 from "./navbar";
 import Footer from "./footer";
 import '../styles/product.css'
 import '../images/apple.mp4'
+import ProductBox from "./hpboxes";
 
 const Product = () => {
     return (
@@ -39,7 +40,11 @@ const Product = () => {
 
             <body>
             <div className="shop-section55">
-                {/* ... (your existing code for the shop section) */}
+               <ProductBox/>
+                <ProductBox/>
+                <ProductBox/>
+                <ProductBox/>
+                <ProductBox/>
             </div>
 
             <div className="shop-section66">
