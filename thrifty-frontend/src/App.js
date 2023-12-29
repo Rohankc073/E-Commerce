@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import HomePage from "./pages/home";
 import AdminDashboard from './pages/admin/AdminDashboard';
-import ViewPage from "./pages/viewpage";
+// import ViewPage from "./pages/viewpage";
 import FirstPage from "./pages/landing";
 import Product from "./pages/product";
 import SignUpForm from "./pages/register";
@@ -14,6 +14,7 @@ import Imageuploadpage from "./pages/imageuploadpage";
 import AddProductForm from "./pages/upload";
 import Login33 from "./pages/login33";
 import Login1 from "./pages/login33";
+import ViewPage from "./pages/viewpage";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 

@@ -11,19 +11,27 @@
     padding: 1rem; /* Add padding for better spacing */
 }
 
-.product-box-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: white;
-    color: #007185;
-    text-decoration: none;
+.love-button {
+    position: absolute;
+    top: -30px; /* Adjusted to move the button up by 15px, considering the 20px top padding */
+    right: 10px; /* Adjust this value as needed to position the button horizontally within the container */
+    background-color: white; /* Background color for the circle */
+    color: #007185; /* Color of the heart icon */
+    width: 40px; /* Adjust the size as needed */
+    height: 40px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%; /* Makes it a circle */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Add a transition for a smooth fade-in effect */
 }
 
-.product-box-button:hover {
-    background-color: #007185;
-    color: white;
+/* Style for box hover effect */
+.box:hover .love-button {
+    opacity: 1; /* Show the love button when hovering over the box */
 }
 
 .product-box-content p {
@@ -33,10 +41,7 @@
 .product-box-image {
     height: 175px;
     width: 145px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     background-size: cover;
 }
 

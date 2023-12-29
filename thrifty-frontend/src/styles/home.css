@@ -114,19 +114,19 @@
 
 /**Box section **/
 
-.shop-section {
+.shop-section33 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.box-container {
+.box-container33 {
     display: flex;
     justify-content: space-around;
     flex-grow: 1;
     margin: 16px 0; /* Adjust the margin as needed */
 }
-.box{
+.box22{
     cursor: pointer;
     height: 300px;
     width: 23%;
@@ -147,14 +147,14 @@
 }
 
 
-.box-content {
+.box22-content {
 
     justify-content: space-between;
     align-items: center;
     position: relative; /* Add relative positioning to the container */
 }
 
-.button {
+.button22 {
     display: inline-block;
     padding: 10px 20px;
     background-color: white;
@@ -165,7 +165,7 @@
 
 }
 
-.button:hover {
+.button22:hover {
     background-color: white;
 }
 
@@ -183,11 +183,23 @@
     background-size: cover;
 }
 
-.box-content h2{
+.box22-content h2{
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.shop-section3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.box-container3 {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin: 16px 0; /* Adjust the margin as needed */
 }
 
 .box-image2{

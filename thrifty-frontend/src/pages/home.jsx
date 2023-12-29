@@ -10,7 +10,7 @@ import frontImage from '../images/slider.jpg';
 import heroImage from '../images/slider2.jpg';
 import hero1Image from '../images/hero2.png';
 import hero2Image from '../images/hero5.jpg';
-import ProductBox from './hpboxes';
+// import ProductBox from './hpboxes';
 import { getDownloadURL, ref } from 'firebase/storage';
 
 const sliderSettings = {
@@ -134,16 +134,16 @@ const HomePage = () => {
                     </p>
                 </div>
 
-                <div className="shop-section">
+                <div className="shop-section33">
                     {/* First row with 4 boxes */}
-                    <div className="box-container">
+                    <div className="box-container33">
                         {/* Box 1 */}
-                        <div className="box2 box">
-                            <div className="box-content">
+                        <div className="box2 box22">
+                            <div className="box22-content">
                                 <h2>Apple</h2>
                                 {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -151,12 +151,12 @@ const HomePage = () => {
                         </div>
 
                         {/* Box 2 */}
-                        <div className="box2 box">
-                            <div className="box-content">
+                        <div className="box2 box22">
+                            <div className="box22-content">
                                 <h2>Samsung</h2>
-                                {samsungImageURL && <img src={samsungImageURL} alt="Samsung" className="box-image" />}
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                {samsungImageURL && <img src={samsungImageURL} alt="Apple" className="box-image" />}
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -164,12 +164,12 @@ const HomePage = () => {
                         </div>
 
                         {/* Box 3 */}
-                        <div className="box3 box">
-                            <div className="box-content">
-                                <h2>One Plus</h2>
-                                {oneplusImageURL && <img src={oneplusImageURL} alt="OnePlus" className="box-image" />}
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                        <div className="box2 box22">
+                            <div className="box22-content">
+                                <h2>OnePlus</h2>
+                                {oneplusImageURL && <img src={oneplusImageURL} alt="Apple" className="box-image" />}
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -177,12 +177,12 @@ const HomePage = () => {
                         </div>
 
                         {/* Box 4 */}
-                        <div className="box4 box">
-                            <div className="box-content">
-                                <h2>Oppo</h2>
-                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image3"></div>
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                        <div className="box2 box22">
+                            <div className="box22-content">
+                                <h2>Vivo</h2>
+                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -191,27 +191,31 @@ const HomePage = () => {
                     </div>
 
                     {/* Second row with 4 boxes */}
-                    <div className="box-container">
-                        {/* Box 5 */}
-                        <div className="box1 box">
-                            <div className="box-content">
-                                <h2>Vivo</h2>
-                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image4"></div>
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
-                                        See more
-                                    </a>
+
+                        {/* First row with 4 boxes */}
+                        <div className="box-container3">
+                            {/* Box 1 */}
+                            <div className="box2 box22">
+                                <div className="box22-content">
+                                    <h2>Redmi</h2>
+                                    {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                    <div className="button-container22">
+                                        <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                            See more
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+
 
                         {/* Box 6 */}
-                        <div className="box2 box">
-                            <div className="box-content">
-                                <h2>Nothing</h2>
-                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image5"></div>
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                        <div className="box2 box22">
+                            <div className="box22-content">
+                                <h2>Oppo</h2>
+                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -219,12 +223,12 @@ const HomePage = () => {
                         </div>
 
                         {/* Box 7 */}
-                        <div className="box3 box">
-                            <div className="box-content">
-                                <h2>Redmi</h2>
-                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image6"></div>
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                        <div className="box2 box22">
+                            <div className="box22-content">
+                                <h2>Xiamoi</h2>
+                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -232,12 +236,12 @@ const HomePage = () => {
                         </div>
 
                         {/* Box 8 */}
-                        <div className="box4 box">
-                            <div className="box-content">
-                                <h2>Xiaomi</h2>
-                                <div style={{ backgroundImage: "url('Apple.jpg')" }} className="box-image7"></div>
-                                <div className="button-container">
-                                    <a href="samsung.html" className="button" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                        <div className="box2 box22">
+                            <div className="box22-content">
+                                <h2>Nothing</h2>
+                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                <div className="button-container22">
+                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </a>
                                 </div>
@@ -248,7 +252,7 @@ const HomePage = () => {
 
 
                 <div className="shop-section2">
-                    <div className="box-container">
+                    <div className="box-container1">
                         <div className="boxP">
 
                         </div>

@@ -3,7 +3,7 @@ import Navbar1 from "./navbar";
 import Footer from "./footer";
 import '../styles/product.css'
 import '../images/apple.mp4'
-import ProductBox from "./hpboxes";
+import ProductBox from "./viewpageBox";
 
 const Product = () => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/hpboxes.css'
+import '../styles/viewpageBox.css'
 const ProductBox = ({ image, title, condition, salePrice, mainPrice }) => {
     return (
         <div className="box1 box">
