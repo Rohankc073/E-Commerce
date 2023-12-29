@@ -40,7 +40,7 @@ const YourComponent = () => {
                 </div>
                 <div className="box1 box ">
                     <div className="box-content">
-                        <div className="box-image" style={{ backgroundImage: "url('ip13Pink.jpg')" }}></div>
+                        <div className="box-image12" style={{ backgroundImage: "url('ip13Pink.jpg')" }}></div>
                     </div>
                 </div>
                 <div className="product-description">
