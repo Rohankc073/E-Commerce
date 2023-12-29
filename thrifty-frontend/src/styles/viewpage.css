@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    font-family: Arial;
+    font-family: ' Argent CF', serif;
+
     /*border: border-box;*/
 }
 .navbar {
@@ -136,88 +137,32 @@ span{
     font-weight: 700;
 }
 
-.apple {
-    width: 1430px;
-    height: 600px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    position: relative; /* Add position: relative to the container */
-}
-
-.apple-logo {
-    /* Add styles for the Apple logo */
-    width: 100px; /* Increase the width of the logo as needed */
-    height: 80px; /* Increase the height of the logo as needed */
-    /*background-image: url('app1.jpg'); !* Set the path to your Apple logo image *!*/
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 560px; /* Adjust the distance from the left side of the container */
-    top: 7%; /* Center vertically within the container */
-    transform: translate(0, -50%); /* Center the logo vertically */
-}
-
-.apple p {
-    font-family: 'SF Pro Display', sans-serif; /* Specify a fallback font family */
-    font-size: 48px;
-    font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    position: absolute; /* Position the paragraph absolutely within the container */
-    top: 7%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the text both horizontally and vertically */
-}
-
-
-.apple video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:  1430px;
-    height: 600px;
-    object-fit: contain;
-    margin-left: 35px;
-    border-radius: 50px;
-}
-
-
-
 .shop-section{
     display: flex;
-    justify-content: space-around;
+    margin-left: 50px;
     background-color: white;
 }
 
 
-
-
-.shop-section1{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: white;
-}
-.boxR2{
-    height: 300px;
-    width: 250px;
+.box{
+    height: 500px;
+    width: 550px;
     background-color: #e2e7e6;
     padding: 20px 0px 15px;
-    margin-top: 35px;
+    margin-top: 50px;
+    margin-left: 30px;
     align-items: center;
     border-radius: 10px;
     border: 1px solid black;
     cursor: pointer;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
 }
-
 .box-image{
     display: flex;
     align-content: center;
     justify-content: center;
-    height: 170px;
-    width: 143px;
+    height: 400px;
+    width: 250px;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: auto;
@@ -228,32 +173,145 @@ span{
 
 }
 
-.boxR2-content {
+
+/* Style for positioning the container */
+.box-content {
     margin-left: 10px;
     position: relative; /* This is important for positioning children */
 }
 
-/* Style for positioning the love button */
-.love-buttonR2 {
-    position: absolute;
-    top: -30px; /* Adjusted to move the button up by 15px, considering the 20px top padding */
-    right: 10px; /* Adjust this value as needed to position the button horizontally within the container */
-    background-color: white; /* Background color for the circle */
-    color: #007185; /* Color of the heart icon */
-    width: 40px; /* Adjust the size as needed */
-    height: 40px;
-    border: none;
-    border-radius: 50%; /* Makes it a circle */
+.small-box-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.small-box {
+    margin-top: 50px;
+    height: 170px; /* Adjust the height as needed */
+    width: 130px; /* Adjust the width as needed */
+    background-color: #f0f0f0; /* Adjust the background color as needed */
+    border-radius: 5px; /* Adjust the border radius as needed */
+    border: 1px solid #0a0909; /* Adjust the border color and width as needed */
     cursor: pointer;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+
+}
+
+.small-box1{
+    margin-top: 30px;
+    height: 170px; /* Adjust the height as needed */
+    width: 130px; /* Adjust the width as needed */
+    background-color: #f0f0f0; /* Adjust the background color as needed */
+    border-radius: 5px; /* Adjust the border radius as needed */
+    border: 1px solid #0a0909; /* Adjust the border color and width as needed */
+    cursor: pointer;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+
+
+}
+
+.product-description {
+
+    height: 500px;
+    width: 550px;
+    background-color: #e2e7e6;
+    padding: 20px 0px 15px;
+    margin-left: 100px; /* Adjust the margin between small boxes and big box */
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.product-description h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+
+
+
+
+.product-description span{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+
+footer{
+    margin-top: 70px;
+}
+.foot-panel1{
+    background-color: #1f6858;
+    color: white;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s; /* Add a transition for a smooth fade-in effect */
+    font-size: 0.5rem;
+
+
 }
 
-/* Style for box hover effect */
-.boxR2:hover .love-buttonR2 {
-    opacity: 1; /* Show the love button when hovering over the box */
+.foot-panel2{
+    display: flex;
+    background-color: #11b18b;
+    color: white;
+    height: 300px;
+    justify-content: space-evenly;
 }
+
+ul{
+    margin-top: 20px;
+}
+
+ul a {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    color: #dddddd;
+}
+
+.foot-panel3{
+    background-color: #1f6858;
+    border-top: 0.5px solid white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    /*background-image: url(logo-removebg-preview.png);*/
+    background-size: cover;
+    height:60px ;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.foot-panel4{
+    background-color:#11b18b ;
+    color: white;
+    height: 75px;
+}
+
+.pages{
+    font-size: 0.9rem;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.copyright{
+    padding-top: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
 

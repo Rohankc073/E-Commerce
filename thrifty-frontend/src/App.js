@@ -15,6 +15,7 @@ import AddProductForm from "./pages/upload";
 import Login33 from "./pages/login33";
 import Login1 from "./pages/login33";
 import ViewPage from "./pages/viewpage";
+import YourComponent from "./pages/viewpage";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -26,9 +27,9 @@ function App() {
             <Routes>
                 <Route path='/' element={<Navigate to="/home" />} />
                 <Route path='/home' element={<HomePage />} />
-                {/*<Route path='/login' element={<Login />} />*/}
+                <Route path='/view' element={<YourComponent />} />
                 <Route path='/admin' element={<AdminDashboard />} />
-                <Route path='/view' element={<ViewPage />} />
+                {/*<Route path='/view' element={<ViewPage />} />*/}
                 <Route path='/landing' element={<FirstPage />} />
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
