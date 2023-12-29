@@ -3,6 +3,9 @@
     font-family: 'Argent CF', serif;
     /*border: border-box;*/
 }
+body {
+    background-color: white;
+}
 .example {
     width: 100%; /* Make an element 100% of its parent container */
     font-size: 1.2em; /* Set font size relative to the default font size */
