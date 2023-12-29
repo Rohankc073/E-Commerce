@@ -36,7 +36,7 @@ function App() {
                 <Route path='/upload' element={<Imageuploadpage />} />
                 <Route path='/image' element={<AddProductForm />} />i
                 <Route path='/adc' element={<Addtocart />} />
-                <Route path='/ll' element={<Login33 />} />
+                <Route path='/login' element={<Login33 />} />
 
 
             </Routes>

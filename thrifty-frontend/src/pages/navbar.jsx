@@ -16,7 +16,7 @@ const Navbar1 = () => {
 
     const handleSignInClick = () => {
         // Navigate to the login page
-        navigate('/ll');
+        navigate('/login');
     };
     const [isCartOpen, setIsCartOpen] = useState(false);
 
