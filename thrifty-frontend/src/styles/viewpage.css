@@ -1,11 +1,14 @@
 * {
     margin: 0;
     font-family: ' Argent CF', serif;
-
+    box-sizing: border-box;
+    overflow: revert;
     /*border: border-box;*/
 }
 
+
 body {
+    /*overflow: auto;*/
     background-color: white;
 }
 .navbar {
@@ -215,11 +218,11 @@ span{
 }
 
 .product-description {
+    overflow: scroll;
     height: 500px;
     width: 550px;
     background-color: white;
     padding: 20px 0px 15px;
-    margin-left: 100px;
     align-items: center;
     border-radius: 10px;
     border: 1px solid black;
@@ -227,6 +230,7 @@ span{
     margin-top: 50px;
     margin-left: 60px;
     position: relative; /* Add position relative for absolute positioning */
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
 
     /* Adjustments for the button */
     .button-container12 {
@@ -311,110 +315,51 @@ span{
 }
 
 .btn:hover::after {
-    background-color: rgb(0, 238, 255);
+    background-color: rgb(20, 224, 162);
     transform: scaleX(1.4) scaleY(1.5);
     opacity: 0;
 }
-.features-container {
-    display: flex;
-    justify-content: space-around; /* or other desired value */
-    align-items: center; /* or other desired value */
-    margin-top: 20px; /* Adjust margin as needed */
-    border: 1px solid #ccc;
-}
-
-.cart-info {
-    width: 50%; /* Each section takes 50% width */
-}
-
-.cart-info ul {
-    display: flex;
-    flex-wrap: wrap; /* Enable wrapping for the list items */
-    justify-content: space-around; /* or other desired value */
-}
-
-.cart-info li {
-    text-align: center; /* Center the content within each list item */
-    width: 100px; /* Adjust width as needed */
-    margin-bottom: 15px; /* Adjust margin as needed */
-
-}
-
-.cart-info img {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Adjust height as needed */
-}
-
-
-footer{
-    margin-top: 70px;
-}
-.foot-panel1{
-    background-color: #1f6858;
-    color: white;
-    height: 50px;
+.features {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
-
-
+    background-size: cover;
+    height: 220px;
+    width: 1200px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-left: 185px;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+    overflow: hidden; /* Hide overflow content */
+    border: 1px solid black;
 }
 
-.foot-panel2{
+.features-container,
+.features-container2 {
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
     display: flex;
-    background-color: #11b18b;
-    color: white;
-    height: 300px;
-    justify-content: space-evenly;
-}
-
-ul{
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: center; /* Center items vertically */
     margin-top: 20px;
 }
 
-ul a {
-    display: block;
-    font-size: 0.85rem;
-    margin-top: 15px;
-    color: #dddddd;
-}
-
-.foot-panel3{
-    background-color: #1f6858;
-    border-top: 0.5px solid white;
-    height: 70px;
+.cart-info ul {
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
-.logo{
-    /*background-image: url(logo-removebg-preview.png);*/
-    background-size: cover;
-    height:60px ;
-    width: 200px;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.foot-panel4{
-    background-color:#11b18b ;
-    color: white;
-    height: 75px;
-}
-
-.pages{
-    font-size: 0.9rem;
+.cart-info li {
+    list-style: none;
     text-align: center;
-    padding-top: 10px;
+    width: 19%; /* Adjust width as needed */
+    margin-right: 10px; /* Add margin between items */
 }
 
-.copyright{
-    padding-top: 5px;
-    font-size: 0.9rem;
-    text-align: center;
+.cart-info img {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+    border: none;
 }
-
-
