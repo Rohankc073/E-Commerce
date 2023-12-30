@@ -67,7 +67,7 @@ const Navbar1 = () => {
 
             <div className="nav-login">
                 <button onClick={handleSignInClick}>Hello, Sign in</button>
-                <p className="nav-second border">Account & Lists</p>
+                <p>Account & Lists</p>
             </div>
 
 

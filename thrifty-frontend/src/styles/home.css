@@ -1,6 +1,7 @@
 * {
     margin: 0;
     font-family: 'Argent CF', serif;
+    border: none;
     /*border: border-box;*/
 }
 body {
@@ -67,6 +68,10 @@ body {
 .panel-deals{
     font-size: 0.9rem;
     font-weight: 700;
+}
+
+.border :hover{
+    border: none;
 }
 
 .slider-container22 {
@@ -187,9 +192,9 @@ body {
 
 }
 
-.button22:hover {
-    background-color: white;
-}
+/*.button22:hover {*/
+/*    background-color: white;*/
+/*}*/
 
 .box-content p {
     color:#007185 ;
@@ -306,7 +311,7 @@ body {
     margin-top: 20px;
     margin-right: 30px;
     border-radius: 10px;
-    /*box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;*/
+    box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;
 }
 
 .boxL {
@@ -320,7 +325,7 @@ body {
     align-items: flex-end;
     margin-top: 20px;
     border-radius: 10px;
-    /*box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;*/
+    box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;
 }
 .shop-section3{
     display: flex;
@@ -347,7 +352,7 @@ body {
     margin-top: 20px;
     margin-right: 30px;
     border-radius: 10px;
-    /*box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;*/
+    box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;
 }
 
 .boxT {
@@ -359,7 +364,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /*box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;*/
+    box-shadow: 30px 30px 80px #a29d9d41, inset -30px -30px 80px ;
     margin-top: 20px;
     border-radius: 10px;
 }
