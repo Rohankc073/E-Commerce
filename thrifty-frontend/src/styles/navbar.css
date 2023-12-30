@@ -1,7 +1,7 @@
 
 
 .navbar1{
-    height: 80px;
+    height: 90px;
     background-color: #11b18b;
     color: black;
     display: flex;
@@ -133,15 +133,18 @@ span{
 
 
 .nav-cart i{
+    color: black;
     font-size: 30px;
 }
 
 .nav-cart{
+
     font-size: 0.85rem;
     font-weight: 700;
 }
 .cart-button{
     background-color: transparent;
     border: none;
+    color: black;
     font-size: 18px;
 }
