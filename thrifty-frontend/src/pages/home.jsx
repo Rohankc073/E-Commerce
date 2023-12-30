@@ -12,6 +12,7 @@ import hero1Image from '../images/hero2.png';
 import hero2Image from '../images/hero5.jpg';
 // import ProductBox from './hpboxes';
 import { getDownloadURL, ref } from 'firebase/storage';
+import {Link} from "react-router-dom";
 
 const sliderSettings = {
     dots: false,
@@ -98,7 +99,7 @@ const HomePage = () => {
                             <p>Today's Deals</p>
                             <p>Customer Service</p>
                             <p>Registry</p>
-                            <p>Gift Cards </p>
+                            <p><Link to="/aboutus" className="transparent-button">About Us</Link></p>
                             <p>Sell</p>
                         </div>
                         <div className="panel-deals border">

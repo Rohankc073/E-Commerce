@@ -75,14 +75,6 @@ const Navbar1 = () => {
                 <p><span>Returns</span></p>
                 <p className="nav-second border">& Order</p>
             </div>
-            <style>
-                {`
-    .cart-button:hover {
-        background-color: #someColor; /* Specify the color you want on hover */
-        color: #febd68; /* Specify the text color on hover */
-    }
-    `}
-            </style>
             <div className="nav-cart border">
                 <button className="cart-button" onClick={openCartPanel} style={{cursor: 'pointer'}}>
                     <FontAwesomeIcon icon={faCartShopping} /> {/* Cart icon */}

@@ -16,6 +16,7 @@ import Login33 from "./pages/login33";
 import Login1 from "./pages/login33";
 import ViewPage from "./pages/viewpage";
 import YourComponent from "./pages/viewpage";
+import EmbeddedCanvas from "./pages/aboutus";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -37,6 +38,7 @@ function App() {
                 <Route path='/image' element={<AddProductForm />} />i
                 <Route path='/adc' element={<Addtocart />} />
                 <Route path='/login' element={<Login33 />} />
+                <Route path='/aboutus' element={<EmbeddedCanvas />} />
 
 
             </Routes>

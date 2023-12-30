@@ -45,6 +45,7 @@ body {
 
 
 .panel{
+    border: none;
     height: 40px;
     background-color: #1f6858;
     display: flex;
@@ -55,6 +56,7 @@ body {
 .panel-ops p{
     display: inline;
     margin-left: 15px;
+    border: none;
 }
 
 .panel-ops{
@@ -76,6 +78,22 @@ body {
     border-radius: 10px;
     margin: 30px 25px 60px;
     /*display: flex;*/
+}
+.transparent-button {
+    background: transparent;
+    color: white; /* Assuming you want white text on a transparent background */
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none; /* Remove the outline on focus */
+}
+
+.transparent-button:hover {
+    /* Add any additional styles you want on hover */
+    border: none;
+    text-decoration: underline; /* For example, underline the text on hover */
 }
 
 /* Style for each slide item */

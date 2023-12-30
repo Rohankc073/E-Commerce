@@ -118,6 +118,7 @@ body {
 /*}*/
 
 .panel{
+    border: none;
     height: 40px;
     background-color: #1f6858;
     display: flex;
@@ -128,6 +129,7 @@ body {
 .panel-ops p{
     display: inline;
     margin-left: 15px;
+    border: none;
 }
 
 .panel-ops{

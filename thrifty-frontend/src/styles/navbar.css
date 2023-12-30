@@ -1,15 +1,7 @@
-.nav{
-    /*height: 100px;*/
-    /*background-color: #11b18b;*/
-    /*color: black;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: space-evenly;*/
 
-}
 
 .navbar1{
-    height: 100px;
+    height: 80px;
     background-color: #11b18b;
     color: black;
     display: flex;
@@ -21,7 +13,7 @@
     height: 70px;
     width: 170px;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
 }
 .logo{
     display: flex;
@@ -33,13 +25,7 @@
     justify-content: center;
 }
 
-/*.border1{*/
-/*    border: 2px solid transparent;*/
-/*}*/
 
-/*.border1:hover {*/
-/*    border: 2px solid white;*/
-/*}*/
 
 .add-first{
     color: black;
@@ -78,7 +64,7 @@
     width: 80px; /* Adjust the width as needed */
     padding: 8px;
     font-size: 15px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     border-radius: 4px;
     cursor: pointer;
 }
