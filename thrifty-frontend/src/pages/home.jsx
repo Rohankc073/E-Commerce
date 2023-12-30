@@ -13,6 +13,7 @@ import hero2Image from '../images/hero5.jpg';
 // import ProductBox from './hpboxes';
 import { getDownloadURL, ref } from 'firebase/storage';
 import {Link} from "react-router-dom";
+import Panel from "./panel";
 
 const sliderSettings = {
     dots: false,
@@ -90,22 +91,7 @@ const HomePage = () => {
                 {/* <div className="loader"></div> */}
                 <header>
                     <Navbar1/>
-                    <div className="panel">
-                        <div className="panel-all border">
-                            <i className="fa-solid fa-bars"></i>
-                            All
-                        </div>
-                        <div className="panel-ops border">
-                            <p>Today's Deals</p>
-                            <p>Customer Service</p>
-                            <p>Registry</p>
-                            <p><Link to="/aboutus" className="transparent-button">About Us</Link></p>
-                            <p>Sell</p>
-                        </div>
-                        <div className="panel-deals border">
-                            <p>Shop deals in Electronics</p>
-                        </div>
-                    </div>
+                   <Panel/>
                 </header>
                 <div className="slider-container22">
                     <Slider {...sliderSettings}>

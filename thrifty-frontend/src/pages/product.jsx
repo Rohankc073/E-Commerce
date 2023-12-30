@@ -4,28 +4,15 @@ import Footer from "./footer";
 import '../styles/product.css'
 import '../images/apple.mp4'
 import ProductBox from "./viewpageBox";
+import Navbar from "./navbar";
+import Panel from "./panel";
 
 const Product = () => {
     return (
         <>
             <header>
-                <Navbar1 />
-                <div className="panel">
-                    <div className="panel-all border">
-                        <i className="fa-solid fa-bars"></i>
-                        All
-                    </div>
-                    <div className="panel-ops border">
-                        <p>Today's Deals</p>
-                        <p>Customer Service</p>
-                        <p>Registry</p>
-                        <p>Gift Cards </p>
-                        <p>Sell</p>
-                    </div>
-                    <div className="panel-deals border">
-                        <p>Shop deals in Electronics</p>
-                    </div>
-                </div>
+                <Navbar />
+                <Panel/>
                 <div className="apple12">
                     <div className="apple-logo">
                     </div>
