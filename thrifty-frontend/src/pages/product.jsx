@@ -1,11 +1,12 @@
 import React from 'react';
-import Navbar1 from "./navbar";
+
 import Footer from "./footer";
 import '../styles/product.css'
 import '../images/apple.mp4'
 import ProductBox from "./viewpageBox";
-import Navbar from "./navbar";
+
 import Panel from "./panel";
+import Navbar from "./navbar";
 
 const Product = () => {
     return (

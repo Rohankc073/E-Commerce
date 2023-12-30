@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 const EmbeddedCanvas = () => {
     return (
@@ -37,6 +38,7 @@ const EmbeddedCanvas = () => {
                 allow="fullscreen"
             ></iframe>
         </div>
+            <Footer/>
         </>
     );
 

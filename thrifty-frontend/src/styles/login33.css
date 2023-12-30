@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
 :root {
     --primary-color: #4EA685;
     --secondary-color: #57B894;
@@ -14,8 +12,10 @@
     --insta-color: #E1306C;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
 * {
-    font-family: 'Argent CF', serif;
+    font-family:  'Argent CF';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,7 +24,7 @@
 html,
 body {
     height: 100vh;
-    /*overflow: hidden;*/
+    overflow: scroll;
 }
 
 .container {
@@ -133,6 +133,7 @@ body {
     padding: .7rem;
     cursor: pointer;
     border-radius: .5rem;
+    cursor: pointer;
     transform: scale(0);
     transition: .5s ease-in-out;
 }
