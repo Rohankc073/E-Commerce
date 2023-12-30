@@ -268,11 +268,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #e2e7e6;
+    background-color: white;
 }
 .box-container {
     display: flex;
-    justify-content: space-evenly; /* Adjust as needed */
+    justify-content: space-evenly;
+    background-color: white/* Adjust as needed */
 }
 
 .boxP {

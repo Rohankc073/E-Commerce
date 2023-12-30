@@ -52,9 +52,102 @@ const YourComponent = () => {
                             <div className="colour"><span className="colour">Color : Pink</span></div>
                         </div>
                     </div>
+                    <div className="button-container12">
+                        <a href="#" className="btn">
+                            Add to Cart
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div className="features-container">
+                <div className="cart-info product-feature-wrap d-none d-lg-block">
+                    <ul>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (1).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Fast <br /> Delivery</h6>
+                        </li>
+                        <li className="has_return ">
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (2).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>10 Days<br />Return</h6>
+                        </li>
+                        <li className="has_warranty ">
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (3).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>12 Months<br />Warranty</h6>
+                        </li>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (4).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Original<br />Product</h6>
+                        </li>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (5).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>ECO<br />Friendly</h6>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
+
+                <div className="cart-info product-feature-wrap d-none d-lg-block">
+                    <ul>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (6).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Installment<br />Plans</h6>
+                        </li>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (7).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Best Price<br />Guarantee</h6>
+                        </li>
+                        <li className="has_warranty ">
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (8).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Buy<br />Back</h6>
+                        </li>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (9).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Graded by<br />Expert</h6>
+                        </li>
+                        <li>
+                            <img
+                                src="https://cartlow.com/web-assets/img/product-page/icon (10).png"
+                                alt="Gallery Image"
+                            />
+                            <h6>Buy now<br />Pay later</h6>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
             </body>
+
 
             <footer>
                 <div className="foot-panel1">
