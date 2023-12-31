@@ -10,9 +10,9 @@ import frontImage from '../images/slider.jpg';
 import heroImage from '../images/slider2.jpg';
 import hero1Image from '../images/hero2.png';
 import hero2Image from '../images/hero5.jpg';
-// import ProductBox from './hpboxes';
+
 import { getDownloadURL, ref } from 'firebase/storage';
-import {Link} from "react-router-dom";
+
 import Panel from "./panel";
 
 const sliderSettings = {

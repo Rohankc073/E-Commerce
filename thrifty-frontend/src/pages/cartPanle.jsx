@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import logo23 from '../images/logo.png';
+
 import product1 from "../images/ip13Blue.jpg";
-import '../styles/cartPanel.css'
 
 const CartPanel = ({ isOpen, onClose }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
