@@ -13,10 +13,10 @@ import Addtocart from "./pages/addtocart";
 import Imageuploadpage from "./pages/imageuploadpage";
 import AddProductForm from "./pages/upload";
 import Login33 from "./pages/login33";
-import Login1 from "./pages/login33";
-import ViewPage from "./pages/viewpage";
+
 import YourComponent from "./pages/viewpage";
 import EmbeddedCanvas from "./pages/aboutus";
+import Adminlogin from "./pages/adminlogin";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -39,6 +39,7 @@ function App() {
                 <Route path='/adc' element={<Addtocart />} />
                 <Route path='/login' element={<Login33 />} />
                 <Route path='/aboutus' element={<EmbeddedCanvas />} />
+                <Route path='/adminlogin' element={<Adminlogin />} />
 
 
             </Routes>
