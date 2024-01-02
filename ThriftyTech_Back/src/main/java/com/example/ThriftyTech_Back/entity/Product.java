@@ -1,60 +1,51 @@
 package com.example.ThriftyTech_Back.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
+    private Long productId;
+    @Getter
+    @Setter
+    private String productCategory;
+    @Getter
+    @Setter
+    private String brandName;
+    @Getter
+    @Setter
+    private String productName;
+    @Getter
+    @Setter
     private String description;
+    @Getter
+    @Setter
     private double price;
-
+    @Getter
+    @Setter
     @Lob
     private byte[] imageData;
 
     // getters and setters
 
     public Long getId() {
-        return id;
+        return productId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.productId = id;
     }
 
     public String getName() {
-        return name;
+        return productName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.productName = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public byte[] getImageData() {
-        return imageData;
-    }
-
-    public void setImageData(byte[] imageData) {
-        this.imageData = imageData;
-    }
 }
