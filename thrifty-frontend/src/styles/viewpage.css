@@ -185,7 +185,7 @@ span{
     flex-direction: column;
 }
 
-.small-box {
+.small-box24 {
     margin-top: 50px;
     height: 170px; /* Adjust the height as needed */
     width: 130px; /* Adjust the width as needed */
@@ -197,7 +197,7 @@ span{
 
 }
 
-.small-box1{
+.small-box25{
     margin-top: 30px;
     height: 170px; /* Adjust the height as needed */
     width: 130px; /* Adjust the width as needed */
@@ -226,7 +226,7 @@ span{
     box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
 
     /* Adjustments for the button */
-    .button-container12 {
+    .button-container89 {
         position: absolute;
         bottom: 20px; /* Adjust as needed */
         left: 50%; /* Center the button horizontally */

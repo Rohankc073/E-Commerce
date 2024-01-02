@@ -32,10 +32,10 @@ const YourComponent = () => {
             <body>
             <div className="shop-section">
                 <div className="small-box-container">
-                    <div className="small-box">
+                    <div className="small-box24">
                         {/* Content for the first small box goes here */}
                     </div>
-                    <div className="small-box1">
+                    <div className="small-box25">
                         {/* Content for the second small box goes here */}
                     </div>
                 </div>
@@ -53,7 +53,7 @@ const YourComponent = () => {
                             <div className="colour"><span className="colour">Color : Pink</span></div>
                         </div>
                     </div>
-                    <div className="button-container12">
+                    <div className="button-container89">
                         <a href="#" className="btn">
                             Add to Cart
                         </a>
