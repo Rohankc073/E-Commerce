@@ -2,7 +2,7 @@
     margin: 0;
     font-family: ' Argent CF', serif;
     box-sizing: border-box;
-    overflow: revert;
+    /*overflow: hidden;*/
     /*border: border-box;*/
 }
 
@@ -167,10 +167,7 @@ span{
     justify-content: center;
     height: 400px;
     width: 250px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -215,7 +212,7 @@ span{
 }
 
 .product-description {
-    overflow: scroll;
+    /*overflow: scroll;*/
     height: 500px;
     width: 550px;
     background-color: white;
@@ -327,18 +324,19 @@ span{
     border-radius: 20px;
     margin-left: 185px;
     box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
-    overflow: hidden; /* Hide overflow content */
+
     border: 1px solid black;
 }
 
 .features-container,
 .features-container2 {
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
+
     white-space: nowrap; /* Prevent items from wrapping to the next line */
     display: flex;
     justify-content: flex-start; /* Align items to the start of the container */
     align-items: center; /* Center items vertically */
     margin-top: 20px;
+
 }
 
 .cart-info ul {
