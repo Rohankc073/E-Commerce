@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/viewpage.css'
 import Navbar from "./navbar";
 import Footer from "./footer";
+import Panel from "./panel";
 
 const YourComponent = () => {
     return (
@@ -10,23 +11,7 @@ const YourComponent = () => {
 
             <header>
                 <Navbar/>
-
-                <div className="panel">
-                    <div className="panel-all border">
-                        <i className="fa-solid fa-bars"></i>
-                        All
-                    </div>
-                    <div className="panel-ops border">
-                        <p>Today's Deals</p>
-                        <p>Customer Service</p>
-                        <p>Registry</p>
-                        <p>Gift Cards</p>
-                        <p>Sell</p>
-                    </div>
-                    <div className="panel-deals border">
-                        <p>Shop deals in Electronics</p>
-                    </div>
-                </div>
+                <Panel/>
             </header>
 
             <body>
