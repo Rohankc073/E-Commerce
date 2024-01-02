@@ -1,11 +1,16 @@
 import React from 'react';
-import '../styles/viewpageBox.css'
+import '../styles/viewpageBox.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 const ProductBox = ({ image, title, condition, salePrice, mainPrice }) => {
     return (
-        <div className="box1 box">
+        <div className="box1 box34">
             <div className="box-content">
-                <div className="button-container">
-                    <button className="love-button"><i className="fa-regular fa-heart"></i></button>
+                <div className="button-container12">
+                    <button className="love-button12">
+                        <FontAwesomeIcon icon={faHeart} />
+                    </button>
                 </div>
                 <div className="box-image" style={{ backgroundImage: `url(${image})` }}></div>
                 <div className="caption">

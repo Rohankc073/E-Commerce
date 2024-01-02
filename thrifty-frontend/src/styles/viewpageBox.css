@@ -1,11 +1,11 @@
 
-.box{
-
+.box34{
+    margin-top: 50px;
     height: 300px;
     width: 250px;
     background-color: #e2e7e6;
     padding: 20px 0px 15px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     align-items: center;
     border-radius: 10px;
     border: 1px solid black;
@@ -14,31 +14,36 @@
 
 
 /* Style for positioning the container */
-.box-content {
+.box34-content {
     margin-left: 10px;
     position: relative; /* This is important for positioning children */
 }
 
-/* Style for positioning the love button */
-.love-button {
-    position: absolute;
-    top: -30px; /* Adjusted to move the button up by 15px, considering the 20px top padding */
-    right: 10px; /* Adjust this value as needed to position the button horizontally within the container */
-    background-color: white; /* Background color for the circle */
-    color: #007185; /* Color of the heart icon */
-    width: 40px; /* Adjust the size as needed */
+.love-button12 {
+    width: 40px;
     height: 40px;
-    border: none;
-    border-radius: 50%; /* Makes it a circle */
     cursor: pointer;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s; /* Add a transition for a smooth fade-in effect */
+    opacity: 0; /* Set opacity to 1 for testing purposes */
+    transition: opacity 0.3s;
 }
 
-/* Style for box hover effect */
-.box:hover .love-button {
-    opacity: 1; /* Show the love button when hovering over the box */
+.button-container12 {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 2px; /* Adjust as needed to position the button at the top */
+    padding-left: 190px; /* Adjust as needed to position the button at the right */
 }
+
+.box1:hover .love-button12 {
+    opacity: 1;
+}
+
+

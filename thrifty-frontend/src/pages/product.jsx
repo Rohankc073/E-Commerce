@@ -14,15 +14,15 @@ const Product = () => {
             <header>
                 <Navbar />
                 <Panel/>
-                <div className="apple12">
-                    <div className="apple-logo">
-                    </div>
-                    <p>Apple</p>
-                    <video controls autoPlay loop muted playsInline>
-                        <source src="../images/apple.mp4" type="/mp4" />
-                        {/* Your browser does not support the video tag. */}
-                    </video>
-                </div>
+                {/*<div className="apple12">*/}
+                {/*    <div className="apple-logo">*/}
+                {/*    </div>*/}
+                {/*    <p>Apple</p>*/}
+                {/*    <video controls autoPlay loop muted playsInline>*/}
+                {/*        <source src="../images/apple.mp4" type="/mp4" />*/}
+                {/*        /!* Your browser does not support the video tag. *!/*/}
+                {/*    </video>*/}
+                {/*</div>*/}
             </header>
 
 
@@ -36,7 +36,11 @@ const Product = () => {
             </div>
 
             <div className="shop-section66">
-                {/* ... (your existing code for the shop section1) */}
+                <ProductBox/>
+                <ProductBox/>
+                <ProductBox/>
+                <ProductBox/>
+                <ProductBox/>
             </div>
 
 <Footer/>

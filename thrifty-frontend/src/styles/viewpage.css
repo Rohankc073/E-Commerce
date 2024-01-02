@@ -2,13 +2,12 @@
     margin: 0;
     font-family: ' Argent CF', serif;
     box-sizing: border-box;
-    /*overflow: hidden;*/
-    /*border: border-box;*/
+
 }
 
 
 body {
-    /*overflow: auto;*/
+
     background-color: white;
 }
 .navbar {
