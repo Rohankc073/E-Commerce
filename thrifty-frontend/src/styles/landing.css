@@ -78,7 +78,7 @@
 
 .logo1 {
     display: flex;
-    background-image: url("../images/logo.png");
+    /*background-image: url("../images/logo.png");*/
     background-size: cover;
     height: 50px;
     width: 100%;

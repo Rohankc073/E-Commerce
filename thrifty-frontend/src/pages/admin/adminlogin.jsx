@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import '../styles/adminlogin.css'; // Import your stylesheet if needed
+import '../../styles/adminlogin.css'; // Import your stylesheet if needed
 
 const Adminlogin = () => {
     return (

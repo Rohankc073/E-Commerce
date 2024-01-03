@@ -15,14 +15,15 @@
     align-items: center;
     justify-items: center;
 }
-.logo{
+.logo12{
     display: flex;
-    background-image: url("../images/logoo.jpg");
+    background-image: url("../images/plp.png");
     background-size: cover;
     height:50px ;
     margin-top: 8px;
     align-items: center;
     justify-content: center;
+    background-repeat: no-repeat;
 }
 
 

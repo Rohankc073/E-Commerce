@@ -16,7 +16,8 @@ import Login33 from "./pages/login33";
 
 import YourComponent from "./pages/viewpage";
 import EmbeddedCanvas from "./pages/aboutus";
-import Adminlogin from "./pages/adminlogin";
+import Adminlogin from "./pages/admin/adminlogin";
+import Signup from "./pages/signup";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -40,6 +41,7 @@ function App() {
                 <Route path='/login' element={<Login33 />} />
                 <Route path='/aboutus' element={<EmbeddedCanvas />} />
                 <Route path='/adminlogin' element={<Adminlogin />} />
+                <Route path='/signup' element={<Signup />} />
 
 
             </Routes>
