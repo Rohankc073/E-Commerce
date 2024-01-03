@@ -1,3 +1,5 @@
+// Login.jsx
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/adminlogin.css'; // Import your stylesheet if needed
@@ -9,6 +11,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,7 +21,16 @@ const Login = () => {
             // Redirect to /home upon successful login
             navigate('/home');
         } catch (error) {
-            setError(error.message);
+            switch (error.code) {
+                case "auth/user-not-found":
+                    setError("Email is incorrect");
+                    break;
+                case "auth/wrong-password":
+                    setError("Password is incorrect");
+                    break;
+                default:
+                    setError("Both email and password are incorrect");
+            }
         }
     };
 
@@ -43,11 +55,22 @@ const Login = () => {
                                 <input
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Password"
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                 />
                             </div>
+                            <div className="checkbox-container">
+                                <input
+                                    type="checkbox"
+                                    id="showPassword"
+                                    checked={showPassword}
+                                    onChange={() => setShowPassword(!showPassword)}
+                                />
+                                <label htmlFor="showPassword" id="showPasswordLabel">Show Password</label>
+
+
+                            </div>
                         </div>
-                        {error && <div className="error-message">{error}</div>}
+                        {error && <div className="error-box">{error}</div>}
                         <div id="submit-button-cvr">
                             <button id="submit-button" type="submit">
                                 Login
