@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import '../styles/signup.css';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, db } from '../Firebase/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { auth } from '../Firebase/firebase';
 
 const Signup = () => {
+    const navigate = useNavigate(); // Initialize the useNavigate hook
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -22,12 +24,14 @@ const Signup = () => {
             const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredentials.user;
 
-            // You can add additional logic here, such as storing user data in Firestore
-            // For example:
-            // const userDocRef = await addDoc(collection(db, 'users'), { email: user.email });
+            // Clear form fields upon successful registration
+            setEmail("");
+            setPassword("");
+            setConfirmPassword("");
+            setError(null);
 
-            // Redirect or provide feedback to the user upon successful registration
-            console.log("User registered successfully", user);
+            // Redirect to the login page
+            navigate('/login');
         } catch (error) {
             if (error.code === "auth/email-already-in-use") {
                 setError("Email address is already in use. Please use a different email or try logging in.");

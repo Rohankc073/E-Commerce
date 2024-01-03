@@ -57,5 +57,6 @@ sampleImageDetails.forEach((detail) => addImageDetails(detail));
 
 export {  sampleImageDetails, firestore, database }; // Export both Firestore and Realtime Database
 export const auth = getAuth(app);
-export const storage = getAuth(app);
+export const storage = getStorage(app);
 export const db = getFirestore(app);
+
