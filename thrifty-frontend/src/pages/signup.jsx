@@ -1,16 +1,18 @@
+// Import statements
 import React, { useState } from 'react';
-import {Link, useNavigate} from 'react-router-dom'; // Import useNavigate instead of useHistory
-import '../styles/signup.css';
+import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
+import '../styles/signup.css';
 
 const Signup = () => {
-    const navigate = useNavigate(); // Initialize the useNavigate hook
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState(null);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,13 +26,11 @@ const Signup = () => {
             const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredentials.user;
 
-            // Clear form fields upon successful registration
             setEmail("");
             setPassword("");
             setConfirmPassword("");
             setError(null);
 
-            // Redirect to the login page
             navigate('/login');
         } catch (error) {
             if (error.code === "auth/email-already-in-use") {
@@ -52,14 +52,35 @@ const Signup = () => {
                         </div>
                         <div id="input-area">
                             <div className="form-inp">
-                                <input onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" type="email" />
+                                <input
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="Email Address"
+                                    type="email"
+                                />
                             </div>
                             <div className="form-inp">
-                                <input onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
+                                <input
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder="Password"
+                                    type={showPassword ? "text" : "password"}
+                                />
                             </div>
                             <div className="form-inp">
-                                <input onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" type="password" />
+                                <input
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    placeholder="Confirm Password"
+                                    type={showPassword ? "text" : "password"}
+                                />
                             </div>
+                        </div>
+                        <div className="checkbox-container">
+                            <input
+                                type="checkbox"
+                                id="showPassword"
+                                checked={showPassword}
+                                onChange={() => setShowPassword(!showPassword)}
+                            />
+                            <label htmlFor="showPassword" id="showPasswordLabel">Show Password</label>
                         </div>
                         {error && <div className="error-message">{error}</div>}
                         <div id="submit-button-cvr">
