@@ -1,7 +1,5 @@
-// Login.jsx
-
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/adminlogin.css'; // Import your stylesheet if needed
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
@@ -11,7 +9,6 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
-    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,16 +18,7 @@ const Login = () => {
             // Redirect to /home upon successful login
             navigate('/home');
         } catch (error) {
-            switch (error.code) {
-                case "auth/user-not-found":
-                    setError("Email is incorrect");
-                    break;
-                case "auth/wrong-password":
-                    setError("Password is incorrect");
-                    break;
-                default:
-                    setError("Both email and password are incorrect");
-            }
+            setError(error.message);
         }
     };
 
@@ -55,30 +43,17 @@ const Login = () => {
                                 <input
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Password"
-                                    type={showPassword ? "text" : "password"}
+                                    type="password"
                                 />
-                            </div>
-                            <div className="checkbox-container">
-                                <input
-                                    type="checkbox"
-                                    id="showPassword"
-                                    checked={showPassword}
-                                    onChange={() => setShowPassword(!showPassword)}
-                                />
-                                <label htmlFor="showPassword" id="showPasswordLabel">Show Password</label>
                             </div>
                         </div>
-                        {error && <div className="error-box">{error}</div>}
+                        {error && <div className="error-message">{error}</div>}
                         <div id="submit-button-cvr">
                             <button id="submit-button" type="submit">
                                 Login
                             </button>
                         </div>
                         <div id="bar"></div>
-                        {/* Link/Button to Signup page */}
-                        <div id="signup-link">
-                            <p>Don't have an account? <Link to="/signup">Signup</Link></p>
-                        </div>
                     </div>
                 </form>
             </div>

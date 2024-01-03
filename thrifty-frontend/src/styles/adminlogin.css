@@ -1,9 +1,3 @@
-body {
-    margin: 0;
-    /*overflow: hidden;*/
-}
-
-
 #form {
     display: grid;
     place-items: center;
@@ -16,7 +10,6 @@ body {
     border-radius: 10px;
 }
 .contain{
-    overflow: hidden;
     margin-top: 150px;
     display: flex;
     align-items: center;
@@ -150,70 +143,5 @@ body {
 #bar:after {
     right: -38px;
 }
-.error-box {
-    color: black;
-    background-color: #00FF7F;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
-.checkbox-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
 
-#showPasswordLabel {
-    color: #00FF7F; /* Change color as needed */
-    font-size: 14px; /* Change font size as needed */
-    margin-top: 10px;
-}
-.checkbox-container input {
-    margin-right: 5px;
-}
-
-.password-toggle {
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-}
-
-.password-toggle:hover {
-    color: #00FF7F;
-}
-
-#input-area {
-    position: relative;
-}
-
-.form-inp {
-    position: relative;
-}
-
-.password-toggle {
-    right: 5px;
-}
-
-#signup-link {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #11b18b;
-}
-
-#signup-link p {
-    margin: 0;
-}
-
-#signup-link a {
-    color: #00FF7F; /* You can adjust the color as needed */
-    text-decoration: underline;
-}
-
-#signup-link a:hover {
-    color: #333; /* Change color on hover */
-}
+    
