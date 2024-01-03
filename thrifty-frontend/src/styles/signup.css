@@ -1,15 +1,20 @@
 #form {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /*place-items: center;*/
+
     width: 350px;
-    height: 470px;
+    height: 500px;
     padding: 25px;
     background-color: #161616;
     box-shadow: 0 15px 60px #00FF7F;
     outline: 1px solid #2b9962;
     border-radius: 10px;
 }
-.contain{
+
+.container {
+    margin-left: 85px;
     margin-top: 150px;
     display: flex;
     align-items: center;
@@ -24,6 +29,7 @@
     width: 230px;
     margin: -156px auto 0 auto;
 }
+
 
 #welcome-lines {
     text-align: center;
@@ -144,4 +150,21 @@
 #bar:after {
     right: -38px;
 }
+
+#login-link p{
+    color: #00FF7F;
+    margin: 10px;
+}
+
+#login-link a {
+    color: #00FF7F; /* You can adjust the color as needed */
+    text-decoration: underline;
+}
+
+#login--link12 a:hover {
+    color: #333; /* Change color on hover */
+}
+
+
+
 

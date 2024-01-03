@@ -1,8 +1,8 @@
-#form {
+#form12 {
     display: grid;
     place-items: center;
     width: 350px;
-    height: 470px;
+    height: 500px;
     padding: 25px;
     background-color: #161616;
     box-shadow: 0 15px 60px #00FF7F;
@@ -143,5 +143,77 @@
 #bar:after {
     right: -38px;
 }
+
+/* Add this CSS to your existing stylesheet or create a new one */
+
+#signup-link {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.error-box {
+    color: black;
+    background-color: #00FF7F;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.checkbox-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-container input {
+    margin-right: 5px;
+}
+
+#showPasswordLabel {
+    margin-top: 8px;
+    color: #00FF7F; /* Change color as needed */
+    font-size: 15px; /* Change font size as needed */
+}
+
+.password-toggle {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.password-toggle:hover {
+    color: #333;
+}
+
+#input-area {
+    position: relative;
+}
+
+.form-inp {
+    position: relative;
+}
+
+.password-toggle {
+    right: 5px;
+}
+#signup-link p {
+    color: #00FF7F;
+    margin: 0;
+}
+
+#signup-link a {
+    color: #00FF7F; /* You can adjust the color as needed */
+    text-decoration: underline;
+}
+
+#signup-link a:hover {
+    color: #333; /* Change color on hover */
+}
+
 
     

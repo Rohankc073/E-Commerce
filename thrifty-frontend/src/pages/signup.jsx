@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+import {Link, useNavigate} from 'react-router-dom'; // Import useNavigate instead of useHistory
 import '../styles/signup.css';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
@@ -68,6 +68,9 @@ const Signup = () => {
                             </button>
                         </div>
                         <div id="bar"></div>
+                        <div id="login-link">
+                            <p>Already have an account? <Link to="/login">Login</Link></p>
+                        </div>
                     </div>
                 </form>
             </div>
