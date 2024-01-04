@@ -1,10 +1,9 @@
 // Login.jsx
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/adminlogin.css'; // Import your stylesheet if needed
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
+// import UserProfile from './'; // Correct path to UserProfile component
 
 const Login = () => {
     const navigate = useNavigate();
@@ -17,20 +16,33 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            await signInWithEmailAndPassword(auth, email, password);
-            // Redirect to /home upon successful login
+            const userCredentials = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredentials.user;
+
+            // Redirect to /userprofile upon successful login
             navigate('/home');
         } catch (error) {
-            switch (error.code) {
-                case "auth/user-not-found":
-                    setError("Email is incorrect");
-                    break;
-                case "auth/wrong-password":
-                    setError("Password is incorrect");
-                    break;
-                default:
-                    setError("Both email and password are incorrect");
-            }
+            console.error('Firebase Authentication Error:', error);
+
+            // Log the error code and message to the console
+            console.log('Error Code:', error.code);
+            console.log('Error Message:', error.message);
+
+            // Set the error state with a precise message
+            setError(getErrorMessage(error));
+        }
+    };
+
+    // Function to get a precise error message based on error code
+    const getErrorMessage = (error) => {
+        if (error.code === "auth/user-not-found") {
+            return "Email not found. Please check your email.";
+        } else if (error.code === "auth/wrong-password") {
+            return "Incorrect password. Please check your password.";
+        } else if (error.code === "auth/too-many-requests") {
+            return "Your account has been temporarily disabled due to many failed login attempts.";
+        } else {
+            return "An error occurred. Please try again.";
         }
     };
 

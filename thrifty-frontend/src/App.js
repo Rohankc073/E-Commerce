@@ -18,6 +18,8 @@ import YourComponent from "./pages/viewpage";
 import EmbeddedCanvas from "./pages/aboutus";
 import Adminlogin from "./pages/admin/adminlogin";
 import Signup from "./pages/signup";
+import Accounts from "./pages/accounts";
+import UserProfile from "./pages/accounts";
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -36,12 +38,13 @@ function App() {
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
                 <Route path='/upload' element={<Imageuploadpage />} />
-                <Route path='/image' element={<AddProductForm />} />i
+                {/*<Route path='/image' element={<AddProductForm />} />*/}
                 <Route path='/adc' element={<Addtocart />} />
                 <Route path='/login' element={<Login33 />} />
                 <Route path='/aboutus' element={<EmbeddedCanvas />} />
                 <Route path='/adminlogin' element={<Adminlogin />} />
                 <Route path='/signup' element={<Signup />} />
+                <Route path='/accounts' element={<UserProfile />} />
 
 
             </Routes>

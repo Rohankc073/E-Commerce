@@ -4,7 +4,7 @@ import {faCartShopping, faLocationDot, faMagnifyingGlass} from '@fortawesome/fre
 import React, {useState} from 'react';
 import CartPanel from "./cartPanle"; // Corrected import
 import "../styles/cartPanel.css"
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import "../styles/navbar.css"
 
 
@@ -66,7 +66,9 @@ const Navbar1 = () => {
 
             <div className="nav-login">
                 <button onClick={handleSignInClick}>Hello, Sign in</button>
-                <p>Account & Lists</p>
+                <Link to="/accounts">
+                    <button>Accounts</button>
+                </Link>
             </div>
 
 

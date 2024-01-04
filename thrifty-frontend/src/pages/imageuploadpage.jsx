@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { storage } from '../Firebase/firebase';
+import '../styles/upload.css'
 
 
 const UploadImagePage = ({ title, imagePath }) => {
@@ -53,7 +54,7 @@ const UploadImagePage = ({ title, imagePath }) => {
                 <h2>{title}</h2>
                 <div style={{ backgroundImage: `url(${imageURL || imagePath})` }} className="product-box-image"></div>
                 <input type="file" onChange={handleImageChange} />
-                <button onClick={uploadImage} className="product-box-button">Upload Image</button>
+                <button onClick={uploadImage} className="product-box-button1">Upload Image</button>
                 <div className="button-container">
                     <a href="index2.html" className="product-box-button">
                         See more
