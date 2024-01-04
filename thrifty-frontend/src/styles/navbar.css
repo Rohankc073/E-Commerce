@@ -10,20 +10,22 @@
 }
 
 .nav-logo{
-    height: 70px;
+    height: 100px;
     width: 170px;
     align-items: center;
     justify-items: center;
+    margin-bottom: 20px;
 }
 .logo12{
     display: flex;
-    background-image: url("../images/plp.png");
-    background-size: cover;
-    height:50px ;
-    margin-top: 8px;
+    background-image: url("../images/pop.png");
+    background-size: contain;
+    height:100% ;
+    margin-top: 20px;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
+
 }
 
 

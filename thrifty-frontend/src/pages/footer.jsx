@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
 
             <div className="foot-panel3">
-                <div className="logo"></div>
+                <div className="logo25"></div>
             </div>
 
             <div className="foot-panel4">
