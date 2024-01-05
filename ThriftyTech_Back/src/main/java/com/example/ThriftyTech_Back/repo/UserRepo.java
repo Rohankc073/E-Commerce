@@ -5,4 +5,5 @@ import com.example.ThriftyTech_Back.entity.User;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
+
 }
