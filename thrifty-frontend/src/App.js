@@ -20,6 +20,8 @@ import Adminlogin from "./pages/admin/adminlogin";
 import Signup from "./pages/signup";
 import Accounts from "./pages/accounts";
 import UserProfile from "./pages/accounts";
+import Description from "./pages/upload";
+
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
 
@@ -45,6 +47,8 @@ function App() {
                 <Route path='/adminlogin' element={<Adminlogin />} />
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/accounts' element={<UserProfile />} />
+                <Route path='/des' element={<Description />} />
+
 
 
             </Routes>

@@ -1,51 +1,62 @@
-import React from 'react';
-
-import Footer from "./footer";
-import '../styles/product.css'
-import '../images/apple.mp4'
-import ProductBox from "./viewpageBox";
-
-import Panel from "./panel";
-import Navbar from "./navbar";
+import React, { useState, useEffect } from 'react';
+import '../styles/product.css';
+import Footer from './footer';
+import ProductBox from './viewpageBox';
+import Panel from './panel';
+import Navbar from './navbar';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../Firebase/firebase'; // Replace with the correct path to your Firebase configuration
 
 const Product = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const productsCollection = collection(db, 'products');
+                const productsSnapshot = await getDocs(productsCollection);
+
+                const productsData = productsSnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+
+                console.log('Fetched products:', productsData);
+                setProducts(productsData);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
     return (
         <>
             <header>
                 <Navbar />
-                <Panel/>
-                {/*<div className="apple12">*/}
-                {/*    <div className="apple-logo">*/}
-                {/*    </div>*/}
-                {/*    <p>Apple</p>*/}
-                {/*    <video controls autoPlay loop muted playsInline>*/}
-                {/*        <source src="../images/apple.mp4" type="/mp4" />*/}
-                {/*        /!* Your browser does not support the video tag. *!/*/}
-                {/*    </video>*/}
-                {/*</div>*/}
+                <Panel />
             </header>
-
 
             <body>
             <div className="shop-section55">
-               <ProductBox/>
-                <ProductBox/>
-                <ProductBox/>
-                <ProductBox/>
-                <ProductBox/>
+                {products.map((product) => (
+                    <ProductBox
+                        key={product.id}
+                        imageUrl="https://firebasestorage.googleapis.com/v0/b/thriftytech-6cd3e.appspot.com/o/upload%2F20231227T041433523Z_t5ku0x_ip13Blue.jpg?alt=media"
+                        name={product.name}
+                        price={product.price}
+                        condition={product.condition}
+                    />
+                ))}
             </div>
 
             <div className="shop-section66">
-                <ProductBox/>
-                <ProductBox/>
-                <ProductBox/>
-                <ProductBox/>
-                <ProductBox/>
+                {/* You can add more ProductBox components here if needed */}
             </div>
 
-<Footer/>
+            <Footer />
             </body>
-
         </>
     );
 };
