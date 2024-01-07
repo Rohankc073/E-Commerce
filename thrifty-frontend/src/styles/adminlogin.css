@@ -215,6 +215,59 @@
 #signup-link a:hover {
     color: #333; /* Change color on hover */
 }
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px; /* Reduced padding */
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
 
+.custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 14px; /* Adjusted height */
+    width: 14px; /* Adjusted width */
+}
 
-    
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px; /* Adjusted height */
+    width: 14px; /* Adjusted width */
+    background-color: #eee;
+    border-radius: 2px; /* Adjusted border radius */
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 4px; /* Adjusted left position */
+    top: 1px; /* Adjusted top position */
+    width: 5px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox:checked ~ .checkmark {
+    background-color: #2196F3;
+    box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+    display: block;
+    animation: checkAnim 0.2s forwards;
+}
+
+.checkbox-container {
+    color: #00FF7F; /* Text color for "Show Password" */
+}

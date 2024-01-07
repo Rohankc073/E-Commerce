@@ -70,15 +70,16 @@ const Login = () => {
                                     type={showPassword ? "text" : "password"}
                                 />
                             </div>
-                            <div className="checkbox-container">
+                            <label className="checkbox-container">
                                 <input
+                                    className="custom-checkbox"
                                     type="checkbox"
-                                    id="showPassword"
                                     checked={showPassword}
                                     onChange={() => setShowPassword(!showPassword)}
                                 />
-                                <label htmlFor="showPassword" id="showPasswordLabel">Show Password</label>
-                            </div>
+                                <span className="checkmark"></span>
+                                Show Password
+                            </label>
                         </div>
                         {error && <div className="error-box">{error}</div>}
                         <div id="submit-button-cvr">
