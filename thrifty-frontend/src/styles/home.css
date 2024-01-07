@@ -142,7 +142,8 @@ body {
     height: 170px;
     width: 138px;
     margin: 1rem auto;
-    background-size: cover;
+    border: none;
+    /*background-size: cover;*/
 
 }
 

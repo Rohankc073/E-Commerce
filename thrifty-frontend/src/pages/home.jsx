@@ -28,21 +28,43 @@ const sliderSettings = {
 const HomePage = () => {
     const [appleImageURL, setAppleImageURL] = useState('');
     const [samsungImageURL, setSamsungImageURL] = useState('');
+    const [oppoImageURL, setOppoImageURL] = useState('');
+    const [vivoImageURL, setVivoImageURL] = useState('');
+    const [redmiImageURL, setRedmiImageURL] = useState('');
     const [oneplusImageURL, setOneplusImageURL] = useState('');
+    const [nothingImageURL, setNothingImageURL] = useState('');
+    const [iqooImageURL, setIqooImageURL] = useState('');
+
+
 
     useEffect(() => {
         const fetchImageURLs = async () => {
             try {
                 const appleImageRef = ref(storage, 'upload/20231226T092116764Z_gi8ffu_Apple.jpg');
                 const samsungImageRef = ref(storage, 'upload/20231226T132335824Z_jcq3fi_S22Black.jpg');
-                const oneplusImageRef = ref(storage,'upload/20231226T133843662Z_2aukpu_oppo.jpg')
+                const oppoImageRef = ref(storage,'upload/20231226T133843662Z_2aukpu_oppo.jpg');
+                const redmiImageRef = ref(storage,'upload/20240107T114653254Z_hk1nc2_redd.png');
+                const oneplusImageRef = ref(storage,'upload/20240107T115214982Z_wj5aat_oneplus.png');
+                const vivoImageRef = ref(storage,'upload/20240107T113528504Z_e6hr0i_vivo.png');
+                const nothingImageRef=ref(storage,"upload/20240107T115957254Z_mbs9i4_nothing.png");
+                const iqooImageRef=ref(storage,'upload/20240107T120506048Z_t7f24i_iqqq.png')
                 const appleURL = await getDownloadURL(appleImageRef);
                 const samsungURL = await getDownloadURL(samsungImageRef);
-                const oneplusURL = await getDownloadURL(oneplusImageRef)
+                const oppoURL = await getDownloadURL(oppoImageRef);
+                const vivoURL = await getDownloadURL(vivoImageRef);
+                const redmiURL = await getDownloadURL(redmiImageRef);
+                const oneplusURL = await getDownloadURL(oneplusImageRef);
+                const nothingURL = await getDownloadURL(nothingImageRef);
+                const iqooURL = await getDownloadURL(iqooImageRef);
 
-                setOneplusImageURL(oneplusURL);
+                setOppoImageURL(oppoURL);
+                setNothingImageURL(nothingURL);
                 setAppleImageURL(appleURL);
                 setSamsungImageURL(samsungURL);
+                setVivoImageURL(vivoURL)
+                setRedmiImageURL(redmiURL)
+                setOneplusImageURL(oneplusURL);
+                setIqooImageURL(iqooURL);
             } catch (error) {
                 console.error('Error fetching image URLs:', error);
             }
@@ -153,8 +175,8 @@ const HomePage = () => {
                         {/* Box 3 */}
                         <div className="box2 box22">
                             <div className="box22-content">
-                                <h2>OnePlus</h2>
-                                {oneplusImageURL && <img src={oneplusImageURL} alt="Apple" className="box-image" />}
+                                <h2>Oppo</h2>
+                                {oppoImageURL && <img src={oppoImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
                                     <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
@@ -167,7 +189,7 @@ const HomePage = () => {
                         <div className="box2 box22">
                             <div className="box22-content">
                                 <h2>Vivo</h2>
-                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                {vivoImageURL && <img src={vivoImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
                                     <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
@@ -185,7 +207,7 @@ const HomePage = () => {
                             <div className="box2 box22">
                                 <div className="box22-content">
                                     <h2>Redmi</h2>
-                                    {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                    {redmiImageURL && <img src={redmiImageURL} alt="Apple" className="box-image" />}
                                     <div className="button-container22">
                                         <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                             See more
@@ -199,8 +221,8 @@ const HomePage = () => {
                         {/* Box 6 */}
                         <div className="box2 box22">
                             <div className="box22-content">
-                                <h2>Oppo</h2>
-                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                <h2>OnePlus</h2>
+                                {oneplusImageURL && <img src={oneplusImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
                                     <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
@@ -212,8 +234,8 @@ const HomePage = () => {
                         {/* Box 7 */}
                         <div className="box2 box22">
                             <div className="box22-content">
-                                <h2>Xiamoi</h2>
-                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                <h2>iQOOO</h2>
+                                {iqooImageURL && <img src={iqooImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
                                     <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
@@ -226,7 +248,7 @@ const HomePage = () => {
                         <div className="box2 box22">
                             <div className="box22-content">
                                 <h2>Nothing</h2>
-                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                {nothingImageURL && <img src={nothingImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
                                     <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
