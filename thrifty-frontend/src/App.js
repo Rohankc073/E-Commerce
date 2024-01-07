@@ -21,6 +21,8 @@ import Signup from "./pages/signup";
 import Accounts from "./pages/accounts";
 import UserProfile from "./pages/accounts";
 import Description from "./pages/upload";
+import Feedback from "./pages/feedback";
+import FeedbackList from "./pages/feedbacklist";
 
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
@@ -48,7 +50,8 @@ function App() {
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/accounts' element={<UserProfile />} />
                 <Route path='/des' element={<Description />} />
-
+                <Route path='/feedback' element={<Feedback />} />
+                <Route path='/feedback/list' element={<FeedbackList/>} />
 
 
             </Routes>
