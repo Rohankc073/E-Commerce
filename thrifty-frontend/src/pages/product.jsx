@@ -7,6 +7,20 @@ import Navbar from './navbar';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../Firebase/firebase'; // Replace with the correct path to your Firebase configuration
 
+// Function to shuffle an array randomly
+const shuffleArray = (array) => {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+};
+
 const Product = () => {
     const [products, setProducts] = useState([]);
 
@@ -21,8 +35,11 @@ const Product = () => {
                     ...doc.data(),
                 }));
 
-                console.log('Fetched products:', productsData);
-                setProducts(productsData);
+                console.log('Fetched products from Firebase:', productsData);
+
+                // Shuffle the products array randomly
+                const shuffledProducts = shuffleArray(productsData);
+                setProducts(shuffledProducts);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }

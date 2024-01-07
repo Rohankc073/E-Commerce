@@ -22,9 +22,9 @@ const ProductBox = ({ imageUrl, name, price, condition }) => {
                             <span className="amount">{price}</span>
                         </div>
                         <div className="d-flex text-truncate">
-                            <div className="mainPrice">
-                                NRP {price}
-                            </div>
+                            {/*<div className="mainPrice">*/}
+                            {/*    NRP {price}*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>
