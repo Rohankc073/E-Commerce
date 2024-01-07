@@ -1,5 +1,6 @@
+// ProductBox.js
 import React from 'react';
-import '../styles/viewpageBox.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,7 +13,9 @@ const ProductBox = ({ imageUrl, name, price, condition }) => {
                         <FontAwesomeIcon icon={faHeart} />
                     </button>
                 </div>
-                <div className="box-image" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+                <Link to="/view">
+                    <div className="box-image" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+                </Link>
                 <div className="caption">
                     <h3 className="product-card-title">{name}</h3>
                     <div className="condition"><span>Condition:</span> {condition}</div>
@@ -20,11 +23,6 @@ const ProductBox = ({ imageUrl, name, price, condition }) => {
                         <div className="salePrice">
                             <span className="currency">NRP</span>
                             <span className="amount">{price}</span>
-                        </div>
-                        <div className="d-flex text-truncate">
-                            {/*<div className="mainPrice">*/}
-                            {/*    NRP {price}*/}
-                            {/*</div>*/}
                         </div>
                     </div>
                 </div>
