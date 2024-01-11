@@ -223,15 +223,13 @@ body {
 }
 
 .box-image{
+
     display: flex;
     align-content: center;
     justify-content: center;
     height: 170px;
     width: 143px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 1rem auto;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

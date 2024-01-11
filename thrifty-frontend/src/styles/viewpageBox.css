@@ -15,6 +15,7 @@
 
 /* Style for positioning the container */
 .box34-content {
+    background: none;
     margin-left: 10px;
     position: relative; /* This is important for positioning children */
 }
@@ -24,7 +25,7 @@
     height: 40px;
     cursor: pointer;
     background-color: white;
-    color: blue;
+    color: #11b18b;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -45,5 +46,6 @@
 .box1:hover .love-button12 {
     opacity: 1;
 }
+
 
 

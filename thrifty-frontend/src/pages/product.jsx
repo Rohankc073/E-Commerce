@@ -66,9 +66,6 @@ const Product = () => {
                         condition={product.condition}
                     />
                 ))}
-            </div>
-
-            <div className="shop-section66">
                 {products.map((product) => (
                     <ProductBox
                         key={product.id}
@@ -78,6 +75,10 @@ const Product = () => {
                         condition={product.condition}
                     />
                 ))}
+            </div>
+
+            <div className="shop-section66">
+
             </div>
 
             <Footer />

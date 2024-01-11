@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-
+import '../styles/viewpageBox.css'
 const ProductBox = ({ imageUrl, name, price, condition }) => {
     return (
         <div className="box1 box34">
