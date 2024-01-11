@@ -69,7 +69,15 @@ const Product = () => {
             </div>
 
             <div className="shop-section66">
-                {/* You can add more ProductBox components here if needed */}
+                {products.map((product) => (
+                    <ProductBox
+                        key={product.id}
+                        imageUrl="https://firebasestorage.googleapis.com/v0/b/thriftytech-6cd3e.appspot.com/o/upload/20231227T042418117Z_jpsu67_Ip14.jpg?alt=media"
+                        name={product.name}
+                        price={product.price}
+                        condition={product.condition}
+                    />
+                ))}
             </div>
 
             <Footer />
