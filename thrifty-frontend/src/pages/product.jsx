@@ -5,21 +5,7 @@ import ProductBox from './viewpageBox';
 import Panel from './panel';
 import Navbar from './navbar';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../Firebase/firebase'; // Replace with the correct path to your Firebase configuration
-
-// Function to shuffle an array randomly
-const shuffleArray = (array) => {
-    let currentIndex = array.length, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-};
+import { db } from '../Firebase/firebase';
 
 const Product = () => {
     const [products, setProducts] = useState([]);
@@ -30,21 +16,18 @@ const Product = () => {
                 const productsCollection = collection(db, 'products');
                 const productsSnapshot = await getDocs(productsCollection);
 
-                const productsData = productsSnapshot.docs.map((doc) => ({
+                const productsData = productsSnapshot.docs.slice(0, 2).map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
                 }));
 
                 console.log('Fetched products from Firebase:', productsData);
 
-                // Shuffle the products array randomly
-                const shuffledProducts = shuffleArray(productsData);
-                setProducts(shuffledProducts);
+                setProducts(productsData);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
         };
-
         fetchProducts();
     }, []);
 
@@ -66,14 +49,16 @@ const Product = () => {
                         condition={product.condition}
                     />
                 ))}
+
                 {products.map((product) => (
                     <ProductBox
                         key={product.id}
-                        imageUrl="https://firebasestorage.googleapis.com/v0/b/thriftytech-6cd3e.appspot.com/o/upload/20231227T042418117Z_jpsu67_Ip14.jpg?alt=media"
+                        imageUrl="https://firebasestorage.googleapis.com/v0/b/thriftytech-6cd3e.appspot.com/o/upload%2F20231227T042433669Z_8pci5h_Ip14.jpg?alt=media"
                         name={product.name}
                         price={product.price}
                         condition={product.condition}
                     />
+
                 ))}
             </div>
 
