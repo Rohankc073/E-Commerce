@@ -30,20 +30,20 @@ const firestore = getFirestore(app); // Initialize Firestore
 const database = getDatabase(app); // Initialize Realtime Database
 
 const sampleImageDetails = [
-    {
-        imageURL: "/upload/20231226T092117562Z_qusy77_Apple.jpg",
-        description: "iPhone 12",
-        price: 899,
-        condition: "New",
-        color: "Blue",
-    },
-    {
-        imageURL: "/upload/20231227T040438402Z_rpq188_ip11Red.jpg",
-        description: "iPhone 11 (Red)",
-        price: 799,
-        condition: "Pre-owned",
-        color: "Red",
-    },
+    // {
+    //     imageURL: "/upload/20231226T092117562Z_qusy77_Apple.jpg",
+    //     description: "iPhone 12",
+    //     price: 899,
+    //     condition: "New",
+    //     color: "Blue",
+    // },
+    // {
+    //     imageURL: "/upload/20231227T040438402Z_rpq188_ip11Red.jpg",
+    //     description: "iPhone 11 (Red)",
+    //     price: 799,
+    //     condition: "Pre-owned",
+    //     color: "Red",
+    // },
     // Add more image details as needed
 ];
 

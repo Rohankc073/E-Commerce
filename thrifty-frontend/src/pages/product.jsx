@@ -16,7 +16,7 @@ const Product = () => {
                 const productsCollection = collection(db, 'products');
                 const productsSnapshot = await getDocs(productsCollection);
 
-                const productsData = productsSnapshot.docs.slice(0, 2).map((doc) => ({
+                const productsData = productsSnapshot.docs.slice(0,5).map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
                 }));
@@ -43,23 +43,23 @@ const Product = () => {
                 {products.map((product) => (
                     <ProductBox
                         key={product.id}
-                        imageUrl="https://firebasestorage.googleapis.com/v0/b/thriftytech-6cd3e.appspot.com/o/upload%2F20231227T041433523Z_t5ku0x_ip13Blue.jpg?alt=media"
+                        imageUrl={product.imageUrl}
                         name={product.name}
                         price={product.price}
                         condition={product.condition}
                     />
                 ))}
 
-                {products.map((product) => (
-                    <ProductBox
-                        key={product.id}
-                        imageUrl="https://firebasestorage.googleapis.com/v0/b/thriftytech-6cd3e.appspot.com/o/upload%2F20231227T042433669Z_8pci5h_Ip14.jpg?alt=media"
-                        name={product.name}
-                        price={product.price}
-                        condition={product.condition}
-                    />
+                {/*{products.map((product) => (*/}
+                {/*    <ProductBox*/}
+                {/*        key={product.id}*/}
+                {/*        imageUrl={product.imageUrl}*/}
+                {/*        name={product.name}*/}
+                {/*        price={product.price}*/}
+                {/*        condition={product.condition}*/}
+                {/*    />*/}
 
-                ))}
+                {/*))}*/}
             </div>
 
             <div className="shop-section66">
