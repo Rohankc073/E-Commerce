@@ -16,7 +16,7 @@ const Product = () => {
                 const productsCollection = collection(db, 'products');
                 const productsSnapshot = await getDocs(productsCollection);
 
-                const productsData = productsSnapshot.docs.slice(0,5).map((doc) => ({
+                const productsData = productsSnapshot.docs.slice(0, 6).map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
                 }));
@@ -40,31 +40,33 @@ const Product = () => {
 
             <body>
             <div className="shop-section55">
-                {products.map((product) => (
-                    <ProductBox
-                        key={product.id}
-                        imageUrl={product.imageUrl}
-                        name={product.name}
-                        price={product.price}
-                        condition={product.condition}
-                    />
-                ))}
 
-                {/*{products.map((product) => (*/}
-                {/*    <ProductBox*/}
-                {/*        key={product.id}*/}
-                {/*        imageUrl={product.imageUrl}*/}
-                {/*        name={product.name}*/}
-                {/*        price={product.price}*/}
-                {/*        condition={product.condition}*/}
-                {/*    />*/}
+                    {products.slice(0, 3).map((product) => (
+                        <div key={product.id} className="col">
+                            <ProductBox
+                                imageUrl={product.imageUrl}
+                                name={product.name}
+                                price={product.price}
+                                condition={product.condition}
+                            />
+                        </div>
+                    ))}
 
-                {/*))}*/}
+                <div className="row">
+                    {products.slice(3, 6).map((product) => (
+                        <div key={product.id} className="col">
+                            <ProductBox
+                                imageUrl={product.imageUrl}
+                                name={product.name}
+                                price={product.price}
+                                condition={product.condition}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <div className="shop-section66">
-
-            </div>
+            <div className="shop-section66">{/* Additional content or components can be added here */}</div>
 
             <Footer />
             </body>

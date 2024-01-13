@@ -43,6 +43,11 @@ const YourComponent = () => {
                             Add to Cart
                         </a>
                     </div>
+                    <div className="button-container77">
+                        <a href="#" className="btn">
+                            Buy Now
+                        </a>
+                    </div>
                 </div>
 
             </div>

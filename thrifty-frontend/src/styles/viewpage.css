@@ -99,9 +99,16 @@ body {
     .button-container89 {
         position: absolute;
         bottom: 20px; /* Adjust as needed */
-        left: 50%; /* Center the button horizontally */
+        left: 30%; /* Center the button horizontally */
         transform: translateX(-50%); /* Center the button horizontally */
     }
+}
+
+.button-container77{
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 70%; /* Center the button horizontally */
+    transform: translateX(-50%);
 }
 
 .btn {
