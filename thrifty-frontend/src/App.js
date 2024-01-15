@@ -25,6 +25,7 @@ import Feedback from "./pages/feedback";
 import FeedbackList from "./pages/feedbacklist";
 import CheckoutForm from "./pages/checkout";
 import ShoppingCart from "./pages/checkout";
+import Payment from "./pages/payment";
 
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
@@ -55,6 +56,7 @@ function App() {
                 <Route path='/feedback' element={<Feedback />} />
                 <Route path='/feedback/list' element={<FeedbackList/>} />
                 <Route path='/checkout' element={<ShoppingCart/>} />
+                <Route path='/payment' element={<Payment/>} />
 
 
             </Routes>
