@@ -83,6 +83,7 @@
     font-family: Open Sans, serif;
 }
 .foot-panel12{
+
     background-color: #1f6858;
     cursor: pointer;
     color: white;
@@ -91,7 +92,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
 }
 
 section {
@@ -160,7 +161,8 @@ section {
     color:  black;
     font-size: 14px;
     font-weight: normal;
-    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 /* Footer Center */
