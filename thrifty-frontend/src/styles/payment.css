@@ -1,377 +1,250 @@
-/** {*/
-/*    margin: 0;*/
-/*    font-family: Arial, serif;*/
-/*    !*border-style: border-box;*!*/
-/*}*/
-/*!*.navbar2{*!*/
-/*!*    height: 60px;*!*/
-/*!*    background-color: #11b18b;*!*/
-/*!*    color: black;*!*/
-/*!*    display: flex;*!*/
-/*!*    align-items: center;*!*/
-/*!*    justify-content: space-evenly;*!*/
+* {
+    margin: 0;
+    font-family: ' Argent CF', serif;
+    box-sizing: border-box;
 
-/*!*}*!*/
-
-/*!*.nav-logo1{*!*/
-/*!*    height: 70px;*!*/
-/*!*    width: 170px;*!*/
-/*!*    align-items: center;*!*/
-/*!*    justify-content: center;*!*/
-/*!*}*!*/
-/*!*.logo1{*!*/
-/*!*    background-image: url("../images/logo.png");*!*/
-/*!*    background-size: cover;*!*/
-/*!*    height:50px ;*!*/
-/*!*    width: 100%;*!*/
-/*!*    margin-top: 8px;*!*/
-/*!*    align-items: center;*!*/
-/*!*    justify-content: center;*!*/
-/*!*}*!*/
-
-/*!*.border{*!*/
-/*!*    border: 2px solid transparent;*!*/
-/*!*}*!*/
-
-/*!*.border:hover {*!*/
-/*!*    border: 2px solid white;*!*/
-/*!*}*!*/
-
-/*!*.add-first{*!*/
-/*!*    color: black;*!*/
-/*!*    font-size: 0.5rem;*!*/
-/*!*    margin-left: 15px;*!*/
-/*!*}*!*/
-
-/*!*.add-second{*!*/
-/*!*    font-size: 1rem;*!*/
-/*!*    margin-left: 3px;*!*/
-/*!*    font-weight: 500;*!*/
-/*!*}*!*/
-
-/*!*.add-icon{*!*/
-/*!*    display: flex;*!*/
-/*!*    align-items: center;*!*/
-/*!*    margin-bottom: 5px;*!*/
-/*!*}*!*/
-
-/*!*.nav-search2{*!*/
-/*!*    display: flex;*!*/
-/*!*    justify-content: space-evenly;*!*/
-/*!*    background-color: pink;*!*/
-/*!*    width: 620px;*!*/
-/*!*    height: 40px;*!*/
-/*!*    border-radius: 5px;*!*/
-/*!*}*!*/
-/*!*.nav-search2:hover{*!*/
-/*!*    border: 2px solid orange;*!*/
-/*!*}*!*/
-
-/*!*.search-select1{*!*/
-/*!*    background-color: #f3f3f3;*!*/
-/*!*    width: 50px;*!*/
-/*!*    text-align: center;*!*/
-/*!*    border-top-left-radius: 5px;*!*/
-/*!*    border-bottom-left-radius: 5px;*!*/
-/*!*    border: none;*!*/
-/*!*}*!*/
-
-/*!*.search-input{*!*/
-/*!*    width: 100%;*!*/
-/*!*    font-size: 1rem;*!*/
-/*!*    border: none;*!*/
-/*!*}*!*/
-
-/*!*.search-icon{*!*/
-/*!*    width: 45px;*!*/
-/*!*    display: flex;*!*/
-/*!*    justify-content: center;*!*/
-/*!*    align-items: center;*!*/
-/*!*    font-size: 1.3rem;*!*/
-/*!*    background-color: #febd68;*!*/
-/*!*    border-top-right-radius: 5px;*!*/
-/*!*    border-bottom-right-radius: 5px;*!*/
-/*!*    color: #0f1111;*!*/
-/*!*}*!*/
-
-/*!*span{*!*/
-/*!*    font-size:0.7rem ;*!*/
-/*!*}*!*/
-
-/*!*.nav-second{*!*/
-/*!*    font-size: 0.85rem;*!*/
-/*!*    font-weight: 700;*!*/
-/*!*}*!*/
+}
 
 
-/*!*.nav-cart i{*!*/
-/*!*    font-size: 30px;*!*/
-/*!*}*!*/
+body {
 
-/*!*.nav-cart{*!*/
-/*!*    font-size: 0.85rem;*!*/
-/*!*    font-weight: 700;*!*/
-/*!*}*!*/
-
-/*.panel{*/
-/*    height: 40px;*/
-/*    background-color: #1f6858;*/
-/*    display: flex;*/
-/*    color: white;*/
-/*    align-items: center;*/
-/*    justify-content: space-evenly;*/
-/*}*/
-/*.panel-ops p{*/
-/*    display: inline;*/
-/*    margin-left: 15px;*/
-/*}*/
-
-/*.panel-ops{*/
-/*    width: 70%;*/
-/*    font-size: 0.85rem;*/
-
-/*}*/
-/*.panel-deals{*/
-/*    font-size: 0.9rem;*/
-/*    font-weight: 700;*/
-/*}*/
-
-/*.apple12 {*/
-/*    background-size: cover;*/
-/*    width: 100%;*/
-/*    height: 600px;*/
-/*    background-color: white;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    border-radius: 8px;*/
-/*    position: relative; !* Add position: relative to the container *!*/
-/*}*/
-
-/*.apple12-logo {*/
-/*    !* Add styles for the Apple logo *!*/
-/*    width: 100px; !* Increase the width of the logo as needed *!*/
-/*    height: 80px; !* Increase the height of the logo as needed *!*/
-/*    !*background-image: url('app1.jpg'); !* Set the path to your Apple logo image *!*!*/
-/*    background-size: contain;*/
-/*    background-repeat: no-repeat;*/
-/*    position: absolute;*/
-/*    left: 560px; !* Adjust the distance from the left side of the container *!*/
-/*    top: 7%; !* Center vertically within the container *!*/
-/*    transform: translate(0, -50%); !* Center the logo vertically *!*/
-/*}*/
-
-/*.apple12 p {*/
+    background-color: white;
+}
+.shop-section1{
+    display: flex;
+    margin-left: 120px;
+    background-color: white;
+}
 
 
-/*    font-family: 'SF Pro Display', sans-serif; !* Specify a fallback font family *!*/
-/*    font-size: 48px;*/
-/*    font-weight: 800;*/
-/*    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
-/*    position: absolute; !* Position the paragraph absolutely within the container *!*/
-/*    top: 4%; !* Center vertically *!*/
-/*    left: 50%; !* Center horizontally *!*/
-/*    transform: translate(-50%, -50%); !* Center the text both horizontally and vertically *!*/
-/*}*/
+.box{
+    height: 500px;
+    width: 550px;
+    background-color: white;
+    padding: 20px 0px 15px;
+    margin-top: 50px;
+    margin-left: 30px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+}
+.box-image12{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 400px;
+    width: 250px;
+    margin: 1rem auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
 
 
-/*.apple12 video {*/
-/*    background-size: contain;*/
+/* Style for positioning the container */
+.box-content {
+    margin-left: 10px;
+    position: relative; /* This is important for positioning children */
+}
 
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    width:  1400px;*/
-/*    height: 500px;*/
-/*    object-fit: contain;*/
-/*    margin-left: 35px;*/
-/*    border-radius: 50px;*/
-/*}*/
+.small-box-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.small-box24 {
+    margin-top: 50px;
+    height: 170px; /* Adjust the height as needed */
+    width: 130px; /* Adjust the width as needed */
+    background-color: white; /* Adjust the background color as needed */
+    border-radius: 5px; /* Adjust the border radius as needed */
+    border: 1px solid #0a0909; /* Adjust the border color and width as needed */
+    cursor: pointer;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+
+}
+
+.small-box25{
+    margin-top: 30px;
+    height: 170px; /* Adjust the height as needed */
+    width: 130px; /* Adjust the width as needed */
+    background-color: white; /* Adjust the background color as needed */
+    border-radius: 5px; /* Adjust the border radius as needed */
+    border: 1px solid #0a0909; /* Adjust the border color and width as needed */
+    cursor: pointer;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+
+
+}
+
+.product-description {
+    /*overflow: scroll;*/
+    height: 500px;
+    width: 550px;
+    background-color: white;
+    padding: 20px 0px 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 60px;
+    position: relative; /* Add position relative for absolute positioning */
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+
+    /* Adjustments for the button */
+    .button-container89 {
+        position: absolute;
+        bottom: 20px; /* Adjust as needed */
+        left: 30%; /* Center the button horizontally */
+        transform: translateX(-50%); /* Center the button horizontally */
+    }
+}
+
+.button-container77{
+    position: absolute;
+    bottom: 20px; /* Adjust as needed */
+    left: 70%; /* Center the button horizontally */
+    transform: translateX(-50%);
+}
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+    padding: 15px 40px; /* Adjust the padding for the button */
+    border: 1px solid;
+    border-radius: 1000px;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 18px; /* Adjust the font size for the button */
+}
+
+.product-description h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-left: 10px;
+
+}
 
 
 
-/*.shop-section55{*/
-/*    display: flex;*/
-/*    justify-content: space-around;*/
-/*    background-color: white;*/
-/*}*/
 
-/*.box22{*/
-
-/*    height: 300px;*/
-/*    width: 250px;*/
-/*    background-color: #e2e7e6;*/
-/*    padding: 20px 0px 15px;*/
-/*    margin-top: 10px;*/
-/*    align-items: center;*/
-/*    border-radius: 10px;*/
-/*    border: 1px solid black;*/
-/*    cursor: pointer;*/
-/*}*/
+.product-description span{
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 15px;
+}
 
 
-/*!* Style for positioning the container *!*/
-/*.box-content {*/
-/*    margin-left: 10px;*/
-/*    position: relative; !* This is important for positioning children *!*/
-/*}*/
-
-/*!* Style for positioning the love button *!*/
-/*.love-button {*/
-/*    position: absolute;*/
-/*    top: -30px; !* Adjusted to move the button up by 15px, considering the 20px top padding *!*/
-/*    right: 10px; !* Adjust this value as needed to position the button horizontally within the container *!*/
-/*    background-color: white; !* Background color for the circle *!*/
-/*    color: #007185; !* Color of the heart icon *!*/
-/*    width: 40px; !* Adjust the size as needed *!*/
-/*    height: 40px;*/
-/*    border: none;*/
-/*    border-radius: 50%; !* Makes it a circle *!*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    opacity: 0; !* Initially hidden *!*/
-/*    transition: opacity 0.3s; !* Add a transition for a smooth fade-in effect *!*/
-/*}*/
-
-/*!* Style for box hover effect *!*/
-/*.box:hover .love-button {*/
-/*    opacity: 1; !* Show the love button when hovering over the box *!*/
-/*}*/
+.button-container12 {
+    align-self: flex-end; /* Align the button to the end (bottom) of the container */
+    margin-top: auto; /* Push the button to the bottom if there's extra space */
+}
 
 
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 1000px;
+    display: inline-block;
+    transition: all .2s;
+    position: relative;
 
-/*.shop-section66{*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-around;*/
-/*    background-color: white;*/
-/*}*/
-/*.boxR2{*/
-/*    height: 300px;*/
-/*    width: 250px;*/
-/*    background-color: #e2e7e6;*/
-/*    padding: 20px 0px 15px;*/
-/*    margin-top: 35px;*/
-/*    align-items: center;*/
-/*    border-radius: 10px;*/
-/*    border: 1px solid black;*/
-/*    cursor: pointer;*/
-/*}*/
+}
 
-/*.box-image{*/
-/*    display: flex;*/
-/*    align-content: center;*/
-/*    justify-content: center;*/
-/*    height: 170px;*/
-/*    width: 143px;*/
-/*    margin-top: 1rem;*/
-/*    margin-bottom: 1rem;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*    background-size: contain;*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: center;*/
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+}
 
-/*}*/
+.btn:active {
+    transform: translateY(-3px);
+}
 
-/*.boxR2-content {*/
-/*    margin-left: 10px;*/
-/*    position: relative; !* This is important for positioning children *!*/
-/*}*/
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+}
 
-/*!* Style for positioning the love button *!*/
-/*.love-buttonR2 {*/
-/*    position: absolute;*/
-/*    top: -30px; !* Adjusted to move the button up by 15px, considering the 20px top padding *!*/
-/*    right: 10px; !* Adjust this value as needed to position the button horizontally within the container *!*/
-/*    background-color: white; !* Background color for the circle *!*/
-/*    color: #007185; !* Color of the heart icon *!*/
-/*    width: 40px; !* Adjust the size as needed *!*/
-/*    height: 40px;*/
-/*    border: none;*/
-/*    border-radius: 50%; !* Makes it a circle *!*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    opacity: 0; !* Initially hidden *!*/
-/*    transition: opacity 0.3s; !* Add a transition for a smooth fade-in effect *!*/
-/*}*/
+.btn:hover::after {
+    background-color: rgb(20, 224, 162);
+    transform: scaleX(1.4) scaleY(1.5);
+    opacity: 0;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 220px;
+    width: 1200px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-left: 185px;
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
 
-/*!* Style for box hover effect *!*/
-/*.boxR2:hover .love-buttonR2 {*/
-/*    opacity: 1; !* Show the love button when hovering over the box *!*/
-/*}*/
+    border: 1px solid black;
+}
 
-/*footer{*/
-/*    margin-top: 30px;*/
-/*}*/
-/*.foot-panel1{*/
-/*    background-color: #1f6858;*/
-/*    color: white;*/
-/*    height: 50px;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    font-size: 0.5rem;*/
+.features-container,
+.features-container2 {
 
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+    display: flex;
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: center; /* Center items vertically */
+    margin-top: 20px;
 
-/*}*/
+}
 
-/*.foot-panel2{*/
-/*    display: flex;*/
-/*    background-color: #11b18b;*/
-/*    color: white;*/
-/*    height: 300px;*/
-/*    justify-content: space-evenly;*/
-/*}*/
+.cart-info ul {
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
 
-/*ul{*/
-/*    margin-top: 20px;*/
-/*}*/
+.cart-info li {
+    list-style: none;
+    text-align: center;
+    width: 19%; /* Adjust width as needed */
+    margin-right: 10px; /* Add margin between items */
+}
 
-/*ul a {*/
-/*    display: block;*/
-/*    font-size: 0.85rem;*/
-/*    margin-top: 15px;*/
-/*    color: #dddddd;*/
-/*}*/
-
-/*.foot-panel3{*/
-/*    background-color: #1f6858;*/
-/*    border-top: 0.5px solid white;*/
-/*    height: 70px;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.logo{*/
-/*    !*background-image: url(logo-removebg-preview.png);*!*/
-/*    background-size: cover;*/
-/*    height:60px ;*/
-/*    width: 200px;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
-
-
-/*.foot-panel4{*/
-/*    background-color:#11b18b ;*/
-/*    color: white;*/
-/*    height: 75px;*/
-/*}*/
-
-/*.pages{*/
-/*    font-size: 0.9rem;*/
-/*    text-align: center;*/
-/*    padding-top: 10px;*/
-/*}*/
-
-/*.copyright{*/
-/*    padding-top: 5px;*/
-/*    font-size: 0.9rem;*/
-/*    text-align: center;*/
-/*}*/
+.cart-info img {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+    border: none;
+}
+.payment{
+    height: 300px;
+    width: 90%;
+    background-color: white;
+    padding: 20px 0px 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-left: 60px;
+    position: relative; /* Add position relative for absolute positioning */
+    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+}
