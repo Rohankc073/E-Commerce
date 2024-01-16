@@ -22,35 +22,35 @@ const Payment = () => {
                         <p className="message"></p>
                         <div className="flex">
                             <label>
-                                <input className="input" type="text" placeholder="" required=""/>
-                                <span>Firstname</span>
+                                <input className="input" type="text" placeholder="Firstname" required=""/>
+                                <span></span>
                             </label>
-
                             <label>
-                                <input className="input" type="text" placeholder="" required=""/>
-                                <span>Lastname</span>
+                                <input className="input" type="text" placeholder="Last Name" required=""/>
+
                             </label>
                         </div>
 
                         <label>
-                            <input className="input" type="email" placeholder="" required=""/>
-                            <span>Email</span>
+                            <input className="input" type="email" placeholder="Email" required=""/>
+
                         </label>
 
                         <label>
-                            <input className="input" type="password" placeholder="" required=""/>
-                            <span>City</span>
+                            <input className="input" type="password" placeholder="City" required=""/>
+
                         </label>
                         <label>
-                            <input className="input" type="password" placeholder="" required=""/>
-                            <span>House No.</span>
+                            <input className="input" type="password" placeholder="House No." required=""/>
+
                         </label>
                         <label>
-                            <input className="input" type="password" placeholder="" required=""/>
-                            <span>State</span>
+                            <input className="input" type="password" placeholder="State" required=""/>
+
                         </label>
-                        <button className="submit">Submit</button>
-                        <p className="signin">Already have an account? <a href="#">Signin</a></p>
+                        <button className="button11"> Submit
+                        </button>
+
                     </form>
                 </div>
                 <div className="product-description"></div>

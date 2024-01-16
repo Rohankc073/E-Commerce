@@ -17,7 +17,7 @@ label {
 }
 
 /* Style text input fields */
-input[type="text"],
+input1[type="text"],
 input[type="file"] {
     width: 100%;
     padding: 8px;
