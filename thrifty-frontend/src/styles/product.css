@@ -24,12 +24,12 @@
     font-size: 0.9rem;
     font-weight: 700;
 }
-
-.shop-section55{
+.shop-section55 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    background-color: white;
 }
+
 .col {
     flex: 0 0 calc(25% - 15px); /* Adjust width and margin as needed */
     margin-bottom: 15px;
@@ -40,8 +40,8 @@
     .col {
         flex: 0 0 calc(50% - 15px);
     }
+    /* Adjust styles for smaller screens if needed */
 }
-
 
 
 
