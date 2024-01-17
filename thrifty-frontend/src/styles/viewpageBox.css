@@ -1,7 +1,7 @@
 
 .box34{
     margin-top: 50px;
-    height: 300px;
+    height: 280px;
     width: 250px;
     background-color: #e2e7e6;
     padding: 20px 0px 15px;
@@ -41,6 +41,14 @@
     height: 0;
     padding-top: 2px; /* Adjust as needed to position the button at the top */
     padding-left: 190px; /* Adjust as needed to position the button at the right */
+}
+.box-image123 {
+    height: 160px;
+    width: 128px;
+    margin: 1rem auto;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .box1:hover .love-button12 {

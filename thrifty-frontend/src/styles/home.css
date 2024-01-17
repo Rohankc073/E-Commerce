@@ -127,28 +127,31 @@ body {
     margin: 16px 0; /* Adjust the margin as needed */
 }
 .box22{
-    cursor: pointer;
-    height: 300px;
-    width: 23%;
-    background-color: rgba(255, 255, 255, 0.93);
+    margin-top: 50px;
+    height: 280px;
+    width: 250px;
+    background-color: white;
     padding: 20px 0px 15px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     align-items: center;
     border-radius: 10px;
-    box-shadow: 30px 30px 80px #00000041, inset -30px -30px 80px white;
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 .box-image{
-    height: 170px;
+    display: flex;
+    height: 155px;
     width: 138px;
     margin: 1rem auto;
     border: none;
-    /*background-size: cover;*/
+    background-size: cover;
 
 }
 
 
 .box22-content {
+
     background-color: white;
     justify-content: space-between;
     align-items: center;

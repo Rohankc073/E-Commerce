@@ -34,42 +34,27 @@ const Product = () => {
     return (
         <>
             <header>
-                <Navbar />
-                <Panel />
+                <Navbar/>
+                <Panel/>
             </header>
 
-            <body>
-            <div className="shop-section55">
-
-                    {products.slice(0, 3).map((product) => (
-                        <div key={product.id} className="col">
-                            <ProductBox
-                                imageUrl={product.imageUrl}
-                                name={product.name}
-                                price={product.price}
-                                condition={product.condition}
-                            />
-                        </div>
-                    ))}
-
-                <div className="row">
-                    {products.slice(3, 6).map((product) => (
-                        <div key={product.id} className="col">
-                            <ProductBox
-                                imageUrl={product.imageUrl}
-                                name={product.name}
-                                price={product.price}
-                                condition={product.condition}
-                            />
-                        </div>
-                    ))}
+            <main>
+                <div className="shop-section55">
+                    <div className="row">
+                        {products.map((product) => (
+                            <div key={product.id} className="col">
+                                <ProductBox
+                                    imageUrl={product.imageUrl}
+                                    name={product.name}
+                                    price={product.price}
+                                    condition={product.condition}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-
-            <div className="shop-section66">{/* Additional content or components can be added here */}</div>
-
-            <Footer />
-            </body>
+            </main>
+            <Footer/>
         </>
     );
 };

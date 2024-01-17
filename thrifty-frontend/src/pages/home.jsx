@@ -198,6 +198,8 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
 
                     {/* Second row with 4 boxes */}
 
@@ -257,7 +259,7 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+
 
 
                 <div className="shop-section2">

@@ -1,5 +1,5 @@
 /* Add some basic styling to the form container */
-form {
+form1 {
 
     max-width: 400px;
     margin: 20px auto;
@@ -37,7 +37,7 @@ img {
 }
 
 /* Style submit button */
-button {
+button1 {
     background-color: #4caf50;
     color: #fff;
     padding: 10px 15px;
@@ -46,7 +46,7 @@ button {
     cursor: pointer;
 }
 
-button:disabled {
+button1:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
