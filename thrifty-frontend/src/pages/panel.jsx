@@ -11,9 +11,9 @@ const Panel = () => {
                 All
             </div>
             <div className="panel-ops border">
-                <p>Today's Deals</p>
+                <p></p>
                 <p>Customer Service</p>
-                <p>Registry</p>
+                <p>Contact Us</p>
                 <p>
                     <Link to="/aboutus" className="transparent-button">
                         About Us
