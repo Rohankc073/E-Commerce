@@ -3,10 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
 import { doc, getDoc } from 'firebase/firestore';
+import {useNavigate} from "react-router-dom";
 
 const UserProfile = () => {
+    const navigate = useNavigate();
     const [user, loading, error] = useAuthState(auth);
     const [userInfo, setUserInfo] = useState(null);
+    const handleLogout=()=>{
+        auth.signOut().then(() => {
+            navigate("/login")
+        })
+    }
 
     useEffect(() => {
         if (user) {
@@ -27,6 +34,7 @@ const UserProfile = () => {
     }, [user]);
 
 
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -35,6 +43,7 @@ const UserProfile = () => {
         console.error('Firebase Authentication Error:', error);
         return <p>An error occurred. Please try again later.</p>;
     }
+
 
     return (
         <div>
@@ -45,7 +54,7 @@ const UserProfile = () => {
                     <p>Phone Number: {userInfo.phoneNumber}</p>
                     <p>Full Name: {userInfo.fullName}</p>
                     {/* Add other user details here */}
-                    <button>Log Out </button>
+=                    <button onClick={handleLogout}>Log Out </button>
                 </div>
             )}
         </div>
