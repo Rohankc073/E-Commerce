@@ -76,11 +76,11 @@
     outline: none;
 }
 
-#submit-button-cvr {
-    margin-top: 20px;
+.loginButton-cvr {
+    margin-top: 30px;
 }
 
-#submit-button {
+.loginButton {
     display: block;
     width: 100%;
     color: #00FF7F;
@@ -94,10 +94,10 @@
     border-radius: 8px;
     line-height: 1;
     cursor: pointer;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .2s;
 }
 
-#submit-button:hover {
+.loginButton:hover {
     transition: all ease-in-out .3s;
     background-color: #00FF7F;
     color: #161616;
@@ -152,7 +152,17 @@
     font-size: 14px;
 }
 
-.error-box {
+.error-mag {
+    color: black;
+    font-size: 12px;
+    background-color: #00FF7F;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+}
+
+.success-mag {
     color: black;
     font-size: 12px;
     background-color: #00FF7F;
@@ -160,7 +170,6 @@
     margin-top: 10px;
     border-radius: 5px;
 }
-
 .checkbox-container {
     position: relative;
     display: flex;

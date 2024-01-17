@@ -26,6 +26,7 @@ const UserProfile = () => {
         }
     }, [user]);
 
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -44,6 +45,7 @@ const UserProfile = () => {
                     <p>Phone Number: {userInfo.phoneNumber}</p>
                     <p>Full Name: {userInfo.fullName}</p>
                     {/* Add other user details here */}
+                    <button>Log Out </button>
                 </div>
             )}
         </div>
