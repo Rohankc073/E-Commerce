@@ -1,6 +1,4 @@
-
-
-.panel{
+.panel {
     border: none;
     height: 40px;
     background-color: #1f6858;
@@ -9,21 +7,23 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.panel-ops p{
+
+.panel-ops p {
     display: inline;
     margin-left: 15px;
     border: none;
 }
 
-.panel-ops{
+.panel-ops {
     width: 70%;
     font-size: 0.85rem;
-
 }
-.panel-deals{
+
+.panel-deals {
     font-size: 0.9rem;
     font-weight: 700;
 }
+
 .shop-section55 {
     display: flex;
     flex-wrap: wrap;
@@ -31,17 +31,18 @@
 }
 
 .col {
-    flex: 0 0 calc(25% - 15px); /* Adjust width and margin as needed */
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    float: right;
+    padding: 10px;
+    margin-bottom: 20px; /* Add margin between columns to improve spacing */
 }
 
-/* Add media query for responsiveness if needed */
+ /*Add media query for responsiveness if needed*/
 @media (max-width: 768px) {
     .col {
         flex: 0 0 calc(50% - 15px);
     }
     /* Adjust styles for smaller screens if needed */
 }
-
-
-

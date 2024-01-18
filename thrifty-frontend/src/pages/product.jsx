@@ -40,18 +40,22 @@ const Product = () => {
 
             <main>
                 <div className="shop-section55">
-                    <div className="row">
-                        {products.map((product) => (
-                            <div key={product.id} className="col">
-                                <ProductBox
-                                    imageUrl={product.imageUrl}
-                                    name={product.name}
-                                    price={product.price}
-                                    condition={product.condition}
-                                />
-                            </div>
-                        ))}
-                    </div>
+                    {products.map((product, index) => (
+                        // Start a new row for every 4th product
+                        index % 4 === 0 && <div className="row" key={index}>
+                            {products.slice(index, index + 4).map((product) => (
+                                <div key={product.id} className="col">
+                                    <ProductBox
+                                        id={product.id}
+                                        imageUrl={product.imageUrl}
+                                        name={product.name}
+                                        price={product.price}
+                                        condition={product.condition}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 </div>
             </main>
             <Footer/>
