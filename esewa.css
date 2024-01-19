@@ -1,34 +1,35 @@
-/*!* styles.css *!*/
-/*body {*/
-/*    font-family: Arial, sans-serif;*/
-/*}*/
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
 
-/*.payment-form {*/
-/*    width: 300px;*/
-/*    margin: 50px auto;*/
-/*    padding: 20px;*/
-/*    border: 1px solid #ccc;*/
-/*    border-radius: 5px;*/
-/*    text-align: center;*/
-/*}*/
+.payment-form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
 
-/*.payment-method {*/
-/*    margin-bottom: 20px;*/
-/*}*/
+.payment-method {
+    margin-bottom: 20px;
+}
 
-/*.btn {*/
-/*    margin-top: 20px;*/
-/*}*/
+.btn {
+    margin-top: 70px;
 
-/*#payButton {*/
-/*    padding: 10px 20px;*/
-/*    background-color: #337ab7;*/
-/*    color: #fff;*/
-/*    border: none;*/
-/*    border-radius: 3px;*/
-/*    cursor: pointer;*/
-/*}*/
+}
 
-/*#payButton:hover {*/
-/*    background-color: #286090;*/
-/*}*/
+#payButton {
+    padding: 10px 20px;
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#payButton:hover {
+    background-color: #286090;
+}

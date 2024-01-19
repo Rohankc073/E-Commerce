@@ -10,14 +10,14 @@
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" th:href="{/Payment.css}"/>
-    <link rel="stylesheet" href="Payment.css">
+    <link rel="stylesheet" href="/Payment.css">
     <title>Browse Product</title>
 </head>
 <body>
     <header>
         <div class="upperpart">
             <h1>
-                <a th:href="@{~/home/homepage}">ThrifyTech</a>
+                <a th:href="@{~/home/homepage}">ThriftyTech</a>
             </h1>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search"/>
@@ -49,6 +49,21 @@
                     </div>
                     <div class="btn">
                         <a href="#">Pay</a>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout_form">
+                <p>Customer Information</p>
+                <div class="details">
+                    <div class="section">
+                        <input type="text" placeholder="Address">
+                    </div>
+                    <div class="section">
+                        <input type="text" placeholder="Contact Number">
+                    </div>
+                   
+                    <div class="btn">
+                        <a href="#">Save</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +109,7 @@
                 <a th:href="@{~/pay/payment}">Contact Us</a>
             </p>
             <p>
-                ThrifyTech@gmail.com Ktm, Nepal<br/>
+                ThriftyTech@gmail.com Ktm, Nepal<br/>
                 85475967841, 3210154789, 0124587895
             </p>
             <p>ThrifyTech &copy; 2024</p>
@@ -102,5 +117,13 @@
     </footer><script src="payment.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
