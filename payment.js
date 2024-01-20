@@ -40,10 +40,10 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const payButton = document.querySelector('.btn a');
-    
+
     payButton.addEventListener('click', function (event) {
         event.preventDefault();
-        
+
         // Handle payment based on selected method
         const fonepayChecked = document.getElementById('fonepay').checked;
         const esewaChecked = document.getElementById('esewa').checked;

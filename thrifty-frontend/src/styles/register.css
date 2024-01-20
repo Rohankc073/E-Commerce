@@ -1,26 +1,17 @@
 /* SignUpForm.css */
-
-
-
-body {
-    /*margin: 150px;*/
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Times New Roman", serif;
-    background: #eee8ee;
-    height: 100%;
-    /* border: solid green 5px; */
-    /*overflow: hidden;;*/
-}
 .custom-login-form {
-    display: flex;
-    justify-content: center;
-    width: 780px;
-    height: 70%;
-    box-shadow: 0 6px 20px rgba(25, 27, 28, 0.5);
-    margin: 20px 300px;
+    display: grid;
+    place-items: center;
+    width: 350px;
+    height: 500px;
+    padding: 25px;
+    background-color: #161616;
+    box-shadow: 0 15px 60px #00FF7F;
+    outline: 1px solid #2b9962;
     border-radius: 10px;
 }
+
+#form
 
 .custom-left-section {
     width: 55%;

@@ -15,8 +15,7 @@ const Product = () => {
             try {
                 const productsCollection = collection(db, 'products');
                 const productsSnapshot = await getDocs(productsCollection);
-
-                const productsData = productsSnapshot.docs.slice(0, 6).map((doc) => ({
+                const productsData = productsSnapshot.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
                 }));
@@ -41,19 +40,14 @@ const Product = () => {
             <main>
                 <div className="shop-section55">
                     {products.map((product, index) => (
-                        // Start a new row for every 4th product
-                        index % 4 === 0 && <div className="row" key={index}>
-                            {products.slice(index, index + 4).map((product) => (
-                                <div key={product.id} className="col">
-                                    <ProductBox
-                                        id={product.id}
-                                        imageUrl={product.imageUrl}
-                                        name={product.name}
-                                        price={product.price}
-                                        condition={product.condition}
-                                    />
-                                </div>
-                            ))}
+                        <div key={product.id} className={`col ${index % 4 === 0 ? 'start-new-row' : ''}`}>
+                            <ProductBox
+                                id={product.id}
+                                imageUrl={product.imageUrl}
+                                name={product.name}
+                                price={product.price}
+                                condition={product.condition}
+                            />
                         </div>
                     ))}
                 </div>

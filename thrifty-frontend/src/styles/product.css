@@ -38,6 +38,9 @@
     padding: 10px;
     margin-bottom: 20px; /* Add margin between columns to improve spacing */
 }
+.start-new-row {
+    clear: both; /* Adjust this property as needed based on your styling requirements */
+}
 
  /*Add media query for responsiveness if needed*/
 @media (max-width: 768px) {

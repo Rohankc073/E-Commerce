@@ -48,7 +48,7 @@ const YourFormComponent = () => {
                 alert('Product added successfully!');
             } catch (error) {
                 console.error('Error adding product:', error);
-                alert('Failed to add product. Please try again.');
+                alert('Failed to add product. Please check the console for details.');
             }
         } else {
             // Display error message to the user
