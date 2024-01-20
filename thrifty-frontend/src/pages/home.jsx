@@ -148,7 +148,7 @@ const HomePage = () => {
                     <div className="box-container33">
                         {/* Box 1 */}
                         <div className="box2 box22">
-                            <div className="box22-content">
+                            <div className="box22c-content">
                                 <h2>Apple</h2>
                                 {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
