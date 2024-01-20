@@ -117,6 +117,7 @@ span{
 /*}*/
 
 .nav-login button {
+    margin-left: 5px;
     border: #febd68;
     background: transparent;
     border: none;

@@ -1,6 +1,6 @@
 // Navbar.js
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faCartShopping, faLocationDot, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import {faCartShopping, faLocationDot, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons';
 import React, {useState} from 'react';
 import CartPanel from "./cartPanle"; // Corrected import
 import "../styles/cartPanel.css"
@@ -65,21 +65,23 @@ const Navbar1 = () => {
 
 
             <div className="nav-login">
+
+
                 <button onClick={handleSignInClick}>Hello, Sign in</button>
+                <FontAwesomeIcon icon={faUser} style={{ marginLeft: '15px' }} />
                 <Link to="/accounts">
+
                     <button>Accounts</button>
                 </Link>
             </div>
 
 
-            <div className="nav-return border">
-                <p><span>Returns</span></p>
-                <p className="nav-second border">& Order</p>
-            </div>
+
             <div className="nav-cart border">
                 <button className="cart-button" onClick={openCartPanel} style={{cursor: 'pointer'}}>
                     <FontAwesomeIcon icon={faCartShopping} /> {/* Cart icon */}
                     Cart
+                    <span className='cart-icon-css'>0</span>
                 </button>
             </div>
             <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel} />
