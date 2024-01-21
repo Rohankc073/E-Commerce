@@ -27,6 +27,7 @@ import CheckoutForm from "./pages/checkout";
 import ShoppingCart from "./pages/checkout";
 import Payment from "./pages/payment";
 import ContactForm from "./pages/contactUs";
+import ProductsByBrand from "./pages/productsByBrand";
 
 // import Login33 from "./pages/login33";
 // import Login33 from "./pages/login33"
@@ -59,6 +60,7 @@ function App() {
                 <Route path='/checkout' element={<ShoppingCart/>} />
                 <Route path='/payment' element={<Payment/>} />
                 <Route path='/contactUs' element={<ContactForm/>} />
+                <Route path="/product/:brandName" component={ProductsByBrand} />
 
 
             </Routes>

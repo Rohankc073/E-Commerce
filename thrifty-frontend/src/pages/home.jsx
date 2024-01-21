@@ -14,6 +14,7 @@ import hero2Image from '../images/hero5.jpg';
 import { getDownloadURL, ref } from 'firebase/storage';
 
 import Panel from "./panel";
+import {Link} from "react-router-dom";
 
 const sliderSettings = {
     dots: false,
@@ -148,13 +149,15 @@ const HomePage = () => {
                     <div className="box-container33">
                         {/* Box 1 */}
                         <div className="box2 box22">
-                            <div className="box22c-content">
+                            <div className="box22-content">
                                 <h2>Apple</h2>
-                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image" />}
+                                {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    {/* Use Link from react-router-dom to navigate to the /product page with the brandName parameter */}
+                                    <Link to="/product?brand=apple" className="button22"
+                                          style={{background: 'rgba(0, 0, 0, 0)'}}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -163,9 +166,10 @@ const HomePage = () => {
                         <div className="box2 box22">
                             <div className="box22-content">
                                 <h2>Samsung</h2>
-                                {samsungImageURL && <img src={samsungImageURL} alt="Apple" className="box-image" />}
+                                {samsungImageURL && <img src={samsungImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    <a href="samsung.html" className="button22"
+                                       style={{background: 'rgba(0, 0, 0, 0)'}}>
                                         See more
                                     </a>
                                 </div>
@@ -176,9 +180,10 @@ const HomePage = () => {
                         <div className="box2 box22">
                             <div className="box22-content">
                                 <h2>Oppo</h2>
-                                {oppoImageURL && <img src={oppoImageURL} alt="Apple" className="box-image" />}
+                                {oppoImageURL && <img src={oppoImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    <a href="samsung.html" className="button22"
+                                       style={{background: 'rgba(0, 0, 0, 0)'}}>
                                         See more
                                     </a>
                                 </div>
@@ -189,9 +194,10 @@ const HomePage = () => {
                         <div className="box2 box22">
                             <div className="box22-content">
                                 <h2>Vivo</h2>
-                                {vivoImageURL && <img src={vivoImageURL} alt="Apple" className="box-image" />}
+                                {vivoImageURL && <img src={vivoImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    <a href="samsung.html" className="button22"
+                                       style={{background: 'rgba(0, 0, 0, 0)'}}>
                                         See more
                                     </a>
                                 </div>
@@ -201,17 +207,17 @@ const HomePage = () => {
                 </div>
 
 
-                    {/* Second row with 4 boxes */}
+                {/* Second row with 4 boxes */}
 
-                        {/* First row with 4 boxes */}
-                        <div className="box-container3">
-                            {/* Box 1 */}
-                            <div className="box2 box22">
-                                <div className="box22-content">
-                                    <h2>Redmi</h2>
-                                    {redmiImageURL && <img src={redmiImageURL} alt="Apple" className="box-image" />}
-                                    <div className="button-container22">
-                                        <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                {/* First row with 4 boxes */}
+                <div className="box-container3">
+                    {/* Box 1 */}
+                    <div className="box2 box22">
+                        <div className="box22-content">
+                            <h2>Redmi</h2>
+                            {redmiImageURL && <img src={redmiImageURL} alt="Apple" className="box-image"/>}
+                            <div className="button-container22">
+                            <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                             See more
                                         </a>
                                     </div>
