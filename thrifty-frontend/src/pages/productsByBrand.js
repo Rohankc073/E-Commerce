@@ -1,7 +1,8 @@
+// ProductsByBrand.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../Firebase/firebase'; // Update with your Firebase configuration
+import { collection, getDocs, where, query } from 'firebase/firestore';
+import { db } from '../Firebase/firebase';
 
 const ProductsByBrand = () => {
     const { brandName } = useParams();
@@ -11,15 +12,17 @@ const ProductsByBrand = () => {
         const fetchProductsByBrand = async () => {
             try {
                 const productsCollection = collection(db, 'products');
-                const querySnapshot = await getDocs(productsCollection);
-                const brandProducts = [];
+                const brandProductsQuery = query(
+                    productsCollection,
+                    where('brand', '==', brandName)
+                );
 
-                querySnapshot.forEach((doc) => {
-                    const productData = doc.data();
-                    if (productData.brand.toLowerCase() === brandName.toLowerCase()) {
-                        brandProducts.push({ id: doc.id, ...productData });
-                    }
-                });
+                const querySnapshot = await getDocs(brandProductsQuery);
+
+                const brandProducts = querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
 
                 setProducts(brandProducts);
             } catch (error) {

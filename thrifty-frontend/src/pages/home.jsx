@@ -12,9 +12,10 @@ import hero1Image from '../images/hero2.png';
 import hero2Image from '../images/hero5.jpg';
 
 import { getDownloadURL, ref } from 'firebase/storage';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 import Panel from "./panel";
-import {Link} from "react-router-dom";
+
 
 const sliderSettings = {
     dots: false,
@@ -109,6 +110,7 @@ const HomePage = () => {
 
 
         return (
+
             <div>
                 {/* Commented out the loader-related code */}
                 {/* <div className="loader"></div> */}
@@ -154,8 +156,7 @@ const HomePage = () => {
                                 {appleImageURL && <img src={appleImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
                                     {/* Use Link from react-router-dom to navigate to the /product page with the brandName parameter */}
-                                    <Link to="/product?brand=apple" className="button22"
-                                          style={{background: 'rgba(0, 0, 0, 0)'}}>
+                                    <Link to={`/product?brand=apple`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
                                     </Link>
                                 </div>
@@ -168,10 +169,9 @@ const HomePage = () => {
                                 <h2>Samsung</h2>
                                 {samsungImageURL && <img src={samsungImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22"
-                                       style={{background: 'rgba(0, 0, 0, 0)'}}>
+                                    <Link to={`/product?brand=samsung`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
