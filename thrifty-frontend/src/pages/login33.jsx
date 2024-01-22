@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
+import '../styles/adminlogin.css'
 // import UserProfile from './'; // Correct path to UserProfile component
 
 const Login = () => {
