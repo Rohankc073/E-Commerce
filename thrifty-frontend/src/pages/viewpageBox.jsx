@@ -12,7 +12,7 @@ const ProductBox = ({ id,imageUrl, name, price, condition,addToCart }) => {
     return (
         <div className="box1 box34">
             <div className="box-content">
-                <div className="button-container12">
+                <div className="button-container123">
                     <button className="love-button12">
                         <FontAwesomeIcon icon={faHeart}/>
                     </button>

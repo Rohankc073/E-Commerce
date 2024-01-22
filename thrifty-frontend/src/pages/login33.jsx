@@ -48,6 +48,7 @@ const Login = () => {
     };
 
     return (
+
         <div className="contain">
             <div id="form-ui">
                 <form onSubmit={handleSubmit} id="form12">
@@ -83,7 +84,7 @@ const Login = () => {
                         </div>
                         {error && <div className="error-box">{error}</div>}
                         <div id="submit-button-cvr">
-                            <button id="submit-button" type="submit">
+                            <button className="loginButton" type="submit">
                                 Login
                             </button>
                         </div>

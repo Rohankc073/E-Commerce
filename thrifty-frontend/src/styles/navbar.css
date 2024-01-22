@@ -97,6 +97,7 @@
 }
 
 .search-icon{
+    height: 40px;
     width: 45px;
     display: flex;
     justify-content: center;
