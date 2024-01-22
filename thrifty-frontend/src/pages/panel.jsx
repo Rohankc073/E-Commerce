@@ -13,7 +13,11 @@ const Panel = () => {
             <div className="panel-ops border">
                 <p></p>
                 <p>Customer Service</p>
-                <p>Contact Us</p>
+                <p>
+                    <Link to="/contactUs" className="transparent-button">
+                        Contact Us
+                    </Link>
+                </p>
                 <p>
                     <Link to="/aboutus" className="transparent-button">
                         About Us
