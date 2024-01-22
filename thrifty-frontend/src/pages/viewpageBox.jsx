@@ -2,19 +2,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../styles/viewpageBox.css'
-const ProductBox = ({ imageUrl, name, price, condition }) => {
+const ProductBox = ({ id,imageUrl, name, price, condition,addToCart }) => {
+    const handleAddToCart = () => {
+        // You can perform any additional logic here before adding to the cart
+        addToCart(id);
+    };
     return (
         <div className="box1 box34">
             <div className="box-content">
                 <div className="button-container12">
                     <button className="love-button12">
-                        <FontAwesomeIcon icon={faHeart} />
+                        <FontAwesomeIcon icon={faHeart}/>
+                    </button>
+                    <button className="add-to-cart-button" onClick={handleAddToCart}>
+                        <FontAwesomeIcon icon={faPlus}/>
                     </button>
                 </div>
                 <Link to="/view">
-                    <div className="box-image123" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+                    <div className="box-image123" style={{backgroundImage: `url(${imageUrl})` }}></div>
                 </Link>
                 <div className="caption">
                     <h3 className="product-card-title">{name}</h3>

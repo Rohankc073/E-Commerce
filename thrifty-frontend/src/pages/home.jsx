@@ -15,6 +15,7 @@ import { getDownloadURL, ref } from 'firebase/storage';
 import { Link, BrowserRouter as Router } from 'react-router-dom';
 
 import Panel from "./panel";
+import product from "./product";
 
 
 const sliderSettings = {
@@ -74,6 +75,10 @@ const HomePage = () => {
 
         fetchImageURLs();
     }, []);
+
+    const addToCart=(product)=>{
+        console.log(product);
+    }
 
     const [isLoading, setIsLoading] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);

@@ -49,6 +49,8 @@ const Navbar1 = () => {
             setSearchResults([]);
         }
     }, [searchInput]);
+
+
     return (
         // <div className="nav">
         <div className="navbar1">

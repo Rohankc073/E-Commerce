@@ -57,3 +57,25 @@
 
 
 
+
+
+.add-to-cart-button{
+    /*margin-top: 150px;*/
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    color: #11b18b;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Set opacity to 1 for testing purposes */
+    transition: opacity 0.3s;
+}
+
+.box1:hover .add-to-cart-button {
+    opacity: 1;
+}
+

@@ -10,6 +10,7 @@ import { db } from '../Firebase/firebase';
 const Product = () => {
     const [products, setProducts] = useState([]);
 
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -47,9 +48,12 @@ const Product = () => {
                                 name={product.name}
                                 price={product.price}
                                 condition={product.condition}
+
                             />
                         </div>
+
                     ))}
+
                 </div>
             </main>
             <Footer/>
