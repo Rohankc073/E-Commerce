@@ -226,3 +226,12 @@
 }
 
 
+.error-box{
+    font-size: 15px;
+    color: black;
+    background-color: #00FF7F;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
