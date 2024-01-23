@@ -1,4 +1,5 @@
 .panel{
+
     border: none;
     height: 40px;
     background-color: #1f6858;
@@ -8,6 +9,7 @@
     justify-content: space-evenly;
 }
 .panel-ops p{
+    font-size: 12px;
     display: inline;
     margin-left: 15px;
     border: none;
@@ -15,12 +17,12 @@
 
 .panel-ops{
     width: 70%;
-    font-size: 0.85rem;
+    font-size: 0.5rem;
 
 }
 .panel-deals{
-    font-size: 0.9rem;
-    font-weight: 700;
+    font-size: 0.7rem;
+    font-weight: 500;
 }
 
 .border :hover{

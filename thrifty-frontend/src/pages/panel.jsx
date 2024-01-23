@@ -6,10 +6,7 @@ import '../styles/panel.css'
 const Panel = () => {
     return (
         <div className="panel">
-            <div className="panel-all border">
-                <i className="fa-solid fa-bars"></i>
-                All
-            </div>
+        
             <div className="panel-ops border">
                 <p></p>
                 <p>Customer Service</p>
