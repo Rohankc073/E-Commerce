@@ -1,13 +1,13 @@
-body {
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    background-image: url('../images/3d-render-modern-network-communications-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh; /* Set background height to viewport height */
-    font-family: 'Arial', sans-serif; /* Set a default font family */
-}
+/*body {*/
+/*    margin: 0; !* Remove default body margin *!*/
+/*    padding: 0; !* Remove default body padding *!*/
+/*    background-image: url('../images/3d-render-modern-network-communications-background.jpg');*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    height: 100vh; !* Set background height to viewport height *!*/
+/*    font-family: 'Arial', sans-serif; !* Set a default font family *!*/
+/*}*/
 
 #form {
     display: flex;
