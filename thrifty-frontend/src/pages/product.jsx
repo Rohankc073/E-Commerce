@@ -4,18 +4,25 @@ import Footer from './footer';
 import ProductBox from './viewpageBox';
 import Panel from './panel';
 import Navbar from './navbar';
-import { collection, getDocs } from 'firebase/firestore';
+import {collection, getDocs, query, where} from 'firebase/firestore';
 import { db } from '../Firebase/firebase';
 
 const Product = () => {
     const [products, setProducts] = useState([]);
-
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const productsCollection = collection(db, 'products');
-                const productsSnapshot = await getDocs(productsCollection);
+                let productsQuery = query(productsCollection);
+
+                if (searchTerm) {
+                    productsQuery = query(productsCollection, where('name', '==', searchTerm));
+                }
+
+                const productsSnapshot = await getDocs(productsQuery);
                 const productsData = productsSnapshot.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
@@ -24,12 +31,14 @@ const Product = () => {
                 console.log('Fetched products from Firebase:', productsData);
 
                 setProducts(productsData);
+                setSearchResults(productsData);
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
         };
+
         fetchProducts();
-    }, []);
+    }, [searchTerm]);
 
     return (
         <>

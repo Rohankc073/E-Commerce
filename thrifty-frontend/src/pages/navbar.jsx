@@ -3,14 +3,18 @@ import { faCartShopping, faLocationDot, faMagnifyingGlass, faUser } from '@forta
 import React, { useEffect, useState } from 'react';
 import CartPanel from '../pages/cartPanle'; // Corrected import
 import { Link, useNavigate } from 'react-router-dom';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 import '../styles/cartPanel.css';
 import '../styles/navbar.css';
 import {db, firestore} from '../Firebase/firebase';
-import {doc} from "firebase/firestore";
+
 
 
 const Navbar1 = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
     const navigate = useNavigate();
 
     const handleSignInClick = () => {
@@ -18,8 +22,7 @@ const Navbar1 = () => {
     };
 
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [searchInput, setSearchInput] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
+
 
     const openCartPanel = () => {
         setIsCartOpen(true);
@@ -29,33 +32,23 @@ const Navbar1 = () => {
         setIsCartOpen(false);
     };
 
-    const fetchSearchResults = async () => {
+    const handleSearch = async () => {
+        console.log('Searching...');
         try {
-            console.log('Search Input:', searchInput);
-            const productsRef = firestore.collection(db, 'products');
+            console.log('Searching for:', searchTerm);
+            const productsCollection = collection(db, 'products');
+            const q = query(productsCollection, where('brand', '==', searchTerm));
+            const querySnapshot = await getDocs(q);
+            const productsData = querySnapshot.docs.map((doc) => doc.data());
 
-            const snapshot = await productsRef
-                .where('brand', '>=', searchInput.toLowerCase())
-                .where('brand', '<=', searchInput.toLowerCase() + '\uf8ff')
-                .get();
-
-            console.log('Query Snapshot:', snapshot.docs.map(doc => doc.data()));
-
-            // Navigate to the "/product" page with the search results as a query parameter
-            // navigate('/product', { searchResults: results });
+            console.log('Search results:', productsData);
+            setSearchResults(productsData);
+            // Comment out the following line to prevent navigation
+            // navigate(`/view?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
         } catch (error) {
-            console.error('Error fetching search results:', error);
+            console.error('Error searching for products:', error);
         }
     };
-
-    useEffect(() => {
-        // Fetch data only if there is a search input
-        if (searchInput.trim() !== '') {
-            fetchSearchResults();
-        } else {
-            setSearchResults([]);
-        }
-    }, [searchInput]);
 
     return (
         <div className="navbar1">
@@ -66,7 +59,7 @@ const Navbar1 = () => {
             <div className="nav-address border">
                 <p className="add-first">Delivery to</p>
                 <div className="add-icon">
-                    <FontAwesomeIcon icon={faLocationDot} />
+                    <FontAwesomeIcon icon={faLocationDot}/>
                     <p className="add-second">KTM</p>
                 </div>
             </div>
@@ -81,45 +74,43 @@ const Navbar1 = () => {
                 </select>
 
                 <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search Thrifty Techs"
                     className="search-input"
-                    value={searchInput}
-                    onChange={(e) => setSearchInput(e.target.value)}
                 />
+                <div className="search-icon" onClick={handleSearch}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                </div>
 
-                <Link to="/product">
-                    <div className="search-icon" onClick={fetchSearchResults}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </div>
-                </Link>
-
-                {searchResults.length > 0 && (
-                    <div className="search-results">
-                        <p>Search Results:</p>
-                        <ul>
-                            {searchResults.map((result, index) => (
-                                <li key={index}>{result.productName}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                {searchResults.map((product) => (
+                    <Link key={product.id} to={`/product/${product.id}`} className="search-result">
+                        {/* Display information about the product */}
+                        <h3>{product.productName}</h3>
+                        <p>{product.name}</p>
+                        <p>{product.description}</p>
+                        <p>Price: ${product.price}</p>
+                        {/* Add more details as needed */}
+                    </Link>
+                ))}
             </div>
 
             <div className="nav-login">
                 <button onClick={handleSignInClick}>Hello, Sign in</button>
-                <FontAwesomeIcon icon={faUser} style={{ marginLeft: '15px' }} />
+                <FontAwesomeIcon icon={faUser} style={{marginLeft: '15px'}}/>
                 <Link to="/accounts">
                     <button>Accounts</button>
                 </Link>
             </div>
 
             <div className="nav-cart border">
-                <button className="cart-button" onClick={openCartPanel} style={{ cursor: 'pointer' }}>
-                    <FontAwesomeIcon icon={faCartShopping} /> Cart
+                <button className="cart-button" onClick={openCartPanel} style={{cursor: 'pointer'}}>
+                    <FontAwesomeIcon icon={faCartShopping}/> Cart
                     <span className="cart-icon-css">0</span>
                 </button>
             </div>
-            <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel} />
+            <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel}/>
         </div>
     );
 };
