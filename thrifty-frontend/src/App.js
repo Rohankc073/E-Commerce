@@ -21,7 +21,7 @@ import Signup from "./pages/signup";
 import Accounts from "./pages/accounts";
 import UserProfile from "./pages/accounts";
 import Description from "./pages/upload";
-import Feedback from "./pages/feedback";
+
 import FeedbackList from "./pages/feedbacklist";
 import CheckoutForm from "./pages/checkout";
 import ShoppingCart from "./pages/checkout";
@@ -55,7 +55,6 @@ function App() {
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/accounts' element={<UserProfile />} />
                 <Route path='/des' element={<Description />} />
-                <Route path='/feedback' element={<Feedback />} />
                 <Route path='/feedback/list' element={<FeedbackList/>} />
                 <Route path='/checkout' element={<ShoppingCart/>} />
                 <Route path='/payment' element={<Payment/>} />
