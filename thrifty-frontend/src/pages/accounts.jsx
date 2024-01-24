@@ -28,13 +28,9 @@ const UserProfile = () => {
                     console.error('User details not found in the database.');
                 }
             };
-
             fetchUserDetails();
         }
     }, [user]);
-
-
-
     if (loading) {
         return <p>Loading...</p>;
     }

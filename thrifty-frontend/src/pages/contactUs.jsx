@@ -43,6 +43,7 @@ const ContactForm = () => {
             // Update the feedback list
             const updatedFeedback = [...feedbackList, { id: docRef.id, name, message }];
             setFeedbackList(updatedFeedback);
+            window.alert('Feedback sent successfully!');
         } catch (error) {
             console.error('Error submitting feedback:', error);
         }

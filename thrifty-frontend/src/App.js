@@ -13,7 +13,6 @@ import Addtocart from "./pages/addtocart";
 import Imageuploadpage from "./pages/imageuploadpage";
 import AddProductForm from "./pages/upload";
 import Login33 from "./pages/login33";
-
 import YourComponent from "./pages/viewpage";
 import EmbeddedCanvas from "./pages/aboutus";
 import Adminlogin from "./pages/admin/adminlogin";
@@ -21,7 +20,6 @@ import Signup from "./pages/signup";
 import Accounts from "./pages/accounts";
 import UserProfile from "./pages/accounts";
 import Description from "./pages/upload";
-
 import FeedbackList from "./pages/feedbacklist";
 import CheckoutForm from "./pages/checkout";
 import ShoppingCart from "./pages/checkout";
@@ -29,12 +27,8 @@ import Payment from "./pages/payment";
 import ContactForm from "./pages/contactUs";
 import ProductsByBrand from "./pages/productsByBrand";
 
-// import Login33 from "./pages/login33";
-// import Login33 from "./pages/login33"
-
 function App() {
     console.log('App component rendered');
-
     return (
         <Router>
             <Routes>
@@ -60,12 +54,8 @@ function App() {
                 <Route path='/payment' element={<Payment/>} />
                 <Route path='/contactUs' element={<ContactForm/>} />
                 <Route path="/product/:brandName" component={ProductsByBrand} />
-
-
-
             </Routes>
         </Router>
     );
 }
-
 export default App;
