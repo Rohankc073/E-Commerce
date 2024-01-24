@@ -1,13 +1,14 @@
-/* Google Font CDN Link */
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set a minimum height to fill the viewport */
 }
 
 .container55{
+    margin-top: 200px;
+    margin-left: 100px;
     width: 85%;
     background: #fff;
     border-radius: 6px;

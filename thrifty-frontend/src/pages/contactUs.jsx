@@ -49,6 +49,7 @@ const ContactForm = () => {
         }
     };
     return (
+        <div>
         <div className="container55">
             <div className="content">
                 <div className="left-side">
@@ -88,11 +89,12 @@ const ContactForm = () => {
                                    onChange={(e) => setMessage(e.target.value)}/>
                         </div>
                         <div className="button">
-                            <input type="submit" value="Send Now"/>
+                            <input type="button" onClick={handleSubmit} value="Send Now"/>
                         </div>
                     </form>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
