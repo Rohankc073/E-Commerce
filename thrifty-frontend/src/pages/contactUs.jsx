@@ -1,9 +1,52 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import "../styles/contactus.css"
+import {addDoc, collection, getDocs} from "firebase/firestore";
+import {db} from "../Firebase/firebase";
 
 
 const ContactForm = () => {
+    const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
+    const [feedbackList, setFeedbackList] = useState([]);
+
+    useEffect(() => {
+        const fetchFeedback = async () => {
+            // Fetch feedback from Firebase when the component mounts
+            try {
+                const feedbackRef = collection(db, 'feedback');
+                const snapshot = await getDocs(feedbackRef);
+                const feedbackData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+                setFeedbackList(feedbackData);
+            } catch (error) {
+                console.error('Error fetching feedback:', error);
+            }
+        };
+
+        fetchFeedback();
+    }, []); // Empty dependency array ensures the effect runs only once
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            // Submit feedback to Firebase in the "feedback" collection
+            const docRef = await addDoc(collection(db, 'feedback'), {
+                name,
+                message,
+            });
+
+            // Clear input fields
+            setName('');
+            setMessage('');
+
+            // Update the feedback list
+            const updatedFeedback = [...feedbackList, { id: docRef.id, name, message }];
+            setFeedbackList(updatedFeedback);
+        } catch (error) {
+            console.error('Error submitting feedback:', error);
+        }
+    };
     return (
         <div className="container55">
             <div className="content">
@@ -30,19 +73,21 @@ const ContactForm = () => {
                 <div className="right-side">
                     <div className="topic-text">Send us a message</div>
                     <p>
-                        If you have any work for me or any types of queries related to my tutorial, you can send me a message from here.
+                        If you have any work for me or any types of queries related to my tutorial, you can send me a
+                        message from here.
                         It's my pleasure to help you.
                     </p>
-                    <form action="#">
+                    <form onSubmit={handleSubmit}>
                         <div className="input-box">
-                            <input type="text" placeholder="Enter your name" />
+                            <input type="text" placeholder="Enter your name" value={name}
+                                   onChange={(e) => setName(e.target.value)}/>
                         </div>
                         <div className="input-box">
-                            <input type="text" placeholder="Enter your email" />
+                            <input type="text" placeholder="Enter your message" value={message}
+                                   onChange={(e) => setMessage(e.target.value)}/>
                         </div>
-                        <div className="input-box message-box"></div>
                         <div className="button">
-                            <input type="button" value="Send Now" />
+                            <input type="submit" value="Send Now"/>
                         </div>
                     </form>
                 </div>

@@ -90,8 +90,7 @@ const Navbar1 = () => {
                         <h3>{product.productName}</h3>
                         <p>{product.name}</p>
                         <p>{product.description}</p>
-                        <p>Price: ${product.price}</p>
-                        {/* Add more details as needed */}
+                        <p>Price: NRP {product.price}</p>
                     </Link>
                 ))}
             </div>
