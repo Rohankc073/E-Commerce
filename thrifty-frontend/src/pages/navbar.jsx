@@ -37,14 +37,16 @@ const Navbar1 = () => {
         try {
             console.log('Searching for:', searchTerm);
             const productsCollection = collection(db, 'products');
-            const q = query(productsCollection, where('brand', '==', searchTerm));
+            const q = query(productsCollection,
+                where('brand', '==', searchTerm),
+                where('name', '==', searchTerm)
+            );
             const querySnapshot = await getDocs(q);
             const productsData = querySnapshot.docs.map((doc) => doc.data());
 
             console.log('Search results:', productsData);
             setSearchResults(productsData);
-            // Comment out the following line to prevent navigation
-            // navigate(`/view?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
+            navigate(`/view?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
         } catch (error) {
             console.error('Error searching for products:', error);
         }
@@ -52,12 +54,12 @@ const Navbar1 = () => {
 
     return (
         <div className="navbar1">
-            <div className="nav-logo border1">
+            <Link to="/home" className="nav-logo border1">
                 <div className="logo12"></div>
-            </div>
+            </Link>
 
             <div className="nav-address border">
-                <p className="add-first">Delivery to</p>
+                <p className="add-first">Delivery To</p>
                 <div className="add-icon">
                     <FontAwesomeIcon icon={faLocationDot}/>
                     <p className="add-second">KTM</p>
@@ -84,15 +86,15 @@ const Navbar1 = () => {
                     <FontAwesomeIcon icon={faMagnifyingGlass}/>
                 </div>
 
-                {searchResults.map((product) => (
-                    <Link key={product.id} to={`/product/${product.id}`} className="search-result">
-                        {/* Display information about the product */}
-                        <h3>{product.productName}</h3>
-                        <p>{product.name}</p>
-                        <p>{product.description}</p>
-                        <p>Price: NRP {product.price}</p>
-                    </Link>
-                ))}
+                {/*{searchResults.map((product) => (*/}
+                {/*    <Link key={product.id} to={`/product/${product.id}`} className="search-result">*/}
+                {/*        /!* Display information about the product *!/*/}
+                {/*        <h3>{product.productName}</h3>*/}
+                {/*        <p>{product.name}</p>*/}
+                {/*        <p>{product.description}</p>*/}
+                {/*        <p>Price: NRP {product.price}</p>*/}
+                {/*    </Link>*/}
+                {/*))}*/}
             </div>
 
             <div className="nav-login">

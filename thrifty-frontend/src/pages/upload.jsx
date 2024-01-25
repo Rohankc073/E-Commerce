@@ -35,7 +35,7 @@ const YourFormComponent = () => {
                 const productsCollection = collection(db, 'products');
 
                 await addDoc(productsCollection, {
-                    uid: product.uid,
+                    // uid: product.uid,
                     name: product.name,
                     description: product.description,
                     price: product.price,
