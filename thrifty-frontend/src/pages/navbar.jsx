@@ -37,15 +37,13 @@ const Navbar1 = () => {
         try {
             console.log('Searching for:', searchTerm);
             const productsCollection = collection(db, 'products');
-            const q = query(productsCollection,
-                where('brand', '==', searchTerm),
-                where('name', '==', searchTerm)
-            );
+            const q = query(productsCollection, where('brand', '==', searchTerm));
             const querySnapshot = await getDocs(q);
             const productsData = querySnapshot.docs.map((doc) => doc.data());
 
             console.log('Search results:', productsData);
             setSearchResults(productsData);
+            // Comment out the following line to prevent navigation
             navigate(`/view?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
         } catch (error) {
             console.error('Error searching for products:', error);

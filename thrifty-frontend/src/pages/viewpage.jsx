@@ -21,6 +21,7 @@ const YourComponent = () => {
                 {searchResults ? (
                     searchResults.map((product) => (
                         <div key={product.id}>
+
                             <img src={product.imageUrl} alt={product.productName}/>
                             {/* Display information about the product */}
                             <h3>{product.productName}</h3>
@@ -29,7 +30,8 @@ const YourComponent = () => {
                             <p>Price: NRP {product.price}</p>
                         </div>
                     ))
-                ) : (
+                ) :
+                    (
                     <p>No search results found.</p>
                 )}
             </div>
