@@ -4,6 +4,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import Panel from "./panel";
 import {useLocation} from "react-router-dom";
+import ProductBox from "./viewpageBox";
 
 const YourComponent = () => {
     const location = useLocation();
@@ -18,6 +19,7 @@ const YourComponent = () => {
             </header>
             <div>
                 <h2>Search Results</h2>
+
                 {searchResults ? (
                     searchResults.map((product) => (
                         <div key={product.id}>
