@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { setDoc, doc } from 'firebase/firestore';
+import {setDoc, doc, collection, addDoc} from 'firebase/firestore';
 import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
 import "../styles/signup.css"
 const Signup = () => {
@@ -29,11 +29,16 @@ const Signup = () => {
             // Save user information in the Firestore 'users' collection
             const userDocRef = doc(db, 'users', user.uid);
             await setDoc(userDocRef, {
+                uid: user.uid,
                 email: user.email,
                 phoneNumber: phoneNumber,
                 fullName: fullName,
                 // Add other user details you want to store in the database
             });
+
+
+                // Add other user details you want to store in the database
+
 
             // Clear form and error state
             setEmail("");
@@ -46,6 +51,7 @@ const Signup = () => {
             // Redirect to /login upon successful signup
             navigate('/login');
         } catch (error) {
+            // Handle signup errors
             if (error.code === "auth/email-already-in-use") {
                 setError("Email address is already in use. Please use a different email or try logging in.");
             } else {

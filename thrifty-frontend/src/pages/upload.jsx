@@ -6,6 +6,7 @@ import { db } from '../Firebase/firebase'; // Replace with the correct path to y
 
 const YourFormComponent = () => {
     const [product, setProduct] = useState({
+        // uid:"",
         name: '',
         description: '',
         price: '',
@@ -30,10 +31,11 @@ const YourFormComponent = () => {
 
         if (Object.keys(formErrors).length === 0) {
             try {
-                // Add product data to Firestore
+                // Add product data to Firestore with auto-generated ID
                 const productsCollection = collection(db, 'products');
 
                 await addDoc(productsCollection, {
+                    uid: product.uid,
                     name: product.name,
                     description: product.description,
                     price: product.price,
@@ -55,7 +57,6 @@ const YourFormComponent = () => {
             alert('Please fill out all fields correctly.');
         }
     };
-
     const validateForm = (formData) => {
         const errors = {};
         if (!formData.name.trim()) {
