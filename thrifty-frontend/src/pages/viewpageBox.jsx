@@ -63,7 +63,7 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
                     </button>
                 </div>
                 <Link to="/view">
-                    <div className="box-image123" style={{backgroundImage: `url(${imageUrl})` }}></div>
+                    <div className="box-image123" style={{backgroundImage: `url(${imageUrl})`}}></div>
                 </Link>
                 <div className="caption">
                     <h3 className="product-card-title">{name}</h3>
