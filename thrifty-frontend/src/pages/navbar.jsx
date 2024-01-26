@@ -44,7 +44,7 @@ const Navbar1 = () => {
             console.log('Search results:', productsData);
             setSearchResults(productsData);
             // Comment out the following line to prevent navigation
-            navigate(`/view?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
+            navigate(`/searchP?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
         } catch (error) {
             console.error('Error searching for products:', error);
         }
