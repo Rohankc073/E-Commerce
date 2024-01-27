@@ -41,7 +41,7 @@ const Signup = () => {
 
             const cartRef = await addDoc(collection(db, 'carts'), {
                 userId: user.uid,
-                userName : user.email,
+                name:user.email,
                 createdAt: new Date(),
             });
 

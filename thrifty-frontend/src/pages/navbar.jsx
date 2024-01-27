@@ -39,7 +39,10 @@ const Navbar1 = () => {
             const productsCollection = collection(db, 'products');
             const q = query(productsCollection, where('brand', '==', searchTerm));
             const querySnapshot = await getDocs(q);
-            const productsData = querySnapshot.docs.map((doc) => doc.data());
+            const productsData = querySnapshot.docs.map((doc) => ({
+                ...doc.data(),
+                uid: doc.id, // Add this line to include the document ID as 'uid'
+            }));
 
             console.log('Search results:', productsData);
             setSearchResults(productsData);
@@ -49,6 +52,7 @@ const Navbar1 = () => {
             console.error('Error searching for products:', error);
         }
     };
+
 
     return (
         <div className="navbar1">

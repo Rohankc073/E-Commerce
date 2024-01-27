@@ -22,14 +22,14 @@ const Searchp = () => {
 
                 {searchResults ? (
                         searchResults.map((product) => (
-                            <div key={product.id}>
-
-                                <img src={product.imageUrl} alt={product.productName}/>
-                                {/* Display information about the product */}
-                                <h3>{product.productName}</h3>
-                                <p>{product.name}</p>
-                                <p>{product.description}</p>
-                                <p>Price: NRP {product.price}</p>
+                            <div key={product.id} >
+                                <ProductBox
+                                    id={product.ui}
+                                    imageUrl={product.imageUrl}
+                                    name={product.name}
+                                    price={product.price}
+                                    condition={product.condition}
+                                    />
                             </div>
                         ))
                     ) :

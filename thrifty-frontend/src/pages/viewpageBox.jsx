@@ -23,6 +23,7 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
         }
 
         const quantity = 1;
+        alert("Product Added to cart")
 
         try {
             // Reference to the 'carts' collection in Firestore
