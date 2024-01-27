@@ -1,11 +1,13 @@
 // ProductBox.js
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../styles/viewpageBox.css'
 import {auth, db} from '../Firebase/firebase'
-import { collection, addDoc } from 'firebase/firestore';
+
+import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+
 import {useAuthState} from "react-firebase-hooks/auth";
 import product from "./product";
 const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) => {
@@ -15,41 +17,58 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
         // Check if the user is authenticated
         if (!user) {
             alert('Please log in to add the product to the cart.');
-            // If not authenticated, show a message or redirect to the login page
             console.log('User not logged in. Please log in to add to cart.');
             console.log('User:', user);
-            // You can redirect to the login page or display a login modal here
             return;
         }
 
-        // Rest of the code for adding to cart
-        console.log(user);
         const quantity = 1;
+
         try {
-            // Reference to the 'cart' collection in Firestore
-            const cartRef = collection(db, 'carts');
-            const data = {
-                userId: user.uid,  // Assuming the user object has a uid property
+            // Reference to the 'carts' collection in Firestore
+            const cartsRef = collection(db, 'carts');
+
+            // Query to find the user's cart based on userId
+            const userCartQuery = query(cartsRef, where('userId', '==', user.uid));
+
+            // Get the query snapshot
+            const userCartSnapshot = await getDocs(userCartQuery);
+
+            // if (userCartSnapshot.empty) {
+            //     // If the user doesn't have a cart, create a new one
+            //     const cartRef = await addDoc(cartsRef, {
+            //         userId: user.uid,
+            //         createdAt: new Date(),
+            //
+            //
+            //     });
+            //
+            //     console.log('New cart created with ID:', cartRef.id);
+            // }
+
+            // Regardless of whether a new cart was created or not, add the item to the user's cart
+            const userCartDoc = userCartSnapshot.docs[0];
+            const userCartItemsRef = collection(db, 'carts', userCartDoc.id, 'items');
+
+            // Add the new item to the 'items' subcollection
+            await addDoc(userCartItemsRef, {
                 productId: id,
-                productName : name,
+                productName: name,
+                // productUid: product?.uid || '',
                 quantity: quantity,
-                createdAt: new Date(),
-                price: price,
-                totalprice: quantity * parseInt(price),
-                image: imageUrl,
-            };
+                price: price || 0,
+                totalprice: quantity * parseInt(price || 0),
+                image: imageUrl || '',
+            });
 
-            // Add a new document to the 'cart' collection
-            const cartItem = await addDoc(cartRef, data);
-            console.log('added to cart');
-
-            // Optionally, you can perform additional actions after adding to cart
-            // For example, navigate to the cart page or display a success message
+            console.log('Item added to cart');
         } catch (error) {
             console.error('Error adding to cart:', error.message);
-            // Handle errors, e.g., display an error message to the user
         }
     };
+
+
+
     return (
 
         <div className="box1 box34">

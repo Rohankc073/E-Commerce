@@ -39,7 +39,13 @@ const Signup = () => {
 
                 // Add other user details you want to store in the database
 
+            const cartRef = await addDoc(collection(db, 'carts'), {
+                userId: user.uid,
+                userName : user.email,
+                createdAt: new Date(),
+            });
 
+            console.log('New cart created with ID:', cartRef.id);
             // Clear form and error state
             setEmail("");
             setPhoneNumber("");
