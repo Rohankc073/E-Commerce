@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import "../styles/contactus.css"
 import {addDoc, collection, getDocs} from "firebase/firestore";
 import {db} from "../Firebase/firebase";
+import Navbar1 from "./navbar";
 
 
 const ContactForm = () => {
@@ -49,6 +50,8 @@ const ContactForm = () => {
         }
     };
     return (
+        <>
+        <Navbar1 />
         <div>
             <div className="container55">
                 <div className="content">
@@ -96,6 +99,7 @@ const ContactForm = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
