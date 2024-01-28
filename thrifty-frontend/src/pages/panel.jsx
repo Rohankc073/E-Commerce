@@ -20,7 +20,7 @@ const Panel = () => {
                         About Us
                     </Link>
                 </p>
-                <p>Sell</p>
+
             </div>
             <div className="panel-deals border">
                 <p>Shop deals in Electronics</p>

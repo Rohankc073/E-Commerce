@@ -87,16 +87,6 @@ const Navbar1 = () => {
                 <div className="search-icon" onClick={handleSearch}>
                     <FontAwesomeIcon icon={faMagnifyingGlass}/>
                 </div>
-
-                {/*{searchResults.map((product) => (*/}
-                {/*    <Link key={product.id} to={`/product/${product.id}`} className="search-result">*/}
-                {/*        /!* Display information about the product *!/*/}
-                {/*        <h3>{product.productName}</h3>*/}
-                {/*        <p>{product.name}</p>*/}
-                {/*        <p>{product.description}</p>*/}
-                {/*        <p>Price: NRP {product.price}</p>*/}
-                {/*    </Link>*/}
-                {/*))}*/}
             </div>
 
             <div className="nav-login">
@@ -110,7 +100,7 @@ const Navbar1 = () => {
             <div className="nav-cart border">
                 <button className="cart-button" onClick={openCartPanel} style={{cursor: 'pointer'}}>
                     <FontAwesomeIcon icon={faCartShopping}/> Cart
-                    <span className="cart-icon-css">0</span>
+                    <span className="cart-icon-css"></span>
                 </button>
             </div>
             <CartPanel isOpen={isCartOpen} onOpen={openCartPanel} onClose={closeCartPanel}/>
