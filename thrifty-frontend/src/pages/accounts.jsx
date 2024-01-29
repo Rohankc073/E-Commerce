@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
 import { doc, getDoc } from 'firebase/firestore';
 import {useNavigate} from "react-router-dom";
+import Navbar1 from "./navbar";
 
 const UserProfile = () => {
     const navigate = useNavigate();
@@ -42,6 +43,8 @@ const UserProfile = () => {
 
 
     return (
+        <>
+        <Navbar1 />
         <div>
             <h1>User Profile</h1>
             {userInfo && (
@@ -54,6 +57,7 @@ const UserProfile = () => {
                 </div>
             )}
         </div>
+        </>
     );
 };
 
