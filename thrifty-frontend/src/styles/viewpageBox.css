@@ -111,10 +111,10 @@
     visibility: hidden;
     width: 120px;
     background-color: #e2e7e6;
-    color: #11b18b;
+    color: black;
     text-align: center;
-    border-radius: 9px;
-    padding: 5px;
+    border-radius: 5px;
+    padding: 7px;
     position: absolute;
     z-index: 1;
     bottom: -60%;
