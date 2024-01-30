@@ -69,8 +69,8 @@ const Product = () => {
                 </div>
 
                 <div className="tooltip">
-                    {Array.from({length: Math.ceil(searchResults.length / productsPerPage)}, (_, index) => (
-                        <button key={index + 1} onClick={() => paginate(index + 1)}>
+                    {Array.from({ length: Math.ceil(searchResults.length / productsPerPage) }, (_, index) => (
+                        <button key={index + 1} onClick={() => paginate(index + 1)} >
                             {index + 1}
                         </button>
 
@@ -78,7 +78,7 @@ const Product = () => {
 
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </>
     );
 };

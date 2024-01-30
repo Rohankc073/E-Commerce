@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../styles/viewpageBox.css'
-import {auth, db} from '../Firebase/firebase'
+import { auth, db } from '../Firebase/firebase'
 
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 
-import {useAuthState} from "react-firebase-hooks/auth";
-import product from "./product";
-const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) => {
+import { useAuthState } from "react-firebase-hooks/auth";
+const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link }) => {
     const [user] = useAuthState(auth);
 
     const handleAddToCart = async () => {
@@ -35,19 +34,6 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
             // Get the query snapshot
             const userCartSnapshot = await getDocs(userCartQuery);
 
-            // if (userCartSnapshot.empty) {
-            //     // If the user doesn't have a cart, create a new one
-            //     const cartRef = await addDoc(cartsRef, {
-            //         userId: user.uid,
-            //         createdAt: new Date(),
-            //
-            //
-            //     });
-            //
-            //     console.log('New cart created with ID:', cartRef.id);
-            // }
-
-            // Regardless of whether a new cart was created or not, add the item to the user's cart
             const userCartDoc = userCartSnapshot.docs[0];
             const userCartItemsRef = collection(db, 'carts', userCartDoc.id, 'items');
 
@@ -55,7 +41,6 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
             await addDoc(userCartItemsRef, {
                 productId: id,
                 productName: name,
-                // productUid: product?.uid || '',
                 quantity: quantity,
                 price: price || 0,
                 totalprice: quantity * parseInt(price || 0),
@@ -68,26 +53,24 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
         }
     };
 
-
-
     return (
-
         <div className="box1 box34">
             <div className="box-content">
                 <div className="button-container123">
                     <button className="love-button12">
-                        <FontAwesomeIcon icon={faHeart}/>
+                        <FontAwesomeIcon icon={faHeart} />
                     </button>
                     <div className="tooltip12">
                         <button className="add-to-cart-button" onClick={handleAddToCart}>
-                            <FontAwesomeIcon icon={faPlus}/>
+                            <FontAwesomeIcon icon={faPlus} />
                         </button>
                         <div className="tooltiptext12">Add to Cart</div>
                     </div>
                 </div>
-                <Link to="/view">
+                <Link to={`/view/${imageUrl}`}>
                     <div className="box-image123" style={{backgroundImage: `url(${imageUrl})`}}></div>
                 </Link>
+
                 <div className="caption">
                     <h3 className="product-card-title">{name}</h3>
                     <div className="condition"><span>Condition:</span> {condition}</div>
@@ -96,6 +79,7 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
                             <span className="currency">NRP</span>
                             <span className="amount">{price}</span>
                         </div>
+                        {/* Display other details as needed */}
                     </div>
                 </div>
             </div>

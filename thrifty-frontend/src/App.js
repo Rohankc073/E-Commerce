@@ -27,6 +27,7 @@ import Payment from "./pages/payment";
 import ContactForm from "./pages/contactUs";
 import ProductsByBrand from "./pages/productsByBrand";
 import Searchp from "./pages/searchp";
+import ProductDetail from "./pages/productdetail";
 
 function App() {
     console.log('App component rendered');
@@ -56,6 +57,8 @@ function App() {
                 <Route path='/contactUs' element={<ContactForm/>} />
                 <Route path="/product/:brandName" component={ProductsByBrand} />
                 <Route path='/searchP' element={<Searchp/>} />
+                <Route path="/products" exact component={Product} />
+                <Route path="/view/:productId" component={ProductDetail} />
             </Routes>
         </Router>
     );

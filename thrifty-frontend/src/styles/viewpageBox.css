@@ -109,16 +109,16 @@
 
 .tooltiptext12 {
     visibility: hidden;
-    width: 160px;
+    width: 120px;
     background-color: #e2e7e6;
     color: #11b18b;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 9px;
     padding: 5px;
     position: absolute;
     z-index: 1;
     bottom: -60%;
-    left: 50%;
+    left: 100%;
     margin-left: -80px;
     opacity: 0;
     transition: opacity 0.3s;

@@ -10,7 +10,7 @@ const CartPanel = ({ isOpen, onClose }) => {
     const [user] = useAuthState(auth);
     const [cartItems, setCartItems] = useState([]);
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalprice, setTotalPrice] = useState(0);
 
     const openCartPanel = () => setIsCartOpen(true);
     const closeCartPanel = () => setIsCartOpen(false);
@@ -111,7 +111,7 @@ const CartPanel = ({ isOpen, onClose }) => {
                     </li>
 
                     ))}
-                <p>Total Price: {totalPrice}</p>
+                <p>Total Price: {totalprice}</p>
             </ul>
 
             <button onClick={onClose}>Close</button>
