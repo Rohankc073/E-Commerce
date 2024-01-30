@@ -78,9 +78,12 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid }) =>
                     <button className="love-button12">
                         <FontAwesomeIcon icon={faHeart}/>
                     </button>
-                    <button className="add-to-cart-button" onClick={handleAddToCart}>
-                        <FontAwesomeIcon icon={faPlus}/>
-                    </button>
+                    <div className="tooltip12">
+                        <button className="add-to-cart-button" onClick={handleAddToCart}>
+                            <FontAwesomeIcon icon={faPlus}/>
+                        </button>
+                        <div className="tooltiptext12">Add to Cart</div>
+                    </div>
                 </div>
                 <Link to="/view">
                     <div className="box-image123" style={{backgroundImage: `url(${imageUrl})`}}></div>

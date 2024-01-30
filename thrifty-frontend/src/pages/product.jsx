@@ -4,13 +4,15 @@ import Footer from './footer';
 import ProductBox from './viewpageBox';
 import Panel from './panel';
 import Navbar from './navbar';
-import {collection, getDocs, query, where} from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../Firebase/firebase';
 
 const Product = () => {
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 10;
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -28,8 +30,6 @@ const Product = () => {
                     ...doc.data(),
                 }));
 
-                console.log('Fetched products from Firebase:', productsData);
-
                 setProducts(productsData);
                 setSearchResults(productsData);
             } catch (error) {
@@ -40,26 +40,39 @@ const Product = () => {
         fetchProducts();
     }, [searchTerm]);
 
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = searchResults.slice(indexOfFirstProduct, indexOfLastProduct);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return (
         <>
             <header>
-                <Navbar/>
-                <Panel/>
+                <Navbar />
+                <Panel />
             </header>
 
             <main>
                 <div className="shop-section55">
-                    {products.map((product, index) => (
-                        <div key={product.id} className={`col ${index % 4 === 0 ? 'start-new-row' : ''}`}>
+                    {currentProducts.map((product) => (
+                        <div key={product.id}>
                             <ProductBox
                                 id={product.id}
                                 imageUrl={product.imageUrl}
                                 name={product.name}
                                 price={product.price}
                                 condition={product.condition}
-
                             />
                         </div>
+                    ))}
+                </div>
+
+                <div className="tooltip">
+                    {Array.from({length: Math.ceil(searchResults.length / productsPerPage)}, (_, index) => (
+                        <button key={index + 1} onClick={() => paginate(index + 1)}>
+                            {index + 1}
+                        </button>
 
                     ))}
 

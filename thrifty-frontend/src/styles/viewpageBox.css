@@ -79,3 +79,59 @@
     opacity: 1;
 }
 
+
+.tooltip12 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip12 button {
+    background-color: #e2e7e6;
+    color: #11b18b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-out;
+}
+
+.tooltip12 button:hover {
+    background-color:  #e2e7e6;
+    transform: scale(1.00);
+}
+
+.tooltip12:hover .tooltiptext12 {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltiptext12 {
+    visibility: hidden;
+    width: 160px;
+    background-color: #e2e7e6;
+    color: #11b18b;
+    text-align: center;
+    border-radius: 8px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: -60%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltiptext12::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e2e7e6 transparent transparent transparent;
+}
+
