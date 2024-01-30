@@ -1,9 +1,6 @@
-/* Fonts */
-/*!*@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:700');*!*/
 
-/* Custom Cart Panel Styles */
 .container14 {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: white;
     position: fixed;
     top: 0;
     right: -600px; /* Initially off-screen */
@@ -14,6 +11,12 @@
     transition: right 0.3s ease; /* Add smooth transition effect */
     padding: 20px;
     z-index: 1000;
+}
+.container14 h2{
+    color: #333131;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .container14.custom-open {
@@ -64,15 +67,9 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Your existing styles for the button element */
-    /*margin-top: 10px;*/
     cursor: pointer;
 }
-/*.remove_btn{*/
-/*    margin-top: 10px;*/
-/*    cursor: pointer;*/
 
-/*}*/
 
 .remove_btn {
     margin-top: 10px;
@@ -157,24 +154,23 @@ ul {
 }
 .buy_button {
     width: 200px;
-    bottom: -450px;
+    bottom: -50px;
     padding: 10px 20px;
     border: unset;
-    border-radius: 5px;
-    /*color: #212121;*/
+    border-radius: 15px;
+    color: #212121;
     z-index: 1;
-    background: #e8e8e8;
+    /*background: #e8e8e8;*/
     position: relative;
     font-weight: 1000;
     font-size: 18px;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 14px 18px 19px -3px rgba(0,0,0,0.27);
     transition: all 250ms;
     overflow: hidden;
 }
 
 .buy_button::before {
-
     content: "";
     position: absolute;
     top: 0;
@@ -187,7 +183,7 @@ ul {
     z-index: -1;
     -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
     box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
-    transition: all 250ms
+    transition: all 550ms
 }
 
 .buy_button:hover {

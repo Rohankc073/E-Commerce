@@ -103,7 +103,9 @@ const CartPanel = ({ isOpen, onClose }) => {
     return (
         <div className={`container14 ${isOpen ? 'custom-open' : ''}`}>
             <button className='close_button' onClick={onClose}>Close</button>
+
             <ul>
+                <h2>Your Cart</h2>
                 {cartItems.map((item) => (
                     <li key={item.productId} className="cart-item">
                         <div className="cart-item-box">
