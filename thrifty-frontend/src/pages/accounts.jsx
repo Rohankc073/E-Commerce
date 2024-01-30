@@ -3,18 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
 import { doc, getDoc } from 'firebase/firestore';
-import {useNavigate} from "react-router-dom";
-import Navbar1 from "./navbar";
+import { useNavigate } from 'react-router-dom';
+import Navbar1 from './navbar';
 
 const UserProfile = () => {
     const navigate = useNavigate();
     const [user, loading, error] = useAuthState(auth);
     const [userInfo, setUserInfo] = useState(null);
-    const handleLogout=()=>{
+    const handleLogout = () => {
         auth.signOut().then(() => {
-            navigate("/login")
-        })
-    }
+            navigate('/login');
+        });
+    };
 
     useEffect(() => {
         if (user) {
@@ -32,6 +32,7 @@ const UserProfile = () => {
             fetchUserDetails();
         }
     }, [user]);
+
     if (loading) {
         return <p>Loading...</p>;
     }
@@ -41,22 +42,24 @@ const UserProfile = () => {
         return <p>An error occurred. Please try again later.</p>;
     }
 
-
     return (
         <>
-        <Navbar1 />
-        <div>
-            <h1>User Profile</h1>
-            {userInfo && (
-                <div>
-                    <p>Email: {userInfo.email}</p>
-                    <p>Phone Number: {userInfo.phoneNumber}</p>
-                    <p>Full Name: {userInfo.fullName}</p>
-                    {/* Add other user details here */}
-=                    <button onClick={handleLogout}>Log Out </button>
-                </div>
-            )}
-        </div>
+            <Navbar1 />
+            <div>
+                <h1>User Profile</h1>
+                {userInfo && (
+                    <div>
+                        <label>Email: </label>
+                        <input type="text" value={userInfo.email} readOnly />
+                        <label>Phone Number: </label>
+                        <input type="text" value={userInfo.phoneNumber} readOnly />
+                        <label>Full Name: </label>
+                        <input type="text" value={userInfo.fullName} readOnly />
+                        {/* Add other user details here */}
+                        <button onClick={handleLogout}>Log Out</button>
+                    </div>
+                )}
+            </div>
         </>
     );
 };
