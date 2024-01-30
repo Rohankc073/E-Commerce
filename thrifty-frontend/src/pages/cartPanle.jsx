@@ -4,6 +4,7 @@ import {db} from "../Firebase/firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
 import { auth } from '../Firebase/firebase';
 import { deleteDoc } from 'firebase/firestore';
+import '../styles/cartPanel.css'
 
 
 const CartPanel = ({ isOpen, onClose }) => {
@@ -98,28 +99,32 @@ const CartPanel = ({ isOpen, onClose }) => {
         fetchCartItems();
     }, [user]);
 
+
     return (
         <div className={`container14 ${isOpen ? 'custom-open' : ''}`}>
+            <button className='close_button' onClick={onClose}>Close</button>
             <ul>
                 {cartItems.map((item) => (
-                    <li key={item.productId}>
-                        <img src={item.image} alt={item.productName} style={{width: '50px', height: '50px'}}/>
-                        {item.productName} - Quantity: {item.quantity} - Price: {item.price}
-                        <button onClick={() => handleRemoveFromCart(item.productId)}>Remove</button>
-
-
+                    <li key={item.productId} className="cart-item">
+                        <div className="cart-item-box">
+                            <img src={item.image} alt={item.productName} className="cart-item-image"/>
+                            <div className="cart-item-details">
+                                <p>{item.productName}</p>
+                                <p>Quantity: {item.quantity}</p>
+                                <p>Price: {item.price}</p>
+                            </div>
+                        </div>
+                        <button className="remove_btn" onClick={() => handleRemoveFromCart(item.productId)}>Remove
+                        </button>
                     </li>
-
-                    ))}
+                ))}
                 <p>Total Price: {totalprice}</p>
             </ul>
 
-            <button onClick={onClose}>Close</button>
-            <button>Buy Now</button>
-            {/*</div>*/}
-            {/*</div>*/}
+            <div className="button-container99">
+                <button className='buy_button'>Buy Now</button>
+            </div>
         </div>
-
     );
 };
 

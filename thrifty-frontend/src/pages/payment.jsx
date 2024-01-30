@@ -1,84 +1,79 @@
+// // PaymentPage.jsx
+//
 // import React, { useState, useEffect } from 'react';
-// import firebase from 'firebase/app';
-// import 'firebase/auth';
-// import 'firebase/firestore';
-// import { loadStripe } from '@stripe/stripe-js';
+// import { auth, db } from '../Firebase/firebase';
 //
-// const PaymentSystem = () => {
-//     const [user, setUser] = useState(firebase.auth().currentUser);
+// const PaymentPage = () => {
+//     const [user, setUser] = useState(null);
 //     const [location, setLocation] = useState('');
-//     const [paymentMethod, setPaymentMethod] = useState(null);
-//
-//     const stripePromise = loadStripe('<YOUR_STRIPE_PUBLISHABLE_KEY>');
+//     const [cardDetails, setCardDetails] = useState('');
 //
 //     useEffect(() => {
-//         const unsubscribe = firebase.auth().onAuthStateChanged((firebaseUser) => {
-//             setUser(firebaseUser);
-//
-//             if (firebaseUser) {
-//                 fetchUserInfoAndLocation(firebaseUser.uid);
+//         const unsubscribe = auth.onAuthStateChanged((user) => {
+//             if (user) {
+//                 setUser(user);
 //             } else {
-//                 setLocation('');
+//                 setUser(null);
 //             }
 //         });
 //
 //         return () => unsubscribe();
 //     }, []);
 //
-//     const fetchUserInfoAndLocation = async (userId) => {
-//         try {
-//             const userDoc = await firebase.firestore().collection('users').doc(userId).get();
-//             const userData = userDoc.data();
-//
-//             if (userData) {
-//                 setLocation(userData.location || '');
-//             }
-//         } catch (error) {
-//             console.error('Error fetching user info:', error.message);
-//         }
+//     const handleLocationChange = (e) => {
+//         setLocation(e.target.value);
 //     };
 //
-//     const handlePayment = async () => {
+//     const handleCardDetailsChange = (e) => {
+//         setCardDetails(e.target.value);
+//     };
+//
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//
 //         if (!user) {
-//             // User not logged in
-//             alert('Please log in to proceed with the payment.');
+//             // Handle case where no user is logged in
 //             return;
 //         }
 //
-//         try {
-//             // Integrate with Stripe to get a payment method token
-//             const stripe = await stripePromise;
-//             const { paymentMethod } = await stripe.createPaymentMethod({
-//                 type: 'card',
-//                 card:"Hi" /* Card Element or Source */,
-//             });
+//         // Update or create the 'deliveryLocation' and 'cardDetails' fields in Realtime Database
+//         db.ref(`users/${user.uid}`).update({
+//             deliveryLocation: location,
+//             cardDetails: cardDetails,
+//         });
 //
-//             setPaymentMethod(paymentMethod);
+//         // Add logic to handle payment and other actions
+//         console.log('Payment successful!');
 //
-//             // Update user document with payment method
-//             await firebase.firestore().collection('users').doc(user.uid).update({
-//                 paymentMethod: paymentMethod.id,
-//             });
-//
-//             alert('Payment successful!');
-//         } catch (error) {
-//             console.error('Error processing payment:', error.message);
-//         }
+//         // Reset form fields
+//         setLocation('');
+//         setCardDetails('');
 //     };
 //
 //     return (
 //         <div>
 //             {user ? (
 //                 <div>
-//                     <p>Welcome, {user.displayName || user.email}!</p>
-//                     <p>Location: {location}</p>
-//                     <button onClick={handlePayment}>Make Payment</button>
+//                     <h2>Welcome, {user.email}!</h2>
+//                     <form onSubmit={handleSubmit}>
+//                         <label>
+//                             Delivery Location:
+//                             <input type="text" value={location} onChange={handleLocationChange} />
+//                         </label>
+//                         <br />
+//                         <label>
+//                             Card Details:
+//                             <input type="text" value={cardDetails} onChange={handleCardDetailsChange} />
+//                         </label>
+//                         <br />
+//                         <button type="submit">Submit Payment</button>
+//                     </form>
 //                 </div>
 //             ) : (
-//                 <p>Please log in to use the payment system.</p>
+//                 <p>Please log in to access the payment page.</p>
 //             )}
 //         </div>
 //     );
 // };
 //
-// export default PaymentSystem;
+// export default PaymentPage;

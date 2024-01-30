@@ -74,6 +74,7 @@
 }
 
 .tooltip button:hover {
+    border: #11b18b solid 1px;
     background-color:  #e2e7e6;
     transform: scale(1.00);
 }
