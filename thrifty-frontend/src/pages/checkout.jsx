@@ -4,6 +4,7 @@ import { auth, db } from '../Firebase/firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Navbar1 from './navbar';
 import '../styles/payment.css'
+import CartPanel from "./cartPanle";
 
 const UpdateProfilePage = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -78,10 +79,8 @@ const UpdateProfilePage = () => {
     return (
         <>
             <Navbar1 />
-            <div>
-
-
-
+            <div className="container334">
+                <div className='left2'>
                 {/* Billing Address Form */}
                 <h3>Billing Address</h3>
                 <form>
@@ -90,6 +89,7 @@ const UpdateProfilePage = () => {
                         type="text"
                         value={displayName}
                         onChange={(e) => setDisplayName(e.target.value)}
+                        readOnly
                     />
                     Email
                     <input
@@ -129,17 +129,20 @@ const UpdateProfilePage = () => {
                                 onChange={(e) => setZip(e.target.value)}
                             />
                         </label>
+
                     </div>
+
                 </form>
+                </div>
 
                 {/* Payment Form */}
 
-                <input
-                    type="submit"
-                    value="Proceed to Checkout"
-                    onClick={handleUpdateProfile}
-                />
+                <button className='submit_btn' onClick={handleUpdateProfile}>
+                   CheckOut
+
+                </button>
             </div>
+
         </>
     );
 
