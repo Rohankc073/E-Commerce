@@ -12,7 +12,7 @@ const Product = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 10;
+    const productsPerPage = 15;
 
     useEffect(() => {
         const fetchProducts = async () => {

@@ -12,7 +12,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link }) => {
     const [user] = useAuthState(auth);
 
-    const handleAddToCart = async () => {
+     const handleAddToCart = async () => {
         // Check if the user is authenticated
         if (!user) {
             alert('Please log in to add the product to the cart.');
@@ -67,7 +67,7 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link
                         <div className="tooltiptext12">Add to Cart</div>
                     </div>
                 </div>
-                <Link to={`/view/${imageUrl}`}>
+                <Link to={`/view/${id}`}>
                     <div className="box-image123" style={{backgroundImage: `url(${imageUrl})`}}></div>
                 </Link>
 
@@ -88,3 +88,4 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link
 };
 
 export default ProductBox;
+

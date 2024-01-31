@@ -5,37 +5,37 @@ import Footer from "./footer";
 import Panel from "./panel";
 import {useLocation} from "react-router-dom";
 import ProductBox from "./viewpageBox";
+import "../styles/searchp.css"
 
 const Searchp = () => {
     const location = useLocation();
     const { searchResults } = location.state || {};
+
     return (
         <>
-
-
             <header>
                 <Navbar/>
                 <Panel/>
             </header>
-            <div>
-                <h2>Search Results</h2>
-
+            <div className="search-results-container">
+                {/*<h2>Search Results</h2>*/}
                 {searchResults ? (
-                        searchResults.map((product) => (
-                            <div key={product.id} >
+                    <div className="search-results-row">
+                        {searchResults.map((product) => (
+                            <div key={product.id} className="product-box-container">
                                 <ProductBox
-                                    id={product.ui}
+                                    id={product.id}
                                     imageUrl={product.imageUrl}
                                     name={product.name}
                                     price={product.price}
                                     condition={product.condition}
-                                    />
+                                />
                             </div>
-                        ))
-                    ) :
-                    (
-                        <p>No search results found.</p>
-                    )}
+                        ))}
+                    </div>
+                ) : (
+                    <p>No search results found.</p>
+                )}
             </div>
             <Footer/>
         </>

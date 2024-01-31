@@ -1,7 +1,7 @@
 // auth.js
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
-import { auth, database } from './firebase';
+import {auth, database, db} from './firebase';
 
 const handleSignup = async (email, password, fullName) => {
     try {
@@ -20,7 +20,7 @@ const handleSignup = async (email, password, fullName) => {
             // Add more user data fields as needed
         };
 
-        const userRef = ref(database, `users/${userId}`);
+        const userRef = ref(db, `users/${userId}`);
         await set(userRef, userData);
 
         // Optionally, you can perform additional actions after signup

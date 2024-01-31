@@ -58,7 +58,8 @@ function App() {
                 <Route path="/product/:brandName" component={ProductsByBrand} />
                 <Route path='/searchP' element={<Searchp/>} />
                 <Route path="/products" exact component={Product} />
-                <Route path="/view/:productId" component={ProductDetail} />
+                <Route path="/view/:productId" element={<YourComponent/>} exact />
+
             </Routes>
         </Router>
     );
