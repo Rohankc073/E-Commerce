@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
-import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../Firebase/firebase';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Navbar1 from './navbar';
+import '../styles/payment.css'
 
 const UpdateProfilePage = () => {
     const [user, loading, error] = useAuthState(auth);
     const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zip, setZip] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const [expMonth, setExpMonth] = useState('');
+    const [expYear, setExpYear] = useState('');
+    const [cvv, setCvv] = useState('');
 
     useEffect(() => {
         if (user) {
@@ -20,9 +28,9 @@ const UpdateProfilePage = () => {
 
                     if (userSnapshot.exists()) {
                         const userData = userSnapshot.data();
-                        setDisplayName(userData.displayName || '');
+                        setDisplayName(userData.fullName || '');  // Update this line
                         setEmail(userData.email || '');
-                        setAddress(userData.address || ''); // Assuming address is a field in the user document
+                        // Set other states accordingly
                     } else {
                         console.error('User details not found in the database.');
                     }
@@ -33,7 +41,6 @@ const UpdateProfilePage = () => {
             fetchUserDetails();
         }
     }, [user]);
-
     const handleUpdateProfile = async () => {
         try {
             // Update user information in Firestore
@@ -42,6 +49,13 @@ const UpdateProfilePage = () => {
                 displayName,
                 email,
                 address,
+                city,
+                state,
+                zip,
+                cardNumber,
+                expMonth,
+                expYear,
+                cvv,
             });
 
             console.log('User information updated successfully.');
@@ -59,43 +73,76 @@ const UpdateProfilePage = () => {
         return <p>An error occurred. Please try again later.</p>;
     }
 
+// ...
+
     return (
         <>
             <Navbar1 />
             <div>
-                <h1>Update Profile</h1>
-                <label>
-                    Display Name:
+
+
+
+                {/* Billing Address Form */}
+                <h3>Billing Address</h3>
+                <form>
+                    Full name
                     <input
                         type="text"
                         value={displayName}
                         onChange={(e) => setDisplayName(e.target.value)}
                     />
-                </label>
-                <br />
-                <label>
-                    Email:
+                    Email
                     <input
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        readOnly // Email is usually not editable
+                        readOnly
                     />
-                </label>
-                <br />
-                <label>
-                    Address:
+                    Address
                     <input
                         type="text"
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                     />
-                </label>
-                <br />
-                <button onClick={handleUpdateProfile}>Update Profile</button>
+                    City
+                    <input
+                        type="text"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                    />
+                    <div id="zip">
+                        <label>
+                            State
+                            <select value={state} onChange={(e) => setState(e.target.value)}>
+                                <option>Choose State..</option>
+                                <option>Rajasthan</option>
+                                <option>Haryana</option>
+                                <option>Uttar Pradesh</option>
+                                <option>Madhya Pradesh</option>
+                            </select>
+                        </label>
+                        <label>
+                            Zip code
+                            <input
+                                type="number"
+                                value={zip}
+                                onChange={(e) => setZip(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                </form>
+
+                {/* Payment Form */}
+
+                <input
+                    type="submit"
+                    value="Proceed to Checkout"
+                    onClick={handleUpdateProfile}
+                />
             </div>
         </>
     );
+
 };
 
 export default UpdateProfilePage;
