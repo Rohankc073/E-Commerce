@@ -1,77 +1,101 @@
-// import React from 'react';
-// import '../styles/checkout.css'
-// const ShoppingCart = () => {
-//     return (
-//         <div className="card">
-//             <div className="row">
-//                 <div className="col-md-8 cart">
-//                     <div className="title">
-//                         <div className="row">
-//                             <div className="col">
-//                                 <h4>
-//                                     <b>Shopping Cart</b>
-//                                 </h4>
-//                             </div>
-//                             <div className="col align-self-center text-right text-muted">3 items</div>
-//                         </div>
-//                     </div>
-//                     {/* Individual item */}
-//                     <div className="row border-top border-bottom">
-//                         <div className="row main align-items-center">
-//                             <div className="col-2">
-//                                 <img className="img-fluid" src="https://i.imgur.com/1GrakTl.jpg" alt="Shirt" />
-//                             </div>
-//                             <div className="col">
-//                                 <div className="row text-muted">Shirt</div>
-//                                 <div className="row">Cotton T-shirt</div>
-//                             </div>
-//                             <div className="col">
-//                                 <a href="#">-</a>
-//                                 <a href="#" className="border">
-//                                     1
-//                                 </a>
-//                                 <a href="#">+</a>
-//                             </div>
-//                             <div className="col">&euro; 44.00 <span className="close">&#10005;</span></div>
-//                         </div>
-//                     </div>
-//                     {/* Repeat for other items */}
-//                     {/* ... */}
-//                     <div className="back-to-shop">
-//                         <a href="#">&leftarrow;</a>
-//                         <span className="text-muted">Back to shop</span>
-//                     </div>
-//                 </div>
-//                 <div className="col-md-4 summary">
-//                     <div>
-//                         <h5>
-//                             <b>Summary</b>
-//                         </h5>
-//                     </div>
-//                     <hr />
-//                     <div className="row">
-//                         <div className="col" style={{ paddingLeft: 0 }}>
-//                             ITEMS 3
-//                         </div>
-//                         <div className="col text-right">&euro; 132.00</div>
-//                     </div>
-//                     <form>
-//                         <p>SHIPPING</p>
-//                         <select>
-//                             <option className="text-muted">Standard-Delivery- &euro;5.00</option>
-//                         </select>
-//                         <p>GIVE CODE</p>
-//                         <input id="code" placeholder="Enter your code" />
-//                     </form>
-//                     <div className="row" style={{ borderTop: '1px solid rgba(0,0,0,.1)', padding: '2vh 0' }}>
-//                         <div className="col">TOTAL PRICE</div>
-//                         <div className="col text-right">&euro; 137.00</div>
-//                     </div>
-//                     <button className="btn">CHECKOUT</button>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-//
-// export default ShoppingCart;
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
+import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore';
+import Navbar1 from './navbar';
+
+const UpdateProfilePage = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const [displayName, setDisplayName] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
+
+    useEffect(() => {
+        if (user) {
+            // Fetch user details from the Firestore 'users' collection
+            const fetchUserDetails = async () => {
+                try {
+                    const userDocRef = doc(db, 'users', user.uid);
+                    const userSnapshot = await getDoc(userDocRef);
+
+                    if (userSnapshot.exists()) {
+                        const userData = userSnapshot.data();
+                        setDisplayName(userData.displayName || '');
+                        setEmail(userData.email || '');
+                        setAddress(userData.address || ''); // Assuming address is a field in the user document
+                    } else {
+                        console.error('User details not found in the database.');
+                    }
+                } catch (error) {
+                    console.error('Error fetching user data:', error.message);
+                }
+            };
+            fetchUserDetails();
+        }
+    }, [user]);
+
+    const handleUpdateProfile = async () => {
+        try {
+            // Update user information in Firestore
+            const userDocRef = doc(db, 'users', user.uid);
+            await updateDoc(userDocRef, {
+                displayName,
+                email,
+                address,
+            });
+
+            console.log('User information updated successfully.');
+        } catch (error) {
+            console.error('Error updating user information:', error.message);
+        }
+    };
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        console.error('Firebase Authentication Error:', error);
+        return <p>An error occurred. Please try again later.</p>;
+    }
+
+    return (
+        <>
+            <Navbar1 />
+            <div>
+                <h1>Update Profile</h1>
+                <label>
+                    Display Name:
+                    <input
+                        type="text"
+                        value={displayName}
+                        onChange={(e) => setDisplayName(e.target.value)}
+                    />
+                </label>
+                <br />
+                <label>
+                    Email:
+                    <input
+                        type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        readOnly // Email is usually not editable
+                    />
+                </label>
+                <br />
+                <label>
+                    Address:
+                    <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                    />
+                </label>
+                <br />
+                <button onClick={handleUpdateProfile}>Update Profile</button>
+            </div>
+        </>
+    );
+};
+
+export default UpdateProfilePage;

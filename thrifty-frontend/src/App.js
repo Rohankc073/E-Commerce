@@ -27,6 +27,7 @@ import Payment from "./pages/payment";
 import ContactForm from "./pages/contactUs";
 import Searchp from "./pages/searchp";
 import ProductDetail from "./pages/productdetail";
+import UpdateProfilePage from "./pages/checkout";
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
                 <Route path='/searchP' element={<Searchp/>} />
                 <Route path="/products" exact component={Product} />
                 <Route path="/view/:productId" element={<YourComponent/>} exact />
+                <Route path='/delivery' element={<UpdateProfilePage />} />
 
             </Routes>
         </Router>
