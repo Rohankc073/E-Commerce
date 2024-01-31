@@ -22,7 +22,7 @@ const Searchp = () => {
                 {searchResults ? (
                     <div className="search-results-row">
                         {searchResults.map((product) => (
-                            <div key={product.id} className="product-box-container">
+                            <div key={product.id}>
                                 <ProductBox
                                     id={product.id}
                                     imageUrl={product.imageUrl}

@@ -56,14 +56,7 @@ const YourComponent = () => {
 
             </div>
             <div className="shop-section">
-                <div className="small-box-container">
-                    <div className="small-box24">
-                        {/* Content for the first small box goes here */}
-                    </div>
-                    <div className="small-box25" style={{backgroundImage: `url(${product.imageUrl})`}}>
 
-                    </div>
-                </div>
                 <div className="box1 box ">
                     <div className="box-content">
                         <div className="box-image12" style={{backgroundImage: `url(${product.imageUrl})`}}>
@@ -80,11 +73,11 @@ const YourComponent = () => {
                         </div>
                     </div>
                     <div className="button-container89">
-                        <a  className="btn">
+                        <button  className="btn" >
                             Add to Cart
-                        </a>
+                        </button>
                     </div>
-                    <div className="button-container77">
+                    <div className="button-container77" >
                         <a href="#" className="btn">
                             Buy Now
                         </a>

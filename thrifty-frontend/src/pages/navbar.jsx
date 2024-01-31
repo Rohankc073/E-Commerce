@@ -3,7 +3,7 @@ import { faCartShopping, faLocationDot, faMagnifyingGlass, faUser } from '@forta
 import React, { useEffect, useState } from 'react';
 import CartPanel from '../pages/cartPanle'; // Corrected import
 import { Link, useNavigate } from 'react-router-dom';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import {collection, query, where, getDocs, addDoc} from 'firebase/firestore';
 
 import '../styles/cartPanel.css';
 import '../styles/navbar.css';
@@ -41,12 +41,11 @@ const Navbar1 = () => {
             const querySnapshot = await getDocs(q);
             const productsData = querySnapshot.docs.map((doc) => ({
                 ...doc.data(),
-                uid: doc.id, // Add this line to include the document ID as 'uid'
+                uid: doc.id, // Include the document ID as 'uid'
             }));
 
             console.log('Search results:', productsData);
             setSearchResults(productsData);
-            // Comment out the following line to prevent navigation
             navigate(`/searchP?searchTerm=${searchTerm}`, { state: { searchResults: productsData } });
         } catch (error) {
             console.error('Error searching for products:', error);

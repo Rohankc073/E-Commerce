@@ -8,8 +8,9 @@ const Panel = () => {
         <div className="panel">
         
             <div className="panel-ops border">
-                <p></p>
-                <p>Customer Service</p>
+                <Link to="/product?type=laptop" className="transparent-button">
+                    Laptop
+                </Link>
                 <p>
                     <Link to="/contactUs" className="transparent-button">
                         Contact Us

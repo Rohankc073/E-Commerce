@@ -1,16 +1,19 @@
 // ProductBox.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
-import '../styles/viewpageBox.css'
-import { auth, db } from '../Firebase/firebase'
+import '../styles/viewpageBox.css';
+import { auth, db } from '../Firebase/firebase';
+import CartPanel from '../pages/cartPanle';
+
 
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link }) => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
      const handleAddToCart = async () => {
         // Check if the user is authenticated
@@ -18,6 +21,7 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link
             alert('Please log in to add the product to the cart.');
             console.log('User not logged in. Please log in to add to cart.');
             console.log('User:', user);
+
             return;
         }
 
@@ -36,7 +40,6 @@ const ProductBox = ({ id, imageUrl, name, price, condition, addToCart, uid, link
 
             const userCartDoc = userCartSnapshot.docs[0];
             const userCartItemsRef = collection(db, 'carts', userCartDoc.id, 'items');
-
             // Add the new item to the 'items' subcollection
             await addDoc(userCartItemsRef, {
                 productId: id,

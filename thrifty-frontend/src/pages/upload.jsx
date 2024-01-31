@@ -14,8 +14,12 @@ const YourFormComponent = () => {
         color: '',
         condition: '',
         brand: '',
+        category: '',
     });
-
+    const handleCategoryChange = (e) => {
+        const { name, value } = e.target;
+        setProduct((prevProduct) => ({ ...prevProduct, [name]: value }));
+    };
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
@@ -32,18 +36,12 @@ const YourFormComponent = () => {
         if (Object.keys(formErrors).length === 0) {
             try {
                 // Add product data to Firestore with auto-generated ID
-                const productsCollection = collection(db, 'products');
+                const collectionName = product.category === 'phone' ? 'phones' : 'laptops';
+                const productsCollection = collection(db, collectionName);
 
                 await addDoc(productsCollection, {
-                    // uid: product.uid,
-                    name: product.name,
-                    description: product.description,
-                    price: product.price,
-                    imageUrl: product.imageUrl,
-                    color: product.color,
-                    condition: product.condition,
-                    brand: product.brand,
-                    // ... other fields as needed
+                    // ... (your existing fields)
+                    category: product.category,
                 });
 
                 // Form submitted successfully
@@ -79,6 +77,9 @@ const YourFormComponent = () => {
         }
         if (!formData.brand.trim()) {
             errors.brand = 'Brand is required';
+            if (!formData.category) {
+                errors.category = 'Category is required';
+            }
         }
 
         return errors;
@@ -87,6 +88,13 @@ const YourFormComponent = () => {
     return (
         <>
             <Navbar />
+            <label>Category:</label>
+            <select name="category" value={product.category} onChange={handleCategoryChange}>
+                <option value="">Select Category</option>
+                <option value="phone">Phone</option>
+                <option value="laptop">Laptop</option>
+            </select>
+            {errors.category && <div className="error">{errors.category}</div>}
             <form onSubmit={handleSubmit}>
                 <label>Name:</label>
                 <input type="text" name="name" value={product.name} onChange={handleChange} />

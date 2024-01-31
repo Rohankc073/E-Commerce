@@ -187,10 +187,9 @@ const HomePage = () => {
                                 <h2>Oppo</h2>
                                 {oppoImageURL && <img src={oppoImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22"
-                                       style={{background: 'rgba(0, 0, 0, 0)'}}>
+                                    <Link to={`/product?brand=Oppo`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -201,10 +200,9 @@ const HomePage = () => {
                                 <h2>Vivo</h2>
                                 {vivoImageURL && <img src={vivoImageURL} alt="Apple" className="box-image"/>}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22"
-                                       style={{background: 'rgba(0, 0, 0, 0)'}}>
+                                    <Link to={`/product?brand=vivo`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -222,9 +220,9 @@ const HomePage = () => {
                             <h2>Redmi</h2>
                             {redmiImageURL && <img src={redmiImageURL} alt="Apple" className="box-image"/>}
                             <div className="button-container22">
-                            <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
-                                            See more
-                                        </a>
+                                <Link to={`/product?brand=redmi`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    See more
+                                </Link>
                                     </div>
                                 </div>
                             </div>
@@ -237,9 +235,9 @@ const HomePage = () => {
                                 <h2>OnePlus</h2>
                                 {oneplusImageURL && <img src={oneplusImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    <Link to={`/product?brand=oneplus`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -250,9 +248,9 @@ const HomePage = () => {
                                 <h2>iQOOO</h2>
                                 {iqooImageURL && <img src={iqooImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    <Link to={`/product?brand=iQOOOO`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -263,9 +261,9 @@ const HomePage = () => {
                                 <h2>Nothing</h2>
                                 {nothingImageURL && <img src={nothingImageURL} alt="Apple" className="box-image" />}
                                 <div className="button-container22">
-                                    <a href="samsung.html" className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
+                                    <Link to={`/product?brand=nothing`} className="button22" style={{ background: 'rgba(0, 0, 0, 0)' }}>
                                         See more
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
