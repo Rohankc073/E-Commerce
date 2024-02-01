@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/adminlogin.css'; // Import your stylesheet if needed
+import '../../styles/adminlogin.css';
+import Navbar1 from "../navbar"; // Import your stylesheet if needed
 
 const Adminlogin = () => {
     const navigate = useNavigate();
@@ -29,16 +30,18 @@ const Adminlogin = () => {
     };
 
     return (
+        <>
+        <Navbar1 />
         <div className="contain">
             <div id="form-ui">
                 <form onSubmit={handleLogin} id="form">
                     <div id="form-body">
                         <div id="welcome-lines">
-                            <div id="welcome-line-1">Thrifty Tech</div>
-                            <div id="welcome-line-2">Welcome Back</div>
+                            <div id="welcome-line">Thrifty Tech</div>
+                            <div id="welcome-line2">Welcome Back</div>
                         </div>
                         <div id="input-area">
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     placeholder="Username"
                                     type="text"
@@ -46,7 +49,7 @@ const Adminlogin = () => {
                                     onChange={(e) => setUsername(e.target.value)}
                                 />
                             </div>
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     placeholder="Password"
                                     type="password"
@@ -71,6 +74,7 @@ const Adminlogin = () => {
                 </div>
             )}
         </div>
+        </>
     );
 };
 
