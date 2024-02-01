@@ -174,33 +174,33 @@ const UpdateProfilePage = () => {
                     <form>
                         Full name
                         <input
-                            type="text"
+                            type="text1"
                             value={displayName}
                             onChange={(e) => setDisplayName(e.target.value)}
                             readOnly
                         />
                         Email
                         <input
-                            type="text"
+                            type="text1"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             readOnly
                         />
                         Phone Number
                         <input
-                            type="text"
+                            type="text1"
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
                         />
                         Address
                         <input
-                            type="text"
+                            type="text1"
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                         />
                         City
                         <input
-                            type="text"
+                            type="text1"
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                         />

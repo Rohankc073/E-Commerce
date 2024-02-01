@@ -4,6 +4,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {setDoc, doc, collection, addDoc} from 'firebase/firestore';
 import { auth, db } from '../Firebase/firebase'; // Assuming you have 'auth' and 'db' instances
 import "../styles/signup.css"
+import Navbar1 from "./navbar";
+import Panel from "./panel";
 const Signup = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -67,16 +69,19 @@ const Signup = () => {
     };
 
     return (
-        <div className="container">
-            <div id="form-ui">
-                <form onSubmit={handleSubmit} id="form">
-                    <div id="form-body">
+        <>
+        <Navbar1 />
+    <Panel />
+        <div className="container12">
+            <div id="form-ui1">
+                <form onSubmit={handleSubmit} id="form1">
+                    <div id="form-body1">
                         <div id="welcome-lines">
-                            <div id="welcome-line-1">Thrifty Tech</div>
-                            <div id="welcome-line-2">Sign Up Here</div>
+                            <div id="welcome-line">Thrifty Tech</div>
+                            <div id="welcome-line2">Sign Up Here</div>
                         </div>
                         <div id="input-area">
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Email Address"
@@ -84,7 +89,7 @@ const Signup = () => {
                                     required
                                 />
                             </div>
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Password"
@@ -92,7 +97,7 @@ const Signup = () => {
                                     required
                                 />
                             </div>
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     placeholder="Confirm Password"
@@ -100,14 +105,14 @@ const Signup = () => {
                                     required
                                 />
                             </div>
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setPhoneNumber(e.target.value)}
                                     placeholder="Phone Number"
                                     type="tel"
                                 />
                             </div>
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setFullName(e.target.value)}
                                     placeholder="Full Name"
@@ -138,6 +143,7 @@ const Signup = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 };
 

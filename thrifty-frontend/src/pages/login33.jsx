@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
 import '../styles/adminlogin.css'
+import Navbar1 from "./navbar";
+import Panel from "./panel";
 // import UserProfile from './'; // Correct path to UserProfile component
 
 const Login = () => {
@@ -49,24 +51,27 @@ const Login = () => {
     };
 
     return (
-
+        <>
+        <Navbar1 />
+            <Panel />
         <div className="contain">
+
             <div id="form-ui">
                 <form onSubmit={handleSubmit} id="form12">
                     <div id="form-body">
                         <div id="welcome-lines">
-                            <div id="welcome-line-1">Thrifty Tech</div>
-                            <div id="welcome-line-2">Welcome Back</div>
+                            <div id="welcome-line">Thrifty Tech</div>
+                            <div id="welcome-line2">Welcome Back</div>
                         </div>
                         <div id="input-area">
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Email Address"
                                     type="text"
                                 />
                             </div>
-                            <div className="form-inp">
+                            <div className="form-inp1">
                                 <input
                                     onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Password"
@@ -98,6 +103,7 @@ const Login = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 };
 

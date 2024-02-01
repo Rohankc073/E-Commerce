@@ -5,6 +5,28 @@
     align-items: center;
     justify-content: center;
 }
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-block {
+    flex: 1;
+    background-color: #3498db; /* Set your desired color */
+}
+
+.right-form {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+}
 
 #form-body {
     position: absolute;
@@ -20,14 +42,14 @@
     line-height: 1;
 }
 
-#welcome-line-1 {
-    color: #00FF7F;
+#welcome-line {
+    color:#11b18b;
     font-weight: 600;
     font-size: 40px;
 }
 
-#welcome-line-2 {
-    color: #ffffff;
+#welcome-line2{
+    color: #11b18b;
     font-size: 18px;
     margin-top: 17px;
 }
@@ -36,33 +58,34 @@
     margin-top: 40px;
 }
 
-.form-inp {
-    padding: 11px 25px;
+.form-inp1 {
+    width: 350px;
+    margin-bottom: 10px;
+    padding: 15px 28px;
     background: transparent;
-    border: 1px solid #e3e3e3;
+    border: 1px solid #11b18b;
     line-height: 1;
     border-radius: 8px;
 }
 
-.form-inp:focus {
-    border: 1px solid #00FF7F;
+.form-inp1:focus {
+    border: 1px solid #11b18b;
 }
 
-.form-inp:first-child {
+.form-inp1:first-child {
     margin-bottom: 15px;
 }
 
-.form-inp input {
-    width: 100%;
+.form-inp1 input {
+    width: 190%;
     background: none;
-    font-size: 13.4px;
-    color: #00FF7F;
+    /*font-size: 13.4px;*/
+    color:black;
     border: none;
-    padding: 0;
-    margin: 0;
+
 }
 
-.form-inp input:focus {
+.form-inp1 input:focus {
     outline: none;
 }
 
@@ -73,14 +96,14 @@
 .loginButton {
     display: block;
     width: 100%;
-    color: #00FF7F;
+    color: #11b18b;
     background-color: transparent;
     font-weight: 600;
     font-size: 14px;
     margin: 0;
     padding: 14px 13px 12px 13px;
     border: 0;
-    outline: 1px solid #00FF7F;
+    outline: 1px solid #11b18b;
     border-radius: 8px;
     line-height: 1;
     cursor: pointer;
@@ -89,7 +112,7 @@
 
 .loginButton:hover {
     transition: all ease-in-out .3s;
-    background-color: #00FF7F;
+    background-color: #11b18b;
     color: #161616;
     cursor: pointer;
 }
@@ -112,7 +135,7 @@
     width: 8px;
     height: 8px;
     margin-left: -33px;
-    background-color: #00FF7F;
+    background-color:#11b18b;
     border-radius: 10px;
 }
 
@@ -122,7 +145,7 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: #00FF7F;
+    background-color: #11b18b;
     border-radius: 50%;
 }
 
@@ -145,7 +168,7 @@
 .error-mag {
     color: black;
     font-size: 12px;
-    background-color: #00FF7F;
+    background-color: #11b18b;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 7px;
@@ -155,7 +178,7 @@
 .success-mag {
     color: black;
     font-size: 12px;
-    background-color: #00FF7F;
+    background-color: #11b18b;
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
@@ -173,7 +196,7 @@
 
 #showPasswordLabel {
     margin-top: 8px;
-    color: #00FF7F; /* Change color as needed */
+    color: #11b18b; /* Change color as needed */
     font-size: 15px; /* Change font size as needed */
 }
 
@@ -194,7 +217,7 @@
     position: relative;
 }
 
-.form-inp {
+.form-inp1 {
     position: relative;
 }
 
@@ -202,12 +225,12 @@
     right: 5px;
 }
 #signup-link p {
-    color: #00FF7F;
+    color: #11b18b;
     margin: 0;
 }
 
 #signup-link a {
-    color: #00FF7F; /* You can adjust the color as needed */
+    color: #11b18b; /* You can adjust the color as needed */
     text-decoration: underline;
 }
 
@@ -219,7 +242,7 @@
 .error-box{
     font-size: 15px;
     color: black;
-    background-color: #00FF7F;
+    background-color:#11b18b;
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;

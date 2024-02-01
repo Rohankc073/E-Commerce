@@ -1,25 +1,5 @@
-/*body {*/
-/*    margin: 0; !* Remove default body margin *!*/
-/*    padding: 0; !* Remove default body padding *!*/
-/*    background-image: url('../images/3d-render-modern-network-communications-background.jpg');*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    height: 100vh; !* Set background height to viewport height *!*/
-/*    font-family: 'Arial', sans-serif; !* Set a default font family *!*/
-/*}*/
 
-#form {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 25px;
-    background-color: transparent;
 
-    border-radius: 10px;
-}
 .error-message{
     color: black;
     background-color: #00FF7F;
@@ -29,9 +9,9 @@
 }
 
 
-.container {
+.container12 {
     margin-left: 85px;
-    margin-top: 150px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +22,7 @@
     top: 50%;
     right: 25px;
     left: 25px;
-    width: 230px;
+    width: 290px;
     margin: -156px auto 0 auto;
 }
 
@@ -72,7 +52,7 @@
     margin-top: 14px;
     padding: 11px 25px;
     background: transparent;
-    border: 1px solid #e3e3e3;
+    border: 1px solid #11b18b;
     line-height: 1;
     border-radius: 8px;
 }
@@ -106,23 +86,23 @@
 #submit-button {
     display: block;
     width: 100%;
-    color: #00FF7F;
+    color: #11b18b;
     background-color: transparent;
     font-weight: 600;
     font-size: 14px;
     margin: 0;
     padding: 14px 13px 12px 13px;
     border: 0;
-    outline: 1px solid #00FF7F;
+    outline: 1px solid #11b18b;
     border-radius: 8px;
     line-height: 1;
     cursor: pointer;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .2s;
 }
 
 #submit-button:hover {
     transition: all ease-in-out .3s;
-    background-color: #00FF7F;
+    background-color: #11b18b;
     color: #161616;
     cursor: pointer;
 }
@@ -145,7 +125,7 @@
     width: 8px;
     height: 8px;
     margin-left: -33px;
-    background-color: #00FF7F;
+    background-color:#11b18b;
     border-radius: 10px;
 }
 
@@ -155,7 +135,7 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: #00FF7F;
+    background-color: #11b18b;
     border-radius: 50%;
 }
 
@@ -168,12 +148,12 @@
 }
 
 #login-link p{
-    color: #00FF7F;
+    color: #11b18b;
     margin: 10px;
 }
 
 #login-link a {
-    color: #00FF7F; /* You can adjust the color as needed */
+    color:#11b18b ; /* You can adjust the color as needed */
     text-decoration: underline;
 }
 
