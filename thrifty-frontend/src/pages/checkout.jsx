@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth, db } from '../Firebase/firebase';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import {doc, getDoc, updateDoc, collection, getDocs, query, where, deleteDoc} from 'firebase/firestore';
 import Navbar1 from './navbar';
-import '../styles/payment.css'
-import CartPanel from "./cartPanle";
+import '../styles/checkout.css';
+import { addDoc, writeBatch } from 'firebase/firestore';
+
 
 const UpdateProfilePage = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -14,10 +15,12 @@ const UpdateProfilePage = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zip, setZip] = useState('');
-    const [cardNumber, setCardNumber] = useState('');
-    const [expMonth, setExpMonth] = useState('');
-    const [expYear, setExpYear] = useState('');
-    const [cvv, setCvv] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [cartItems, setCartItems] = useState([]);
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false); // Added state for success pop-up
+    const calculateTotalPrice = () => {
+        return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    };
 
     useEffect(() => {
         if (user) {
@@ -29,8 +32,9 @@ const UpdateProfilePage = () => {
 
                     if (userSnapshot.exists()) {
                         const userData = userSnapshot.data();
-                        setDisplayName(userData.fullName || '');  // Update this line
+                        setDisplayName(userData.fullName || '');
                         setEmail(userData.email || '');
+                        setPhoneNumber(userData.phoneNumber || '');
                         // Set other states accordingly
                     } else {
                         console.error('User details not found in the database.');
@@ -42,7 +46,46 @@ const UpdateProfilePage = () => {
             fetchUserDetails();
         }
     }, [user]);
-    const handleUpdateProfile = async () => {
+
+    useEffect(() => {
+        // Fetch cart items
+        const fetchCartItems = async () => {
+            try {
+                const cartsRef = collection(db, 'carts');
+                const userCartQuery = query(cartsRef, where('userId', '==', user.uid));
+                const userCartSnapshot = await getDocs(userCartQuery);
+
+                if (!userCartSnapshot.empty) {
+                    const userCartDoc = userCartSnapshot.docs[0];
+                    const userCartItemsRef = collection(db, 'carts', userCartDoc.id, 'items');
+
+                    const userCartItemsSnapshot = await getDocs(userCartItemsRef);
+                    const userCartItems = userCartItemsSnapshot.docs.map((doc) => doc.data());
+
+                    console.log('User Cart Items:', userCartItems);
+                    setCartItems(userCartItems);
+                } else {
+                    console.log('User has no cart.');
+                    setCartItems([]); // Clear the component state if the user has no cart
+                }
+            } catch (error) {
+                console.error('Error fetching cart items:', error.message);
+            }
+        };
+
+        // Call the fetchCartItems function when the component mounts
+        if (user) {
+            fetchCartItems();
+        }
+    }, [user]);
+    const totalCartPrice = calculateTotalPrice();
+
+    const handleUpdateProfile = async () => {if (!address ) {
+        console.error('Please fill out all the required fields.');
+        // You might want to display an error message to the user or prevent further actions.
+        return;
+    }
+
         try {
             // Update user information in Firestore
             const userDocRef = doc(db, 'users', user.uid);
@@ -53,17 +96,64 @@ const UpdateProfilePage = () => {
                 city,
                 state,
                 zip,
-                cardNumber,
-                expMonth,
-                expYear,
-                cvv,
             });
 
             console.log('User information updated successfully.');
+
+            // Create an order in the "orders" collection
+            const ordersRef = collection(db, 'orders');
+            const newOrderDocRef = await addDoc(ordersRef, {
+                userId: user.uid,
+                fullName: displayName,
+                email,
+                address,
+                city,
+                state,
+
+                items: cartItems,
+                orderDate: new Date(),
+            });
+
+            console.log('Order created successfully. Order ID:', newOrderDocRef.id);
+
+            // Clear the user's cart items
+            const userCartRef = collection(db, 'carts');
+            const userCartQuery = query(userCartRef, where('userId', '==', user.uid));
+            const userCartSnapshot = await getDocs(userCartQuery);
+
+            if (!userCartSnapshot.empty) {
+                const userCartDoc = userCartSnapshot.docs[0];
+                const userCartItemsRef = collection(db, 'carts', userCartDoc.id, 'items');
+
+                // Delete all items in the user's cart using asynchronous iteration
+                const deleteCartItemsPromises = cartItems.map(async (item) => {
+                    const itemQuery = query(userCartItemsRef, where('productId', '==', item.productId));
+                    const itemSnapshot = await getDocs(itemQuery);
+
+                    if (!itemSnapshot.empty) {
+                        const itemDoc = itemSnapshot.docs[0];
+                        await deleteDoc(itemDoc.ref);
+                    }
+                });
+
+                await Promise.all(deleteCartItemsPromises);
+
+                console.log('User cart items cleared successfully.');
+                alert('Order placed successfully!');
+
+                // Redirect to /home after a delay
+                setTimeout(() => {
+                    window.location.href = '/home';
+                }, 100); // Redirect after 3 seconds (adjust as needed)
+            } else {
+                console.log('User has no cart.');
+            }
         } catch (error) {
-            console.error('Error updating user information:', error.message);
+            console.error('Error during checkout:', error.message);
         }
     };
+
+
 
     if (loading) {
         return <p>Loading...</p>;
@@ -74,73 +164,102 @@ const UpdateProfilePage = () => {
         return <p>An error occurred. Please try again later.</p>;
     }
 
-// ...
-
     return (
         <>
             <Navbar1 />
             <div className="container334">
                 <div className='left2'>
-                {/* Billing Address Form */}
-                <h3>Billing Address</h3>
-                <form>
-                    Full name
-                    <input
-                        type="text"
-                        value={displayName}
-                        onChange={(e) => setDisplayName(e.target.value)}
-                        readOnly
-                    />
-                    Email
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        readOnly
-                    />
-                    Address
-                    <input
-                        type="text"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                    />
-                    City
-                    <input
-                        type="text"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                    />
-                    <div id="zip">
-                        <label>
-                            State
-                            <select value={state} onChange={(e) => setState(e.target.value)}>
-                                <option>Choose State..</option>
-                                <option>Rajasthan</option>
-                                <option>Haryana</option>
-                                <option>Uttar Pradesh</option>
-                                <option>Madhya Pradesh</option>
-                            </select>
-                        </label>
-                        <label>
-                            Zip code
+                    {/* Billing Address Form */}
+                    <h2>Billing Address</h2>
+                    <form>
+                        Full name
+                        <input
+                            type="text"
+                            value={displayName}
+                            onChange={(e) => setDisplayName(e.target.value)}
+                            readOnly
+                        />
+                        Email
+                        <input
+                            type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            readOnly
+                        />
+                        Phone Number
+                        <input
+                            type="text"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
+                        Address
+                        <input
+                            type="text"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
+                        City
+                        <input
+                            type="text"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                        />
+                        <div id="zip">
+                            <label>
+                                State
+                                <select value={state} onChange={(e) => setState(e.target.value)}>
+                                    <option>Choose State..</option>
+                                    <option>Kathmandu</option>
+                                    <option>Butwal</option>
+                                    <option>Jhapa</option>
+                                    <option>Dharan</option>
+                                </select>
+                            </label>
+
+
+                        </div>
+                        <h3>Total Price: {totalCartPrice}</h3>
+
+                        <div className="checkbox-container">
                             <input
-                                type="number"
-                                value={zip}
-                                onChange={(e) => setZip(e.target.value)}
+                                type="checkbox"
+                                id="showPassword"
+                                // checked={showPassword}
+                                // onChange={() => setShowPassword(!showPassword)}
                             />
-                        </label>
+                            <label htmlFor="showPassword" id="showPasswordLabel">Cash On Delivery</label>
+                        </div>
+                        {/*<label>*/}
+                        {/*    <input*/}
+                        {/*        type="checkbox"*/}
 
-                    </div>
+                        {/*    />*/}
+                        {/*    Cash on Delivery*/}
+                        {/*</label>*/}
 
-                </form>
+                    </form>
+                    <button className='submit_btn' onClick={handleUpdateProfile}>
+                        <h4>Check Out</h4>
+                    </button>
+
                 </div>
-
+                <div className="cart-items-container">
+                    <h2>Your Cart</h2>
+                    <ul>
+                        {cartItems.map((item) => (
+                            <li key={item.productId}>
+                                {item.productName}
+                                <img src={item.image} alt={item.productName}/>
+                                Quantity: {item.quantity}
+                                <p>Price: {item.price}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
                 {/* Payment Form */}
 
-                <button className='submit_btn' onClick={handleUpdateProfile}>
-                   CheckOut
 
-                </button>
+
             </div>
 
         </>

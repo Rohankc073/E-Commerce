@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {collection, getDocs, query, where} from "firebase/firestore";
+import {collection, getDoc, getDocs, query, where} from "firebase/firestore";
 import {db} from "../Firebase/firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
 import { auth } from '../Firebase/firebase';
 import { deleteDoc } from 'firebase/firestore';
 import '../styles/cartPanel.css'
+import {useNavigate} from "react-router-dom";
 
 
 const CartPanel = ({ isOpen, onClose }) => {
+
+    const navigate = useNavigate(); // Get the navigate function
     const [user] = useAuthState(auth);
     const [cartItems, setCartItems] = useState([]);
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -71,18 +74,28 @@ const CartPanel = ({ isOpen, onClose }) => {
                 const userCartItemsRef = collection(db, 'carts', userCartDoc.id, 'items');
 
                 const userCartItemsSnapshot = await getDocs(userCartItemsRef);
-                const userCartItems = userCartItemsSnapshot.docs.map((doc) => doc.data());
+                const userCartItems = await Promise.all(userCartItemsSnapshot.docs.map(async (doc) => {
+                    const itemData = doc.data();
+                    // Fetch product details including price
+                    const productDoc = await getDoc(doc.ref); // Assuming you have a reference to the product
+                    const productData = productDoc.data();
+                    return {
+                        ...itemData,
+                        price: productData.price,
+                    };
+                }));
 
                 console.log('User Cart Items:', userCartItems);
 
                 // Update the component state with cart items
                 setCartItems(userCartItems);
 
-                // Calculate total price by summing up individual prices
+                // Calculate total price by summing up individual prices * quantities
                 const newTotalPrice = userCartItems.reduce((total, item) => {
-                    return total + item.totalprice;
+                    console.log('Item Price:', item.price);
+                    console.log('Item Quantity:', item.quantity);
+                    return total + item.price * item.quantity;
                 }, 0);
-
                 setTotalPrice(newTotalPrice);
             } else {
                 console.log('User has no cart.');
@@ -93,6 +106,7 @@ const CartPanel = ({ isOpen, onClose }) => {
             console.error('Error fetching cart items:', error.message);
         }
     };
+
 
     // Call the fetchCartItems function when the component mounts
     useEffect(() => {
@@ -124,7 +138,7 @@ const CartPanel = ({ isOpen, onClose }) => {
             </ul>
 
             <div className="button-container99">
-                <button className='buy_button'>Buy Now</button>
+                <button className='buy_button' onClick={() => navigate('/delivery')}>Buy Now</button>
             </div>
         </div>
     );
