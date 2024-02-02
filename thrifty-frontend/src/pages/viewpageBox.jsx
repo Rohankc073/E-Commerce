@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../styles/viewpageBox.css';
 import { auth, db } from '../Firebase/firebase';
-import CartPanel from '../pages/cartPanle';
+
 
 
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';

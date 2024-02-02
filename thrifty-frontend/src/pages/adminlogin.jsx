@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/adminlogin.css';
-import Navbar1 from "../navbar"; // Import your stylesheet if needed
+import '../styles/adminlogin.css';
+import Navbar1 from "./navbar"; // Import your stylesheet if needed
 
 const Adminlogin = () => {
     const navigate = useNavigate();

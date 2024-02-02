@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom
 import HomePage from "./pages/home";
 
 // import ViewPage from "./pages/viewpage";
-import FirstPage from "./pages/landing";
+
 import Product from "./pages/product";
 import SignUpForm from "./pages/register";
 
@@ -14,7 +14,7 @@ import AddProductForm from "./pages/upload";
 import Login33 from "./pages/login33";
 import YourComponent from "./pages/viewpage";
 import EmbeddedCanvas from "./pages/aboutus";
-import Adminlogin from "./pages/admin/adminlogin";
+import Adminlogin from "./pages/adminlogin";
 import Signup from "./pages/signup";
 import Accounts from "./pages/accounts";
 import UserProfile from "./pages/accounts";
@@ -25,9 +25,9 @@ import ShoppingCart from "./pages/checkout";
 import Payment from "./pages/payment";
 import ContactForm from "./pages/contactUs";
 import Searchp from "./pages/searchp";
-import ProductDetail from "./pages/productdetail";
+
 import UpdateProfilePage from "./pages/checkout";
-import BillPage from "./pages/modal";
+
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/view' element={<YourComponent />} />
 
-                <Route path='/landing' element={<FirstPage />} />
+              
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
                 <Route path='/upload' element={<Imageuploadpage />} />

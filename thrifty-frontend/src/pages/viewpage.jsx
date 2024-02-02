@@ -7,6 +7,7 @@ import Panel from "./panel";
 import {useParams} from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore";
 import {db} from "../Firebase/firebase";
+import {handleAddToCart} from "./cartFunction";
 // import {handleAddToCart} from '../pages/viewpageBox'
 
 const YourComponent = () => {
@@ -73,12 +74,12 @@ const YourComponent = () => {
                         </div>
                     </div>
                     <div className="button-container89">
-                        <button  className="btn" >
+                        <button className="btn12" onClick={handleAddToCart}>
                             Add to Cart
                         </button>
                     </div>
-                    <div className="button-container77" >
-                        <a href="#" className="btn">
+                    <div className="button-container77">
+                        <a href="/delivery" className="btn1">
                             Buy Now
                         </a>
                     </div>
