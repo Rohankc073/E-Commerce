@@ -8,13 +8,13 @@ import HomePage from "./pages/home";
 import Product from "./pages/product";
 import SignUpForm from "./pages/register";
 
-import Addtocart from "./pages/addtocart";
-import Imageuploadpage from "./pages/imageuploadpage";
+
+
 import AddProductForm from "./pages/upload";
 import Login33 from "./pages/login33";
 import YourComponent from "./pages/viewpage";
 import EmbeddedCanvas from "./pages/aboutus";
-import Adminlogin from "./pages/adminlogin";
+
 import Signup from "./pages/signup";
 import Accounts from "./pages/accounts";
 import UserProfile from "./pages/accounts";
@@ -25,9 +25,18 @@ import ShoppingCart from "./pages/checkout";
 import Payment from "./pages/payment";
 import ContactForm from "./pages/contactUs";
 import Searchp from "./pages/searchp";
-
+import ProductDetail from "./pages/productdetail";
 import UpdateProfilePage from "./pages/checkout";
-
+import BillPage from "./pages/modal";
+import ChartPage from "./pages/admin/ChartPage";
+import ProductFeatures from "./pages/admin/ProductFeatures";
+import AdminOrder from "./pages/admin/AdminOrder";
+import CrudProduct from "./pages/admin/CrudProduct";
+import ImageUpload from "./pages/admin/ImageUpload";
+import AddingProduct from "./pages/admin/AddingProduct";
+import dash from './pages/admin/dash';
+import Dash from './pages/admin/dash';
+import Adminlogin from "./pages/adminlogin";
 
 
 function App() {
@@ -39,12 +48,10 @@ function App() {
                 <Route path='/home' element={<HomePage />} />
                 <Route path='/view' element={<YourComponent />} />
 
-              
+
                 <Route path='/register' element={<SignUpForm />} />
                 <Route path='/product' element={<Product />} />
-                <Route path='/upload' element={<Imageuploadpage />} />
                 {/*<Route path='/image' element={<AddProductForm />} />*/}
-                <Route path='/adc' element={<Addtocart />} />
                 <Route path='/login' element={<Login33 />} />
                 <Route path='/aboutus' element={<EmbeddedCanvas />} />
                 <Route path='/adminlogin' element={<Adminlogin />} />
@@ -60,6 +67,15 @@ function App() {
                 <Route path="/products" exact component={Product} />
                 <Route path="/view/:productId" element={<YourComponent/>} exact />
                 <Route path='/delivery' element={<UpdateProfilePage />} />
+                <Route path="/dash" element={dash} />
+                <Route path="/chart" element={<ChartPage/>} />
+                {/* <Route path="/customer" element={<CustomerTable />} /> */}
+                <Route path="/adminproduct" element={<ProductFeatures />} />
+                <Route path="/adminorder" element={<AdminOrder />} />
+                <Route path="/crudproduct" element={<CrudProduct />} />
+                <Route path="/imageupload" element={<ImageUpload/>} />
+                <Route path="/addproduct" element={<AddingProduct/>} />
+                <Route path="/admin" element={<Dash/>} />
 
 
             </Routes>
