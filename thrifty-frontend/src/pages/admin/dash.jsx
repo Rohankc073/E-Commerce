@@ -1,33 +1,42 @@
 import React from 'react';
 import '../../styles/dash.css';
 import Sidebar from './sidebar';
-import Header from './header';
+// import Header from './header';
 import RecentOrders from './recentorders';
-import Navbar from '../../pages/navbar'; // Correct the relative path
-import Footer from '../../pages/footer'; // Correct the relative path
 import AdminProduct from './ProductFeatures';
 
 const Dash = () => {
-  return (
-    <div className="d-flex" id="wrapper">
-      {/* Sidebar component */}
-      <Sidebar />
+    return (
+        <div>
+            <head>
+                <link
+                    rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+                    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                    crossOrigin="anonymous"
+                />
+            </head>
 
-      {/* Page Content */}
-      <div id="page-content-wrapper">
-        {/* Header component */}
-        <Header />
+            <div className="d-flex" id="wrapper">
+                {/* Sidebar component */}
+                <Sidebar />
 
-        <div className="container-fluid px-4">
-          <RecentOrders />
-          <div className="row my-5">
-            <AdminProduct />
-            {/* Your table and other content here */}
-          </div>
+                {/* Page Content */}
+                <div id="page-content-wrapper">
+                    {/* Header component */}
+                    {/* <Header /> */}
+
+                    <div className="container-fluid px-4">
+                        <RecentOrders />
+                        <div className="row my-5">
+                            <AdminProduct />
+                            {/* Your table and other content here */}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Dash;

@@ -34,8 +34,8 @@ import AdminOrder from "./pages/admin/AdminOrder";
 import CrudProduct from "./pages/admin/CrudProduct";
 import ImageUpload from "./pages/admin/ImageUpload";
 import AddingProduct from "./pages/admin/AddingProduct";
-import dash from './pages/admin/dash';
 import Dash from './pages/admin/dash';
+
 import Adminlogin from "./pages/adminlogin";
 
 
@@ -67,15 +67,16 @@ function App() {
                 <Route path="/products" exact component={Product} />
                 <Route path="/view/:productId" element={<YourComponent/>} exact />
                 <Route path='/delivery' element={<UpdateProfilePage />} />
-                <Route path="/dash" element={dash} />
+                <Route path="/dash" element={<dash/>} />
                 <Route path="/chart" element={<ChartPage/>} />
-                {/* <Route path="/customer" element={<CustomerTable />} /> */}
+        
                 <Route path="/adminproduct" element={<ProductFeatures />} />
                 <Route path="/adminorder" element={<AdminOrder />} />
                 <Route path="/crudproduct" element={<CrudProduct />} />
                 <Route path="/imageupload" element={<ImageUpload/>} />
                 <Route path="/addproduct" element={<AddingProduct/>} />
                 <Route path="/admin" element={<Dash/>} />
+                {/* <Route path="/dash" element={<dash/>} /> */}
 
 
             </Routes>
