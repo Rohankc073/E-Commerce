@@ -36,7 +36,7 @@ import ImageUpload from "./pages/admin/ImageUpload";
 import AddingProduct from "./pages/admin/AddingProduct";
 import Dash from './pages/admin/dash';
 
-import Adminlogin from "./pages/adminlogin";
+import Adminlogin from "./pages/admin/adminlogin";
 
 
 function App() {

@@ -21,7 +21,7 @@ const sidebar = () => {
           <span className="fw-bold">Products</span>
         </a>
         <div className="my-2 mx-10 border-bottom"></div> {/*Line between Dashboard and Products*/}
-        <a href="addproduct" className="list-group-item list-group-item-action bg-transparent second-text fw-bold" style={{ border: 'none', fontSize: commonFontSize }}>
+        <a href="/des" className="list-group-item list-group-item-action bg-transparent second-text fw-bold" style={{ border: 'none', fontSize: commonFontSize }}>
           <i className="fas fa-comment-dots me-2"></i>
           <span className="fw-bold">AddProduct</span>
         </a>
