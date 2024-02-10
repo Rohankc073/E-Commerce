@@ -18,7 +18,7 @@ const Adminlogin = () => {
 
             // Redirect after a delay (adjust the delay based on your needs)
             setTimeout(() => {
-                navigate('/des');
+                navigate('/admin');
             }, 2000); // 2000 milliseconds (2 seconds)
         } else {
             // Unsuccessful login logic (show error message, clear inputs, etc.)
