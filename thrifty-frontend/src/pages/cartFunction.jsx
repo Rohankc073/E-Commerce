@@ -1,4 +1,4 @@
-// utils.js
+
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 import { auth, db } from '../Firebase/firebase';
 

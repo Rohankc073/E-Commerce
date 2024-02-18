@@ -1,7 +1,8 @@
-// src/pages/FeedbackList.jsx
 import React, { useState, useEffect } from 'react';
 import { db } from '../Firebase/firebase';
-import { collection, getDocs } from 'firebase/firestore'; // Import Firestore functions
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore'; // Import Firestore functions
+import '../styles/FeedbackList.css';
+import Navbar1 from "./navbar"; // Import CSS file for styling
 
 const FeedbackList = () => {
     const [feedbackList, setFeedbackList] = useState([]);
@@ -22,14 +23,26 @@ const FeedbackList = () => {
         fetchFeedback();
     }, []); // Empty dependency array ensures the effect runs only once
 
+    const handleDeleteFeedback = async (id) => {
+        try {
+            await deleteDoc(doc(db, 'feedback', id));
+            setFeedbackList(feedbackList.filter((feedback) => feedback.id !== id));
+        } catch (error) {
+            console.error('Error deleting feedback:', error);
+        }
+    };
+
     return (
+        <>
+        <Navbar1 />
         <div>
-            <h1>Feedback List</h1>
-            <table>
+            <h2>Feedback List</h2>
+            <table className="feedback-table">
                 <thead>
                 <tr>
                     <th>Name</th>
                     <th>Message</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,11 +50,15 @@ const FeedbackList = () => {
                     <tr key={feedback.id}>
                         <td>{feedback.name}</td>
                         <td>{feedback.message}</td>
+                        <td>
+                            <button onClick={() => handleDeleteFeedback(feedback.id)}>Delete</button>
+                        </td>
                     </tr>
                 ))}
                 </tbody>
             </table>
         </div>
+        </>
     );
 };
 

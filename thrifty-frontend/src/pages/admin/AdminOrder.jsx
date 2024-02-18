@@ -77,9 +77,9 @@ const AdminOrder = () => {
                                     <td>{order.id}</td>
                                     {/* <td>{order.orderDate.seconds}</td> */}
                                     <td>{order.fullName}</td>
-                                    <td>{order.items[0].productName}</td>
-                                    <td>{order.items[0].quantity}</td>
-                                    <td>Rs{order.items[0].price}</td>
+                                    {/*<td>{order.items[0].productName}</td>*/}
+                                    {/*<td>{order.items[0].quantity}</td>*/}
+                                    {/*<td>Rs{order.items[0].price}</td>*/}
                                     <td>{Math.random() < 0.5 ? 'Pending' : 'Delivered'}</td>
                                     <td>
                                         {order.status !== 'Cancelled' && (
